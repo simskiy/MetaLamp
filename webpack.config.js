@@ -68,6 +68,10 @@ module.exports = {
       filename: 'index.html',
       template: './pages/index.pug'
     }),
+    new HTMLWebpackPlugin({
+      filename: 'colors-type.html',
+      template: './pages/colors-type.pug'
+    }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [

@@ -13,6 +13,7 @@ const isProd = !isDev
 module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, 'src'),
+  target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
   devtool: isDev ? 'source-map' : false,
 	entry: {
     // подключаем предварительно полифилл
@@ -97,18 +98,32 @@ module.exports = {
     rules: [
       {
         test: /\.s[ac]ss$/i,
+        // use: [
+        //   MiniCssExtractPlugin.loader,
+        //   'css-loader',
+        //   "sass-loader"
+        //   ]
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          "sass-loader"
-          ]
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-          ],
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader'
+          }
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

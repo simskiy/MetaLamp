@@ -111,22 +111,23 @@ module.exports = {
           ],
       },
       {
-        test: /\.(png|jpg|svg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
+        include: path.resolve(__dirname, './src/assets/img'),
         options: {
           name: '[name].[ext]',
           outputPath: './images'
         }
-
       },
       {
-        test: /\.(ttf|woff|woff2|eot)$/,
+        test: /\.(ttf|woff|woff2|eot|svg)$/,
         loader: 'file-loader',
+        include: path.resolve(__dirname, './src/assets/fonts'),
         options: {
           name: '[name].[ext]',
-          outputPath: './fonts'
+          outputPath: './fonts',
+          esModule: false,
         }
-
       },
       {
         test: /\.pug$/,

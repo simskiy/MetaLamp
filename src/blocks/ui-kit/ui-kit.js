@@ -1,7 +1,8 @@
+
 $('.nav__item').click(function() {
   $('.nav__item').removeClass('nav__item--active')
   $(this).addClass('nav__item--active')
-  $('.content').removeClass('content--active')
+  $('.content').fadeOut()
   const activeBlock = '#' + $(this).data('item')
-  $(activeBlock).addClass('content--active')
+  $(activeBlock).fadeIn().addClass('content--active')
 })

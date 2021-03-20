@@ -1,0 +1,30 @@
+extends ../pug/layout.pug
+include ../blocks/colors-type/colors-type.pug
+
+block meta
+  title Document
+
+block header
+  header
+block content
+  main
+    .container
+      nav.nav
+        ul.nav__list
+          li.nav__item.nav__item--active(data-item="block-1") Colors & Types
+          li.nav__item(data-item="block-2") Form Elements
+          li.nav__item(data-item="block-3") Cards
+          li.nav__item(data-item="block-4") Headers & Footers
+      .logo
+        img.logo__img(src="./images/logo.svg", alt="logo", width="48", height="48")
+      .content.content--active#block-1
+        +colors-type()
+      .content#block-2
+        p Form Elements
+      .content#block-3
+        p Cards
+      .content#block-4
+        p Header & Footers
+
+block footer
+  footer

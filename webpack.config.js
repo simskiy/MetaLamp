@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -30,7 +31,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@assets': path.resolve(__dirname, './src/assets'),
-      '#': path.resolve(__dirname, './src/blocks')
+      '@blocks': path.resolve(__dirname, './src/blocks')
     }
   },
 
@@ -70,8 +71,8 @@ module.exports = {
       template: './pages/index.pug'
     }),
     new HTMLWebpackPlugin({
-      filename: 'colors-type.html',
-      template: './pages/colors-type.pug'
+      filename: 'ui-kit.html',
+      template: './pages/ui-kit.pug'
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -91,18 +92,17 @@ module.exports = {
     }),
     new ESLintPlugin({
       extensions: ["js", "jsx", "ts", "tsx"],
-    })
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
   ],
 
   module: {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        // use: [
-        //   MiniCssExtractPlugin.loader,
-        //   'css-loader',
-        //   "sass-loader"
-        //   ]
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {

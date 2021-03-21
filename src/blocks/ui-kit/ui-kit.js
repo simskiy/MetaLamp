@@ -1,3 +1,4 @@
+import '@blocks/rate/rate.js'
 
 $('.nav__item').click(function() {
   $('.nav__item').removeClass('nav__item--active')

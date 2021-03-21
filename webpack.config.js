@@ -109,9 +109,6 @@ module.exports = {
             loader: 'css-loader'
           },
           {
-            loader: 'postcss-loader'
-          },
-          {
             loader: 'sass-loader'
           }
         ]
@@ -128,7 +125,7 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
-        include: path.resolve(__dirname, './src/assets/img'),
+        include: [path.resolve(__dirname, './src/assets/img'), path.resolve(__dirname, './src/blocks/**/*')],
         options: {
           name: '[name].[ext]',
           outputPath: './images'

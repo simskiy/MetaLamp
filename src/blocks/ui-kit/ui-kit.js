@@ -4,5 +4,8 @@ $('.nav__item').click(function() {
   $(this).addClass('nav__item--active')
   $('.content').fadeOut()
   const activeBlock = '#' + $(this).data('item')
-  $(activeBlock).fadeIn().addClass('content--active')
+  $('.content').removeClass('content--active')
+  $(activeBlock).fadeIn('slow', function () {
+    $(this).css('display', 'flex')
+  }).addClass('content--active')
 })

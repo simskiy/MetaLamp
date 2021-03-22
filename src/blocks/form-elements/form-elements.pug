@@ -4,6 +4,7 @@ include ../checkBtn/checkBtn
 include ../radioBtn/radioBtn
 include ../toggleBtn/toggleBtn
 include ../btnPurple/btnPurple
+include ../btnClear/btnClear
 
 mixin form-elements
   +text-field('text')(placeholder="hello")
@@ -14,3 +15,4 @@ mixin form-elements
   +toggleBtn('name', 'on', 'Получать спецпредложения', true)
   +toggleBtn('name', 'off', 'Получать спецпредложения', false)
   +btnPurple('Перейти к оплате')(style="width: 320px; margin-top: 10px;" )
+  +btnClear('Click me')(style="width: 99px")

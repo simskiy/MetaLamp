@@ -17,7 +17,7 @@ block content
           li.nav__item(data-item="block-3") Cards
           li.nav__item(data-item="block-4") Headers & Footers
       .logo
-        img.logo__img(src="./images/logo.svg", alt="logo", width="48", height="48")
+        img.logo__img(src=require('@blocks/ui-kit/logo.svg'), alt="logo", width="48", height="48")
       .content.content--colors-type#block-1
         +colors-type()
       .content#block-2.content--form-elements.content--active

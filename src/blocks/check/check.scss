@@ -1,0 +1,34 @@
+.check {
+  position: relative;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+    margin-left: 30px;
+    font-size: 0.875rem;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgba($main-color, 0.5);
+
+    &::before {
+      position: absolute;
+      left: -30px;
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  }
+
+  &__input:checked + .check__label::before {
+    background: url('@blocks/check/check.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

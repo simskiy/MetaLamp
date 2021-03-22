@@ -1,6 +1,8 @@
 include ../text-field/text-field
 include ../rate/rate
+include ../check/check
 
 mixin form-elements
   +text-field('text')(placeholder="hello")
   +rate(4, true)
+  +check('value', 1, 'Можно c питомцами')

@@ -1,4 +1,4 @@
-.check {
+.checkBtn {
   position: relative;
 
   &__input {
@@ -26,9 +26,9 @@
     }
   }
 
-  &__input:checked + .check__label::before {
-    background: url('@blocks/check/check.png');
+  &__input:checked + .checkBtn__label::before {
+    background: url('@blocks/checkBtn/checkBtn.png');
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center top 48%;
   }
 }

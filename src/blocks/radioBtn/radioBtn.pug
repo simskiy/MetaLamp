@@ -1,0 +1,9 @@
+//- name - аттрибут name
+//- value - аттрибут value
+//- label - текст label
+//- checked - аттрибут checked
+
+mixin radioBtn(name, value, label, checked)
+  .radioBtn
+    input.radioBtn__input(name=name, value=value, checked=checked)
+    label.radioBtn__label=label

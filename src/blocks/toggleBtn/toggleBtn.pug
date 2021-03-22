@@ -1,0 +1,10 @@
+//- name - аттрибут name
+//- value - аттрибут value
+//- label - текст label
+//- checked - аттрибут checked
+
+mixin toggleBtn(name, value, label, checked)
+  - var id = Math.random()
+  .toggleBtn
+    input.toggleBtn__input(id!=id, type="checkbox", name=name, value=value, checked=checked)
+    label.toggleBtn__label(for!=id)= label

@@ -2,6 +2,7 @@ include ../text-field/text-field
 include ../rate/rate
 include ../checkBtn/checkBtn
 include ../radioBtn/radioBtn
+include ../toggleBtn/toggleBtn
 
 mixin form-elements
   +text-field('text')(placeholder="hello")
@@ -9,3 +10,5 @@ mixin form-elements
   +checkBtn('name', 'value', 'Можно курить', true)
   +radioBtn('sex', 'male', 'Мужчина', true)
   +radioBtn('sex', 'female', 'Женщина', false)
+  +toggleBtn('name', 'on', 'Получать спецпредложения', true)
+  +toggleBtn('name', 'off', 'Получать спецпредложения', false)

@@ -1,0 +1,50 @@
+.toggleBtn {
+  position: relative;
+
+  &__label {
+    @include body-font;
+    margin-left: 50px;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      border: 1px solid rgba($main-color, 0.25);
+      transition: border 0.3s ease;
+    }
+
+    &::after {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba($main-color, 0.25);
+      transition: left 0.3s ease;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .toggleBtn__label{
+      &::before {
+        border: 1px solid $purple;
+      }
+
+      &::after {
+        left: 24px;
+        background-color: $purple;
+        background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      }
+    }
+  }
+}

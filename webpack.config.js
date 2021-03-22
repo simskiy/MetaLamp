@@ -80,11 +80,7 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/assets/favicon.ico'),
           to: path.resolve(__dirname, 'dist/images')
-        },
-    //     {
-    //       from: path.resolve(__dirname, '/\.src/assets/fonts/'),
-    //       to: path.resolve(__dirname, 'dist')
-    //     }
+        }
       ],
     }),
     new MiniCssExtractPlugin({
@@ -101,6 +97,17 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]',
+        },
+      },
+      {
+        test: /\.html$/i,
+        use: ['extract-loader', 'html-loader'],
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -124,22 +131,19 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        include: [path.resolve(__dirname, './src/assets/img'), path.resolve(__dirname, './src/blocks/**/*')],
-        options: {
-          name: '[name].[ext]',
-          outputPath: './images'
-        }
+        type: 'asset/resource',
+        generator: {
+         filename: 'images/[hash][ext][query]'
+       }
+
       },
       {
-        test: /\.(ttf|woff|woff2|eot|svg)$/,
-        loader: 'file-loader',
-        include: path.resolve(__dirname, './src/assets/fonts'),
-        options: {
-          name: '[name].[ext]',
-          outputPath: './fonts',
-          esModule: false,
-        }
+        test: /\.(ttf|woff|woff2|eot)$/,
+        type: 'asset/resource',
+        generator: {
+         filename: 'fonts/[hash][ext][query]'
+       }
+
       },
       {
         test: /\.pug$/,

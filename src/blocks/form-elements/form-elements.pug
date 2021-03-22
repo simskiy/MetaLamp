@@ -6,5 +6,6 @@ include ../radioBtn/radioBtn
 mixin form-elements
   +text-field('text')(placeholder="hello")
   +rate(4, true)
-  +checkBtn('value', 1, 'Можно c питомцами')
-  +radioBtn()
+  +checkBtn('name', 'value', 'Можно курить', true)
+  +radioBtn('sex', 'male', 'Мужчина', true)
+  +radioBtn('sex', 'female', 'Женщина', false)

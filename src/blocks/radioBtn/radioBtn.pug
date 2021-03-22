@@ -1,9 +1,11 @@
+//- id - аттрибут id
 //- name - аттрибут name
 //- value - аттрибут value
 //- label - текст label
 //- checked - аттрибут checked
 
 mixin radioBtn(name, value, label, checked)
+  - var id = Math.random()
   .radioBtn
-    input.radioBtn__input(name=name, value=value, checked=checked)
-    label.radioBtn__label=label
+    input.radioBtn__input(id!=id, type="radio", name=name, value=value, checked=checked)
+    label.radioBtn__label(for!=id)=label

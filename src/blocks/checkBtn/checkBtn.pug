@@ -4,6 +4,7 @@
 //- checked - аттрибут checked
 
 mixin checkBtn(name, value, label, checked)
+  - var id = Math.random()
   .checkBtn
-    input.checkBtn__input#checkBtn(type="checkbox", name=name, value=value, checked=checked)
-    label.checkBtn__label(for="checkBtn")= label
+    input.checkBtn__input(id!=id, type="checkbox", name=name, value=value, checked=checked)
+    label.checkBtn__label(for!=id)= label

@@ -4,10 +4,15 @@ mixin dblSlider(label='Range Slider', min=0, max=100, a=25, b=50, step=1)
     data-max=max
     data-a=a
     data-b=b
-    step=step
+    data-step=step
     role='group'
     aria-labelledby='multi-lbl'
   )&attributes(attributes)
+    .dblSlider__label-block
+      span#dblSlider__label-1
+      |  -
+      |
+      span#dblSlider__label-2
     #dblSlider__label.dblSlider__label=label
     input(id="jsr-1-1" name="range1" type="range" min!=min max!=max step!=step value!=a).dblSlider__input
     input(id="jsr-1-2" name="range2" type="range" min!=min max!=max step!=step value!=b).dblSlider__input

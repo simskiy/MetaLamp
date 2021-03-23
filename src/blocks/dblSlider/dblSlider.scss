@@ -7,15 +7,39 @@
     font-weight: 700;
     text-transform: uppercase;
   }
+
+  &__label-block {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    @include body-font();
+    font-size: 0.75rem;
+  }
+
   .jsr {
     margin: 0;
-
+    padding: 0;
+    margin-top: 13px;
     &_label {
       cursor: auto;
+    }
 
-      &--minmax {
-      display: none;
+    &_rail {
+      height: 6px;
+      border: 1px solid rgba($main-color, 0.25);
+      background-color: #fff;
+      border-radius: 3px;
     }
+
+    &_slider::before {
+      box-sizing: border-box;
+      border: 2px solid #fff;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     }
+
+    &_bar {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+
   }
 }

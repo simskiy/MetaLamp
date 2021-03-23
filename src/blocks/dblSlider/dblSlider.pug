@@ -1,13 +1,13 @@
-mixin dblSlider
-  - let min = -50, max = 50
-  - let a = -30, b = 20;
-
-  .wrap(role='group' aria-labelledby='multi-lbl' style=`--a: ${a}; --b: ${b}; --min: ${min}; --max: ${max}`)
-    .track
-    #multi-lbl Multi thumb slider:
-    label.sr-only(for='a') Value A:
-    input#a(type='range' min=min value=a max=max)
-    output(for='a' style='--c: var(--a)')
-    label.sr-only(for='b') Value B:
-    input#b(type='range' min=min value=b max=max)
-    output(for='b' style='--c: var(--b)')
+mixin dblSlider(label='Range Slider', min=0, max=100, a=25, b=50, step=1)
+  .dblSlider(
+    data-min=min
+    data-max=max
+    data-a=a
+    data-b=b
+    step=step
+    role='group'
+    aria-labelledby='multi-lbl'
+  )&attributes(attributes)
+    #dblSlider__label.dblSlider__label=label
+    input(id="jsr-1-1" name="range1" type="range" min!=min max!=max step!=step value!=a).dblSlider__input
+    input(id="jsr-1-2" name="range2" type="range" min!=min max!=max step!=step value!=b).dblSlider__input

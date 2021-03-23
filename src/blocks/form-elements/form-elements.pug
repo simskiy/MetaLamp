@@ -1,10 +1,11 @@
-include ../text-field/text-field
-include ../rate/rate
-include ../checkBtn/checkBtn
-include ../radioBtn/radioBtn
-include ../toggleBtn/toggleBtn
-include ../btnPurple/btnPurple
-include ../btnClear/btnClear
+include ../text-field/text-field.pug
+include ../rate/rate.pug
+include ../checkBtn/checkBtn.pug
+include ../radioBtn/radioBtn.pug
+include ../toggleBtn/toggleBtn.pug
+include ../btnPurple/btnPurple.pug
+include ../btnClear/btnClear.pug
+include ../dblSlider/dblSlider.pug
 
 mixin form-elements
   +text-field('text')(placeholder="hello")
@@ -16,3 +17,4 @@ mixin form-elements
   +toggleBtn('name', 'off', 'Получать спецпредложения', false)
   +btnPurple('Перейти к оплате')(style="width: 320px; margin-top: 10px;" )
   +btnClear('Click me')(style="width: 99px")
+  +dblSlider()

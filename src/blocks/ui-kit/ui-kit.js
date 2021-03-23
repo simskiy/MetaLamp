@@ -1,4 +1,5 @@
-import '@blocks/rate/rate.js'
+import '@blocks/form-elements/form-elements.js'
+
 
 $('.nav__item').click(function() {
   $('.nav__item').removeClass('nav__item--active')

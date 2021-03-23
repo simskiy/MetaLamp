@@ -1,2 +1,13 @@
 mixin dblSlider
-  p hello, mudila!
+  - let min = -50, max = 50
+  - let a = -30, b = 20;
+
+  .wrap(role='group' aria-labelledby='multi-lbl' style=`--a: ${a}; --b: ${b}; --min: ${min}; --max: ${max}`)
+    .track
+    #multi-lbl Multi thumb slider:
+    label.sr-only(for='a') Value A:
+    input#a(type='range' min=min value=a max=max)
+    output(for='a' style='--c: var(--a)')
+    label.sr-only(for='b') Value B:
+    input#b(type='range' min=min value=b max=max)
+    output(for='b' style='--c: var(--b)')

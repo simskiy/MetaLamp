@@ -4,6 +4,12 @@ $d: .5*$h;
 $r: .5*$d;
 $uw: $w - $d;
 
+$value-1: -30;
+$value-2: 20;
+$min: -50;
+$max: 50;
+
+
 @mixin track() {
   width: 100%; height: 100%;
   background: none /* get rid of Firefox track background */

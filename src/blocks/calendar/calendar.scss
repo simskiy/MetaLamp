@@ -1,0 +1,152 @@
+@import 'air-datepicker/dist/css/datepicker.min.css';
+
+.calendar {
+  width: 320px;
+  height: 370px;
+  font-family: inherit;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+
+  & .datepicker {
+
+    &--nav {
+      border: none;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    &--nav-title {
+      font-size: 1.188rem;
+      font-weight: 700;
+      color: $main-color;
+      & i {
+        color: inherit;
+      }
+    }
+
+    &--nav-action {
+      width: 25px;
+
+      & path {
+        fill: inherit;
+        stroke: inherit;
+        stroke-width: inherit;
+      }
+
+      & svg {
+        width: 17px;
+        height: 18px;
+        fill: $purple;
+      }
+
+    }
+
+    &--content {
+      margin-top: 13px;
+    }
+
+    &--day-name {
+      color: $purple;
+      text-transform: capitalize;
+    }
+
+    &--cells-days {
+      margin-top: 13px;
+
+      & .-current- {
+        border-radius: 50%;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        color: #fff;
+      }
+
+      & .-selected- {
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        color: #fff;
+        border-radius: 50%;
+      }
+
+      & .-in-range- {
+        background: none;
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+          opacity: 0.25;
+        }
+      }
+
+      & .-range-from- {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 50%;
+          height: 100%;
+          right: 0;
+          background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+          opacity: 0.25;
+        }
+
+        &.-focus- {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+
+      & .-range-to- {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 50%;
+          height: 100%;
+          left: 0;
+          background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+          opacity: 0.25;
+        }
+
+        &.-focus- {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &--cell-day {
+      font-size: 0.75rem;
+      color: rgba($main-color, 0.50);
+      height: 40px;
+
+      &.-other-month- {
+        color: rgba($main-color, 0.25);
+      }
+    }
+    &--buttons {
+      border-top: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    &--button {
+      flex: 0;
+      padding-top: 5px;
+      font-family: Montserrat;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: $purple;
+      text-transform: uppercase;
+    }
+  }
+}

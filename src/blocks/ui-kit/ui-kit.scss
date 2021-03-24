@@ -1,5 +1,6 @@
 @import '@blocks/colors-type/colors-type.scss';
 @import '@blocks/form-elements/form-elements.scss';
+@import '@blocks/cards/cards.scss';
 
 main {
   background-color: #e5e5e5;
@@ -34,6 +35,13 @@ main {
 
   &--form-elements {
     padding-top: 62px;
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-bottom: 0;
+  }
+
+  &--cards {
+    padding-top: 72px;
     padding-left: 110px;
     padding-right: 110px;
     padding-bottom: 0;

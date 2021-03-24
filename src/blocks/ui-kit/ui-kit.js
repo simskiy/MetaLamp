@@ -1,4 +1,5 @@
 import '@blocks/form-elements/form-elements.js'
+import '@blocks/cards/cards.js'
 
 
 $('.nav__item').click(function() {

@@ -1,6 +1,7 @@
 extends ../pug/layout.pug
 include ../blocks/colors-type/colors-type.pug
 include ../blocks/form-elements/form-elements.pug
+include ../blocks/cards/cards.pug
 
 block meta
   title Document
@@ -13,17 +14,17 @@ block content
       nav.nav
         ul.nav__list
           li.nav__item(data-item="block-1") Colors & Types
-          li.nav__item.nav__item--active(data-item="block-2") Form Elements
-          li.nav__item(data-item="block-3") Cards
+          li.nav__item(data-item="block-2") Form Elements
+          li.nav__item.nav__item--active(data-item="block-3") Cards
           li.nav__item(data-item="block-4") Headers & Footers
       .logo
         img.logo__img(src=require('@blocks/ui-kit/logo.svg'), alt="logo", width="48", height="48")
       .content.content--colors-type#block-1
         +colors-type()
-      .content#block-2.content--form-elements.content--active
+      .content#block-2.content--form-elements
         +form-elements()
-      .content#block-3
-        p Cards
+      .content#block-3.content--cards.content--active
+        +cards()
       .content#block-4
         p Header & Footers
 

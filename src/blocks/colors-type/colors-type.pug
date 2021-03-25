@@ -1,50 +1,28 @@
 mixin colors-type()
+  -
+    let colors= [ {class: 'dark', text: 'Dark Shade 100%', code: '#1F2041' },
+                  {class: 'dark75', text: 'Dark Shade 75%', code: '#1F2041'},
+                  {class: 'dark50', text: 'Dark Shade 50%', code: '#1F2041'},
+                  {class: 'dark25', text: 'Dark Shade 50%', code: '#1F2041'},
+                  {class: 'dark5', text: 'Dark Shade 50%', code: '#1F2041'},
+                  {class: 'purple', text: 'Purple', code: '#BC9CFF'},
+                  {class: 'green', text: 'Green', code: '#6FCF97'}  ]
   ul.color
-    li.color__item
-      .color__block.color__block--dark
-      .color__text
-        span Dark Shade 100%
-        span.color__code #1F2041
-    li.color__item
-      .color__block.color__block--dark75
-      .color__text
-        span Dark Shade 75%
-        span.color__code #1F2041
-    li.color__item
-      .color__block.color__block--dark50
-      .color__text
-        span Dark Shade 50%
-        span.color__code #1F2041
-    li.color__item
-      .color__block.color__block--dark25
-      .color__text
-        span Dark Shade 25%
-        span.color__code #1F2041
-    li.color__item
-      .color__block.color__block--dark5
-      .color__text
-        span Dark Shade 5%
-        span.color__code #1F2041
-    li.color__item
-      .color__block.color__block--purple
-      .color__text
-        span Purple
-        span.color__code #BC9CFF
-    li.color__item
-      .color__block.color__block--green
-      .color__text
-        span Green
-        span.color__code #6FCF97
+    each val in colors
+      li.color__item
+        .color__block(class=`color__block--${val.class}`)
+        .color__text
+          span= val.text
+          span.color__code= val.code
+
   ul.font-style
-    li.font-style__item.font-style__item--h1
-      span.font-style__title H1
-      span.font-style__text.font-style__text--style This one is the sub-section or widget title
-    li.font-style__item.font-style__item--h2
-      span.font-style__title H2
-      span.font-style__text.font-style__text--style Next one is the item title inside widgets
-    li.font-style__item.font-style__item--h3
-      span.font-style__title H3
-      span.font-style__text.font-style__text--style.font-style__text--uppercase This is a label or CTA text
-    li.font-style__item.font-style__item--body
-      span.font-style__title Body
-      span.font-style__text.font-style__text--style This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    -
+      let fonts = [ {class: 'h1', title: 'H1', text: 'This one is the sub-section or widget title', upper: false },
+                    {class: 'h2', title: 'H2', text: 'Next one is the item title inside widgets', upper: false},
+                    {class: 'h3', title: 'H3', text: 'This is a label or CTA text', upper: true},
+                    {class: 'body', title: 'Body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', upper: false }]
+
+    each val in fonts
+      li.font-style__item(class=`font-style__item--${val.class}`)
+        span.font-style__title= val.title
+        span.font-style__text.font-style__text--style(class= val.upper ? 'font-style__text--uppercase' : '')= val.text

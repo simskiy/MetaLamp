@@ -6,17 +6,18 @@
   }
 
   &__label {
+    display: inline-block;
     position: relative;
-    margin-left: 30px;
     font-size: 0.875rem;
     line-height: 18px;
     font-weight: 400;
     color: rgba($main-color, 0.5);
     cursor: pointer;
+    padding-left: 30px;
 
     &::before {
       position: absolute;
-      left: -30px;
+      left: 0px;
       content: '';
       display: block;
       width: 20px;

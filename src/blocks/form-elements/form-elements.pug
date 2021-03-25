@@ -9,11 +9,11 @@ include ../btn/btn.pug
 mixin form-elements
   +text-field('text')(placeholder="hello")
   +rate(4, true)
-  +checkBtn({name: 'name', value: 'value', label: 'Можно курить'})
+  +checkBtn({name: 'name', value: 'value', label: 'Можно курить и делать всякие непотребства. Например, кушать бутерброды и смотреть сериалы'})(style="width: 200px")
   +radioBtn({name: 'sex', value: 'male', label: 'Мужчина', checked: true})
   +radioBtn({name: 'sex', value: 'female', label: 'Женщина', checked: false})
   +toggleBtn({name: 'name', value: 'on', label: 'Получать спецпредложения', checked: true})
   +toggleBtn({name: 'name', value: 'off', label: 'Получать спецпредложения'})
   +btn({arrow: false, color: 'clear', text: 'Click me'})(style="width: 99px; margin: 10px;")
   +btn({arrow: true, color: 'purple', text: 'Перейти к оплате'})(style="width: 320px; margin: 10px;")
-  +dblSlider({label: 'range slider', min: 0, max: 16000, a: 5000, b: 10000})(style="width: 266px")
+  +dblSlider({label: 'range slider', a: 5000, min: 0, max: 16000, b: 10000})(style="width: 266px")

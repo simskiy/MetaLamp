@@ -3,8 +3,21 @@
 //- label - текст label
 //- checked - аттрибут checked
 
-mixin checkBtn(name, value, label, checked)
-  - var id = Math.random()
+mixin checkBtn(attr={})
+  -
+    let id = Math.random()
+    let opt = {
+      name: attr.name || 'name',
+      value: attr.value || 'value',
+      label: attr.label || 'Можно курить',
+      checked: attr.checked || false
+    }
   .checkBtn
-    input.checkBtn__input(id!=id, type="checkbox", name=name, value=value, checked=checked)
-    label.checkBtn__label(for!=id)= label
+    input.checkBtn__input(
+      id!=id,
+      type="checkbox",
+      name=opt.name,
+      value=opt.value,
+      checked=opt.checked
+      )
+    label.checkBtn__label(for!=id)= opt.label

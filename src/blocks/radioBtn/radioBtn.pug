@@ -4,8 +4,20 @@
 //- label - текст label
 //- checked - аттрибут checked
 
-mixin radioBtn(name, value, label, checked)
-  - var id = Math.random()
+mixin radioBtn(attr={})
+  -
+    let id = Math.random()
+    let opt = {
+      name: attr.name || 'name',
+      value: attr.value || 'value',
+      label: attr.label || 'label',
+      checked: attr.checked || true
+    }
   .radioBtn
-    input.radioBtn__input(id!=id, type="radio", name=name, value=value, checked=checked)
-    label.radioBtn__label(for!=id)=label
+    input.radioBtn__input(
+      id!=id,
+      type="radio",
+      name=opt.name,
+      value=opt.value,
+      checked=opt.checked)
+    label.radioBtn__label(for!=id)=opt.label

@@ -3,20 +3,17 @@ include ../rate/rate.pug
 include ../checkBtn/checkBtn.pug
 include ../radioBtn/radioBtn.pug
 include ../toggleBtn/toggleBtn.pug
-include ../btnPurple/btnPurple.pug
-include ../btnClear/btnClear.pug
 include ../dblSlider/dblSlider.pug
 include ../btn/btn.pug
 
 mixin form-elements
   +text-field('text')(placeholder="hello")
   +rate(4, true)
-  +checkBtn('name', 'value', 'Можно курить', true)
-  +radioBtn('sex', 'male', 'Мужчина', true)
-  +radioBtn('sex', 'female', 'Женщина', false)
-  +toggleBtn('name', 'on', 'Получать спецпредложения', true)
-  +toggleBtn('name', 'off', 'Получать спецпредложения', false)
-  +btnPurple('Перейти к оплате')(style="width: 320px; margin-top: 10px;" )
-  +btnClear('Click me')(style="width: 99px; margin-top: 10px")
-  +dblSlider('range slider', 0, 16000, 5000, 10000)(style="width: 266px")
-  +bnt()
+  +checkBtn({name: 'name', value: 'value', label: 'Можно курить'})
+  +radioBtn({name: 'sex', value: 'male', label: 'Мужчина', checked: true})
+  +radioBtn({name: 'sex', value: 'female', label: 'Женщина', checked: false})
+  +toggleBtn({name: 'name', value: 'on', label: 'Получать спецпредложения', checked: true})
+  +toggleBtn({name: 'name', value: 'off', label: 'Получать спецпредложения'})
+  +btn({arrow: false, color: 'clear', text: 'Click me'})(style="width: 99px; margin: 10px;")
+  +btn({arrow: true, color: 'purple', text: 'Перейти к оплате'})(style="width: 320px; margin: 10px;")
+  +dblSlider({label: 'range slider', min: 0, max: 16000, a: 5000, b: 10000})(style="width: 266px")

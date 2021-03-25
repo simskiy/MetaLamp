@@ -1,2 +1,14 @@
-mixin bnt
-  p hello, mudila
+mixin btn(attr={})
+  -
+    let opt = {
+      arrow: attr.arrow || 'btn--arrow',
+      color: attr.color || 'clear',
+      text: attr.text || 'Click me'
+    }
+  button.btn(
+    class = opt.arrow ? 'btn--arrow' : ''
+    class = opt.color == 'clear' ? 'btn--clear' : ''
+    class = opt.color == 'purple' ? 'btn--purple' : ''
+    data-content = opt.color == 'clear' ? `${opt.text}` : ''
+    checked = opt.checked
+  )&attributes(attributes)= opt.text

@@ -1,10 +1,19 @@
-mixin dblSlider(label='Range Slider', min=0, max=100, a=25, b=50, step=1)
+mixin dblSlider(attr="")
+  -
+    let opt = {
+      label: attr.label || 'Range Slider',
+      min: attr.min || 0,
+      max: attr.max || 100,
+      a: attr.a || 25,
+      b: attr.b || 50,
+      step: attr.step || 1
+    }
   .dblSlider(
-    data-min=min
-    data-max=max
-    data-a=a
-    data-b=b
-    data-step=step
+    data-min=opt.min
+    data-max=opt.max
+    data-a=opt.a
+    data-b=opt.b
+    data-step=opt.step
     role='group'
     aria-labelledby='multi-lbl'
   )&attributes(attributes)
@@ -13,6 +22,22 @@ mixin dblSlider(label='Range Slider', min=0, max=100, a=25, b=50, step=1)
       |  -
       |
       span#dblSlider__label-2
-    #dblSlider__label.dblSlider__label=label
-    input(id="jsr-1-1" name="range1" type="range" min!=min max!=max step!=step value!=a).dblSlider__input
-    input(id="jsr-1-2" name="range2" type="range" min!=min max!=max step!=step value!=b).dblSlider__input
+    #dblSlider__label.dblSlider__label=opt.label
+    input(
+      id="jsr-1-1"
+      name="range1"
+      type="range"
+      min=opt.min
+      max=opt.max
+      step=opt.step
+      value=opt.a
+      ).dblSlider__input
+    input(
+      id="jsr-1-2"
+      name="range2"
+      type="range"
+      min=opt.min
+      max=opt.max
+      step=opt.step
+      value=opt.b
+      ).dblSlider__input

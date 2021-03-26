@@ -1,2 +1,35 @@
-mixin text-field(type)
-  input(type=type)&attributes(attributes).text-field
+//- label - надпись (label)
+//- type - тип input (text/date/phone/email)
+//- placeholder - заполнитель для input
+//- expand - добавляет на background стрелку вниз (для всплытия другого диалогового окна) и блокирует input на редактирование
+//- arrow - добавлет на background стрелку вправо
+//- date - добавляет маску (дата)
+//- value - value of input
+//- hover - стилизация input как при наведении курсором
+
+mixin text-field(attr={})
+  -
+    let id = Math.random()
+    let opt = {
+      label: attr.label || '',
+      type: attr.type || 'text',
+      placeholder: attr.placeholder || 'placeholder',
+      expand: attr.expand,
+      arrow: attr.arrow,
+      date: attr.date || false,
+      value: attr.value || '',
+      hover: attr.hover || false,
+    }
+  .text-field&attributes(attributes)
+    label.text-field__label(id!=id)=opt.label
+    input.text-field__input(
+      id!=id
+      type=opt.type
+      placeholder=opt.date ? 'ДД.ММ.ГГГГ' : opt.placeholder
+      readonly=opt.expand ? true : false
+      data-input=opt.date ? 'date' : ''
+      value=opt.value
+      class=opt.expand ? 'text-field__input--expand' : ''
+      class=opt.hover ? 'text-field__input--hover' : ''
+      class=opt.arrow ? 'text-field__input--arrow' : ''
+    )

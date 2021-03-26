@@ -7,9 +7,10 @@ include ../dblSlider/dblSlider.pug
 include ../btn/btn.pug
 
 mixin form-elements
-  +text-field('text')(placeholder="hello")
+
+  +text-field({type: 'text', placeholder: 'Email', label: 'subscription text field', date: false, arrow: true})(style="width: 266px; margin: 10px;")
   +rate(4, true)
-  +checkBtn({name: 'name', value: 'value', label: 'Можно курить и делать всякие непотребства. Например, кушать бутерброды и смотреть сериалы'})(style="width: 200px")
+  +checkBtn()
   +radioBtn({name: 'sex', value: 'male', label: 'Мужчина', checked: true})
   +radioBtn({name: 'sex', value: 'female', label: 'Женщина', checked: false})
   +toggleBtn({name: 'name', value: 'on', label: 'Получать спецпредложения', checked: true})

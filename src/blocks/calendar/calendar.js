@@ -18,7 +18,6 @@ $('#calendar').datepicker({
 $('.datepicker--buttons').append('<span class="datepicker--button" data-action="submit">Применить</span>')
 
 if ($('#calendar').data('maket') == 'maket') {
-  console.log('ok')
   let datepicker = $('#calendar').datepicker().data('datepicker');
   datepicker.selectedDates = [new Date('2019-8-19'), new Date('2019-8-23')]
   datepicker.date = new Date('2019-8')

@@ -9,17 +9,57 @@
 
 mixin text-field(attr={})
   -
+    let opt ={}
     let id = Math.random()
-    let opt = {
-      label: attr.label || '',
+    switch (attr.preset) {
+      case 'text':
+        attr.label = 'text field'
+        attr.placeholder = 'Email'
+        break
+      case 'text-hover':
+        attr.label = 'text field'
+        attr.placeholder = 'This is pretty awesome'
+        attr.hover = true
+        break
+      case 'text-drop':
+        attr.label = 'dropdown'
+        attr.placeholder = 'Сколько гостей'
+        attr.expand = true
+        break
+      case  'date':
+        attr.label = 'masked text field'
+        attr.date = true
+        break
+      case 'date-drop':
+        attr.label = 'date dropdown'
+        attr.expand = true
+        attr.date = true
+        attr.placeholderDark = true
+        break
+      case 'date-filter':
+        attr.label = 'filter date dropdown'
+        attr.expand = true
+        attr.placeholder = '19 авг - 23 авг'
+        attr.placeholderDark = true
+        break
+      case 'text-arrow':
+        attr.label = 'subscription text field'
+        attr.arrow = true
+        attr.placeholder = 'Email'
+      }
+
+    opt = {
+      label: attr.label || 'label',
       type: attr.type || 'text',
       placeholder: attr.placeholder || 'placeholder',
-      expand: attr.expand,
-      arrow: attr.arrow,
-      date: attr.date || false,
-      value: attr.value || '',
+      expand: attr.expand || false,
+      arrow: attr.arrow || false,
+      value: attr.value || false,
       hover: attr.hover || false,
+      date: attr.date || false,
+      placeholderDark: attr.placeholderDark || false
     }
+
   .text-field&attributes(attributes)
     label.text-field__label(id!=id)=opt.label
     input.text-field__input(
@@ -27,9 +67,10 @@ mixin text-field(attr={})
       type=opt.type
       placeholder=opt.date ? 'ДД.ММ.ГГГГ' : opt.placeholder
       readonly=opt.expand ? true : false
-      data-input=opt.date ? 'date' : ''
       value=opt.value
       class=opt.expand ? 'text-field__input--expand' : ''
       class=opt.hover ? 'text-field__input--hover' : ''
       class=opt.arrow ? 'text-field__input--arrow' : ''
+      class=opt.date ? 'text-field__input--date' : ''
+      class=opt.placeholderDark ? 'text-field__input--placeholder-dark' : ''
     )

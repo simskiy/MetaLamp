@@ -1,11 +1,13 @@
 import 'cleave.js'
 
-let inputDate = document.querySelector('.text-field__input[data-input="date"]')
+let inputDate = document.querySelectorAll('.text-field__input--date')
 
 if (inputDate) {
-  new Cleave('.text-field__input[data-input="date"]', {
-    date: true,
-    delimiter: '-',
-    datePattern: ['d', 'm', 'Y']
-  });
+  $(inputDate).each(function () {
+    new Cleave(this, {
+      date: true,
+      delimiter: '-',
+      datePattern: ['d', 'm', 'Y']
+    });
+  })
 }

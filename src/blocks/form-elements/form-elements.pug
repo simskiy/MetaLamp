@@ -8,9 +8,14 @@ include ../btn/btn.pug
 
 mixin form-elements
 
-  +text-field({type: 'text', placeholder: 'Email', label: 'subscription text field', date: false, arrow: true})(style="width: 266px; margin: 10px;")
+  +text-field({preset: 'text'})(style="width: 266px; margin: 10px;")
+  +text-field({preset: 'text-hover'})(style="width: 266px; margin: 10px;")
+  +text-field({preset: 'text-drop'})(style="width: 266px; margin: 10px;")
+  +text-field({preset: 'date'})(style="width: 266px; margin: 10px;")
+  +text-field({preset: 'text-arrow'})
+
   +rate()
-  +checkBtn()
+  +checkBtn({preset: 'drop'})
 
   +radioBtn({preset: 'male'})
   +radioBtn({preset: 'female'})

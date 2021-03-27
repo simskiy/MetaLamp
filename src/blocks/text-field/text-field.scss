@@ -36,6 +36,9 @@
       padding-right: 44px;
       background-position: right 13px center;
     }
+    &--placeholder-dark::placeholder {
+      color: rgba($main-color, 0.75);
+    }
   }
 
   &__label {

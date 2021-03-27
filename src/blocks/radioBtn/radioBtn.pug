@@ -3,16 +3,33 @@
 //- value - аттрибут value
 //- label - текст label
 //- checked - аттрибут checked
+//- preset: 'male' - предустановка "мужчина"
+//- preset: 'female' - предустановка "женщина"
 
 mixin radioBtn(attr={})
   -
     let id = Math.random()
+    switch (attr.preset) {
+      case 'male':
+        attr.name = 'sex'
+        attr.value = 'male'
+        attr.label = 'Мужчина'
+        attr.checked = true
+        break
+      case 'female':
+        attr.name = 'sex'
+        attr.value = 'female'
+        attr.label = 'Женщина'
+        attr.checked = false
+    }
+
     let opt = {
       name: attr.name || 'name',
       value: attr.value || 'value',
       label: attr.label || 'label',
-      checked: attr.checked || true
+      checked: attr.checked
     }
+
   .radioBtn
     input.radioBtn__input(
       id!=id,

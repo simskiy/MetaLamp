@@ -15,6 +15,11 @@ mixin form-elements
   +radioBtn({name: 'sex', value: 'female', label: 'Женщина', checked: false})
   +toggleBtn({name: 'name', value: 'on', label: 'Получать спецпредложения', checked: true})
   +toggleBtn({name: 'name', value: 'off', label: 'Получать спецпредложения'})
-  +btn({arrow: false, color: 'clear', text: 'Click me'})(style="width: 99px; margin: 10px;")
-  +btn({arrow: true, color: 'purple', text: 'Перейти к оплате'})(style="width: 320px; margin: 10px;")
+
+  +btn({preset: 'clear'})(style="width: 99px; margin: 10px;")
+  +btn({preset: 'clear', active: true})(style="width: 99px; margin: 10px;")
+  +btn({preset: 'purple'})(style="width: 99px; margin: 10px;")
+  +btn({preset: 'purple', active: true})(style="width: 99px; margin: 10px;")
+  +btn({preset: 'arrow'})(style="width: 320px; margin: 10px;")
+
   +dblSlider({label: 'range slider', a: 5000, min: 0, max: 16000, b: 10000})(style="width: 266px")

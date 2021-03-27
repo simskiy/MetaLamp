@@ -45,7 +45,8 @@
       background-position: right 12px center, 0 0;
     }
 
-  &:active {
+  &:active,
+  &--active {
     opacity: 0.5;
   }
 }

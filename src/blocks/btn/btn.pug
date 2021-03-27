@@ -1,14 +1,33 @@
 mixin btn(attr={})
   -
-    let opt = {
+    let opt = {}
+    switch(attr.preset) {
+      case 'purple':
+        attr.color = 'purple'
+        attr.text = 'Click me'
+        attr.arrow = false
+        break;
+      case 'clear':
+        attr.color = 'clear'
+        attr.text = 'Click me'
+        attr.arrow = false
+        break;
+      case 'arrow':
+        attr.color = 'purple'
+        attr.arrow = true
+        attr.text = 'Перейти к оплате'
+        break;
+    }
+    opt = {
       arrow: attr.arrow || 'btn--arrow',
       color: attr.color || 'clear',
-      text: attr.text || 'Click me'
+      text: attr.text || 'Click me',
+      active: attr.active || false
     }
   button.btn(
-    class = opt.arrow ? 'btn--arrow' : ''
+    class = opt.arrow == true ? 'btn--arrow' : ''
     class = opt.color == 'clear' ? 'btn--clear' : ''
     class = opt.color == 'purple' ? 'btn--purple' : ''
+    class = opt.active ? 'btn--active': ''
     data-content = opt.color == 'clear' ? `${opt.text}` : ''
-    checked = opt.checked
   )&attributes(attributes)= opt.text

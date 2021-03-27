@@ -1,5 +1,12 @@
 mixin dblSlider(attr="")
   -
+    if(attr.preset == 'default') {
+      attr.a = 5000
+      attr.b = 10000
+      attr.min = 0
+      attr.max = 16000
+    }
+
     let opt = {
       label: attr.label || 'Range Slider',
       min: attr.min || 0,

@@ -11,15 +11,18 @@ mixin text-field(attr={})
   -
     let opt ={}
     let id = Math.random()
+
     switch (attr.preset) {
       case 'text':
         attr.label = 'text field'
         attr.placeholder = 'Email'
+        attr.span = 'default'
         break
       case 'text-hover':
         attr.label = 'text field'
         attr.placeholder = 'This is pretty awesome'
         attr.hover = true
+        attr.span = 'hover / focus'
         break
       case 'text-drop':
         attr.label = 'dropdown'
@@ -46,22 +49,31 @@ mixin text-field(attr={})
         attr.label = 'subscription text field'
         attr.arrow = true
         attr.placeholder = 'Email'
+        break
+      case 'drop-down':
+        attr.label = 'dropdown'
+        attr.dropDown = true
+        attr.expand = true
       }
 
     opt = {
       label: attr.label || 'label',
       type: attr.type || 'text',
-      placeholder: attr.placeholder || 'placeholder',
+      placeholder: attr.placeholder || false,
       expand: attr.expand || false,
       arrow: attr.arrow || false,
       value: attr.value || false,
       hover: attr.hover || false,
       date: attr.date || false,
-      placeholderDark: attr.placeholderDark || false
+      placeholderDark: attr.placeholderDark || false,
+      span: attr.span,
+      dropDown: attr.dropDown,
     }
 
   .text-field&attributes(attributes)
     label.text-field__label(id!=id)=opt.label
+    if opt.span
+      span.text-field__note=opt.span
     input.text-field__input(
       id!=id
       type=opt.type
@@ -73,4 +85,5 @@ mixin text-field(attr={})
       class=opt.arrow ? 'text-field__input--arrow' : ''
       class=opt.date ? 'text-field__input--date' : ''
       class=opt.placeholderDark ? 'text-field__input--placeholder-dark' : ''
+      class=opt.dropDown ? 'text-field__input--drop-down' : ''
     )

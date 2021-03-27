@@ -5,14 +5,17 @@ include ../radioBtn/radioBtn.pug
 include ../toggleBtn/toggleBtn.pug
 include ../dblSlider/dblSlider.pug
 include ../btn/btn.pug
+include ../dropDown/dropDown.pug
 
 mixin form-elements
 
-  +text-field({preset: 'text'})(style="width: 266px; margin: 10px;")
-  +text-field({preset: 'text-hover'})(style="width: 266px; margin: 10px;")
-  +text-field({preset: 'text-drop'})(style="width: 266px; margin: 10px;")
-  +text-field({preset: 'date'})(style="width: 266px; margin: 10px;")
+  +text-field({preset: 'text'})(style="width: 320px; margin: 10px;")
+  +text-field({preset: 'text-hover'})(style="width: 320px; margin: 10px;")
+  +text-field({preset: 'text-drop'})(style="width: 320px; margin: 10px;")
+  +text-field({preset: 'date'})(style="width: 320px; margin: 10px;")
   +text-field({preset: 'text-arrow'})
+  +text-field({preset: 'date-drop'})
+  +text-field({preset: 'date-filter'})
 
   +rate()
   +checkBtn({preset: 'drop'})
@@ -30,3 +33,5 @@ mixin form-elements
   +btn({preset: 'arrow'})(style="width: 320px; margin: 10px;")
 
   +dblSlider({preset: 'default'})(style="width: 266px")
+
+  +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати'})(style="width: 266px")

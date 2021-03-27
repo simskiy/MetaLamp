@@ -1,4 +1,7 @@
 .text-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   &__input {
     box-sizing: border-box;
@@ -15,6 +18,7 @@
 
     &::placeholder {
       color: inherit;
+      text-overflow: ellipsis;
     }
 
     &:hover,
@@ -36,8 +40,14 @@
       padding-right: 44px;
       background-position: right 13px center;
     }
+
     &--placeholder-dark::placeholder {
       color: rgba($main-color, 0.75);
+    }
+
+    &--drop-down {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
   }
 
@@ -50,6 +60,12 @@
     text-transform: uppercase;
   }
 
-
-
+  &__note {
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: rgba($main-color, 0.5);
+    align-self: flex-start;
+  }
 }

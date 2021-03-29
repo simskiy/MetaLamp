@@ -1,14 +1,23 @@
 .drop-down {
-  &__list {
-    box-sizing: border-box;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
     border: 1px solid rgba($main-color, 0.5);
     border-top: 0;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-    list-style: none;
     padding: 5px 6px 7px 15px;
+  }
+
+  &__list {
+    width: 100%;
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0;
     margin: 0;
   }
+
   &__item {
     display: flex;
     justify-content: space-between;
@@ -74,6 +83,22 @@
         left: 0;
         content: '+';
       }
+    }
+  }
+
+  &__btn-form {
+    background: transparent;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $purple;
+    text-transform: uppercase;
+    padding: 0;
+    border: 0;
+    margin-top: 22px;
+    margin-bottom: 5px;
+
+    &--submit {
+      margin-left: auto;
     }
   }
 }

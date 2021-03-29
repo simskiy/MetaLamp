@@ -9,8 +9,14 @@ class DropDown {
       show: this.show = this.show || false,
       title: this.title = this.title || 'dropdown',
       note: this.note = this.note || '',
-      placeholder: this.placeholder = this.placeholder || ''
+      placeholder: this.placeholder = this.placeholder || '',
+      styles: this.styles,
+      showBtns: this.showBtns = this.showBtns || true
     } = options);
+    this.showClearBtn = 0;
+    this.Input = '',
+    this.Submit = '',
+    this.Clear = ''
   }
 
   createInputBlock () {
@@ -28,6 +34,7 @@ class DropDown {
     label.textContent = this.title;
     input.classList.add(`${cl}__input`, `${cl}__input--drop-down`, `${cl}__input--expand`);
     input.setAttribute('readonly', true);
+    input.setAttribute('placeholder', this.placeholder);
 
     if (this.show) {
       input.classList.add('text-field__input--hover');
@@ -36,13 +43,16 @@ class DropDown {
     }
 
     [label, span, input].forEach(item => inputBlock.appendChild(item));
+    this.Input = inputBlock;
     return inputBlock;
   }
 
   createDropList () {
     const dd = 'drop-down';
     let list = document.createElement('ul');
-    list.classList.add(`${dd}__list`)
+    list.classList.add(`${dd}__list`);
+    let dropWrapper = document.createElement('div');
+    dropWrapper.classList.add(`${dd}__wrapper`);
 
     for (let elem of this.labels) {
       let listItem = document.createElement('li');
@@ -51,6 +61,7 @@ class DropDown {
       let btnAdd = document.createElement('button');
       let btnSub = document.createElement('button');
       let sum = document.createElement('span');
+      // listItem.setAttribute('style', this.styles.listItem || '');
 
       listItem.classList.add(`${dd}__item`);
       label.classList.add(`${dd}__label`);
@@ -63,16 +74,33 @@ class DropDown {
       sum.classList.add(`${dd}__sum`);
       sum.textContent = this.setSum(elem)[1];
 
+      this.showClearBtn += +sum.textContent;
+
       if (this.setSum(elem)[1] == 0) {
         btnSub.classList.add(`${dd}__btn--disable`);
       }
 
       [btnSub, sum, btnAdd].forEach(item => btnBlock.appendChild(item));
       [label, btnBlock].forEach(elem => listItem.appendChild(elem));
+
       list.appendChild(listItem);
       if (!this.show) list.setAttribute('style', 'display: none');
     }
-    return list
+    dropWrapper.appendChild(list);
+    if (this.showBtns) this.createBtnForm().forEach(item => dropWrapper.appendChild(item));
+    return dropWrapper;
+  }
+
+  createBtnForm () {
+    let btnSubmit = document.createElement('button');
+    btnSubmit.classList.add('drop-down__btn-form', 'drop-down__btn-form--submit');
+    btnSubmit.textContent = 'Применить';
+    let btnClear = document.createElement('button');
+    btnClear.classList.add('drop-down__btn-form', 'drop-down__btn-form--clear');
+    btnClear.textContent = 'Очистить';
+    this.Clear = btnClear;
+    this.Submit = btnSubmit;
+    return [btnClear, btnSubmit];
   }
 
   createDropDown () {
@@ -91,7 +119,7 @@ class DropDown {
 
   inputEvent () {
     $(`${this.elem} .text-field__input`).click( () => {
-      $(`${this.elem} .drop-down__list`).slideToggle();
+      $(`${this.elem} .drop-down__wrapper`).slideToggle();
       $(`${this.elem} .text-field__input`).toggleClass('text-field__input--hover');
     })
   }
@@ -101,22 +129,38 @@ class DropDown {
     let btnsSub = document.querySelectorAll(`${this.elem} .drop-down__btn--sub`);
 
     for (let btn of btnsSub) {
-      btn.addEventListener('click', function () {
-        let span = this.nextSibling;
+      btn.addEventListener('click', (e) => {
+        let span = e.target.nextSibling;
+        this.showClearBtn--;
         span.textContent--;
-        if (+span.textContent <= 0) {
+        if (+span.textContent < 1) {
           span.textContent = 0;
-          this.classList.add('drop-down__btn--disable')
+          e.target.classList.add('drop-down__btn--disable');
         }
+        if (this.showBtns) this.setClearBtn(this.showClearBtn);
       })
     }
 
     for (let btn of btnsAdd) {
-      btn.addEventListener('click', function () {
-        let span = this.previousSibling;
-        this.parentElement.firstElementChild.classList.remove('drop-down__btn--disable');
+      btn.addEventListener('click', (e) => {
+        let span = e.target.previousSibling;
+        e.target.parentElement.firstElementChild.classList.remove('drop-down__btn--disable');
         span.textContent++;
+        this.showClearBtn++;
+        if (this.showBtns) this.setClearBtn(this.showClearBtn);
       })
+    }
+  }
+
+  setStyles () {
+    console.log(this.styles);
+  }
+
+  setClearBtn (num) {
+    if (+num > 0) {
+      this.Clear.setAttribute('style', 'display: block');
+    } else {
+      this.Clear.setAttribute('style', 'display: none');
     }
   }
 
@@ -124,13 +168,18 @@ class DropDown {
     this.createDropDown();
     this.inputEvent();
     this.btnEvent();
+    this.setStyles();
   }
 }
 
 let drop = new DropDown('#drop-down', {
-  labels: [['ночные горшки', 2], 'вазы', ['привет, мудила', 5]],
+  labels: [['взрослые', 2], ['дети', 1], 'младенцы'],
   show: true,
-  note: 'default/hover'
+  note: 'default/hover',
+  showBtns: true,
+  styles: {
+    input: 'padding: 12px; color: black;'
+  }
 });
 
 drop.init()

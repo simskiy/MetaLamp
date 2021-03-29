@@ -21,13 +21,19 @@ class DropDown {
 
     let span = document.createElement('span');
     span.classList.add(`${cl}__note`);
-    span.innerText = this.note;
+    span.textConten = this.note;
 
     inputBlock.classList.add(`${cl}`);
     label.classList.add(`${cl}__label`);
-    label.innerText = this.title;
+    label.textContent = this.title;
     input.classList.add(`${cl}__input`, `${cl}__input--drop-down`, `${cl}__input--expand`);
     input.setAttribute('readonly', true);
+
+    if (this.show) {
+      input.classList.add('text-field__input--hover');
+    } else {
+      input.classList.remove('text-field__input--hover');
+    }
 
     [label, span, input].forEach(item => inputBlock.appendChild(item));
     return inputBlock;
@@ -48,14 +54,14 @@ class DropDown {
 
       listItem.classList.add(`${dd}__item`);
       label.classList.add(`${dd}__label`);
-      label.innerText = this.setSum(elem)[0];
+      label.textContent = this.setSum(elem)[0];
 
       btnBlock.classList.add(`${dd}__btn-block`);
       btnAdd.classList.add(`${dd}__btn`, `${dd}__btn--add`);
       btnSub.classList.add(`${dd}__btn`, `${dd}__btn--sub`);
 
       sum.classList.add(`${dd}__sum`);
-      sum.innerText = this.setSum(elem)[1];
+      sum.textContent = this.setSum(elem)[1];
 
       if (this.setSum(elem)[1] == 0) {
         btnSub.classList.add(`${dd}__btn--disable`);
@@ -86,11 +92,32 @@ class DropDown {
   inputEvent () {
     $(`${this.elem} .text-field__input`).click( () => {
       $(`${this.elem} .drop-down__list`).slideToggle();
+      $(`${this.elem} .text-field__input`).toggleClass('text-field__input--hover');
     })
   }
 
   btnEvent () {
+    let btnsAdd = document.querySelectorAll(`${this.elem} .drop-down__btn--add`);
+    let btnsSub = document.querySelectorAll(`${this.elem} .drop-down__btn--sub`);
 
+    for (let btn of btnsSub) {
+      btn.addEventListener('click', function () {
+        let span = this.nextSibling;
+        span.textContent--;
+        if (+span.textContent <= 0) {
+          span.textContent = 0;
+          this.classList.add('drop-down__btn--disable')
+        }
+      })
+    }
+
+    for (let btn of btnsAdd) {
+      btn.addEventListener('click', function () {
+        let span = this.previousSibling;
+        this.parentElement.firstElementChild.classList.remove('drop-down__btn--disable');
+        span.textContent++;
+      })
+    }
   }
 
   init () {

@@ -1,42 +1,47 @@
 include ../text-field/text-field.pug
 
 mixin drop-down(attr={})
-  -
-    switch (attr.preset) {
+  //- -
+  //-   switch (attr.preset) {
 
-    }
-    let opt = {
-      label: attr.label || 'label',
-      type: attr.type || 'text',
-      placeholder: attr.placeholder || false,
-      expand: attr.expand || false,
-      arrow: attr.arrow || false,
-      value: attr.value || false,
-      hover: attr.hover || false,
-      date: attr.date || false,
-      placeholderDark: attr.placeholderDark || false,
-      span: attr.span,
-      dropDown: attr.dropDown,
-    }
+  //-   }
+  //-   let opt = {
+  //-     label: attr.label || 'label',
+  //-     type: attr.type || 'text',
+  //-     placeholder: attr.placeholder || false,
+  //-     expand: attr.expand || false,
+  //-     arrow: attr.arrow || false,
+  //-     value: attr.value || false,
+  //-     hover: attr.hover || false,
+  //-     date: attr.date || false,
+  //-     placeholderDark: attr.placeholderDark || false,
+  //-     span: attr.span,
+  //-     dropDown: attr.dropDown,
+  //-   }
 
-  .drop-down&attributes(attributes)
-    +text-field({preset: 'drop-down', opt})
-    ul.drop-down__list
-      li.drop-down__item
-        span.drop-down__label Спальни
-        .drop-down__btn-block
-          button.drop-down__btn.drop-down__btn--sub
-          span.drop-down__sum 2
-          button.drop-down__btn.drop-down__btn--add
-      li.drop-down__item
-        span.drop-down__label Кровати
-        .drop-down__btn-block
-          button.drop-down__btn.drop-down__btn--sub
-          span.drop-down__sum 2
-          button.drop-down__btn.drop-down__btn--add
-      li.drop-down__item
-        span.drop-down__label Ванные комнаты
-        .drop-down__btn-block
-          button.drop-down__btn.drop-down__btn--sub
-          span.drop-down__sum 0
-          button.drop-down__btn.drop-down__btn--add
+  //-   let preset = { preset: 'drop-down'}
+
+  //-   opt = Object.assign(opt, preset)
+
+  //- .drop-down&attributes(attributes)
+  //-   +text-field(opt)
+  //-   ul.drop-down__list
+  //-     li.drop-down__item
+  //-       span.drop-down__label Спальни
+  //-       .drop-down__btn-block
+  //-         button.drop-down__btn.drop-down__btn--sub
+  //-         span.drop-down__sum 2
+  //-         button.drop-down__btn.drop-down__btn--add
+  //-     li.drop-down__item
+  //-       span.drop-down__label Кровати
+  //-       .drop-down__btn-block
+  //-         button.drop-down__btn.drop-down__btn--sub
+  //-         span.drop-down__sum 2
+  //-         button.drop-down__btn.drop-down__btn--add
+  //-     li.drop-down__item
+  //-       span.drop-down__label Ванные комнаты
+  //-       .drop-down__btn-block
+  //-         button.drop-down__btn.drop-down__btn--sub
+  //-         span.drop-down__sum 0
+  //-         button.drop-down__btn.drop-down__btn--add
+  #drop-down(style="width: 266px")

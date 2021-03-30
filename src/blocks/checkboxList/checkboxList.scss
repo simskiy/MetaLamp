@@ -1,0 +1,33 @@
+.checkboxList {
+  width: 266px;
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    text-transform: uppercase;
+    @include h3-font;
+
+    &--expand {
+      background: url('@blocks/checkboxList/expand_more.svg') no-repeat;
+      background-position: right 15px center;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 3px;
+  }
+
+  &__item {
+    margin-top: 10px;
+    height: 20px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

@@ -6,6 +6,7 @@ include ../toggleBtn/toggleBtn.pug
 include ../dblSlider/dblSlider.pug
 include ../btn/btn.pug
 include ../dropDown/dropDown.pug
+include ../checkboxList/checkboxList.pug
 
 mixin form-elements
 
@@ -18,7 +19,7 @@ mixin form-elements
   +text-field({preset: 'date-filter'})
 
   +rate()
-  +checkBtn({preset: 'drop'})
+  +checkBtn()
 
   +radioBtn({preset: 'male'})
   +radioBtn({preset: 'female'})
@@ -35,3 +36,14 @@ mixin form-elements
   +dblSlider({preset: 'default'})(style="width: 266px")
 
   +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...'})(style="width: 266px")
+
+  +checkboxList({
+    items: [
+      ['Завтрак', false],
+      ['Письменный стол', true],
+      ['Стул для кормления', true],
+      ['Кроватка', true],
+      ['Телевизор', false],
+      ['шампунь', false] ],
+    expande: true
+  })

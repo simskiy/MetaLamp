@@ -8,8 +8,9 @@
   &__label {
     display: inline-block;
     position: relative;
+    height: 20px;
     font-size: 0.875rem;
-    line-height: 18px;
+    line-height: 20px;
     font-weight: 400;
     color: rgba($main-color, 0.5);
     cursor: pointer;

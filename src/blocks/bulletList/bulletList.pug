@@ -1,0 +1,11 @@
+mixin bulletList(attr={})
+  -
+    let opt = {
+      title: attr.title || 'bullet list',
+      items: attr.items || []
+    }
+  .bulletList&attributes(attributes)
+    h3.bulletList__title= opt.title
+    ul.bulletList__list
+      each val in opt.items
+        li.bulletList__item=val

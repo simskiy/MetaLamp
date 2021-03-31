@@ -8,6 +8,7 @@ include ../btn/btn.pug
 include ../dropDown/dropDown.pug
 include ../checkboxList/checkboxList.pug
 include ../checkboxRich/checkboxRich.pug
+include ../bulletList/bulletList.pug
 
 mixin form-elements
 
@@ -68,3 +69,8 @@ mixin form-elements
             }
           ]
   })(style="width: 266px")
+
+  +bulletList({
+    title: 'bullet list',
+    items: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+  })(style="width: 260px")

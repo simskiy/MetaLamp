@@ -9,6 +9,7 @@ include ../dropDown/dropDown.pug
 include ../checkboxList/checkboxList.pug
 include ../checkboxRich/checkboxRich.pug
 include ../bulletList/bulletList.pug
+include ../likeBtn/likeBtn.pug
 
 mixin form-elements
 
@@ -83,3 +84,6 @@ mixin form-elements
     title: 'bullet list',
     items: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
   })(style="width: 260px")
+
+  +likeBtn({disable: true, count: 2})
+  +likeBtn({count: 12})

@@ -15,7 +15,7 @@ mixin checkboxList(attr={})
       data-expand = opt.expand
       )=opt.title
     ul.checkboxList__list(
-      style=opt.expand == 'on' ? 'display: none': 'display: block'
+      style=opt.expand == 'off' ? 'display: none': 'display: block'
     )
       each val in opt.items
         li.checkboxList__item

@@ -1,0 +1,11 @@
+mixin likeBtn(attr={})
+  -
+    let opt = {
+      disable: attr.disable || false,
+      count: attr.count || 10
+    }
+
+  button.likeBtn(
+    class=opt.disable ? 'likeBtn--disable' : ''
+  )
+    span.likeBtn__count=opt.count

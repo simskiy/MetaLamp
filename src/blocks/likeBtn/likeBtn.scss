@@ -1,0 +1,28 @@
+.likeBtn {
+  display: flex;
+  box-sizing: border-box;
+  width: 40px;
+  height: 20px;
+  border: 1px solid $purple;
+  border-radius: 10px;
+  color: $purple;
+  font-size: 0.625rem;
+  background-repeat: no-repeat;
+  background-position: left 5px center;
+  background-image: url('@blocks/likeBtn/favorite.svg');
+  padding-left: 20px;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &--disable {
+    background-image: url('@blocks/likeBtn/favorite_border.svg');
+    border: 1px solid rgba($main-color, 0.25);
+    color: rgba($main-color, 0.25);
+  }
+}

@@ -6,6 +6,11 @@
     color: rgba($main-color, 0.5);
     margin-left: 30px;
     cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $main-color;
+    }
 
     &:before {
       position: absolute;

@@ -1,6 +1,9 @@
 .checkboxList {
   width: 266px;
+
   &__title {
+    cursor: pointer;
+    user-select: none;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -9,14 +12,23 @@
     margin: 0;
     text-transform: uppercase;
     @include h3-font;
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    transition: background-color 0.3s ease;
+    background-image: url('@blocks/checkboxList/expand_up.svg');
+    border-radius: 22px;
 
     &--expand {
-      background: url('@blocks/checkboxList/expand_more.svg') no-repeat;
-      background-position: right 15px center;
+      background-image: url('@blocks/checkboxList/expand_down.svg');
+
+      & + .checkboxList__list {
+        display: block;
+      }
     }
   }
 
   &__list {
+    display: none;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -25,7 +37,7 @@
 
   &__item {
     margin-top: 10px;
-    height: 20px;
+    // height: 20px;
     &:first-child {
       margin-top: 0;
     }

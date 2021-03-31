@@ -5,6 +5,11 @@
     @include body-font;
     margin-left: 50px;
     cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $main-color;
+    }
 
     &::before {
       position: absolute;

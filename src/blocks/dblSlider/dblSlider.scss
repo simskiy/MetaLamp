@@ -3,8 +3,9 @@
 .dblSlider {
   position: relative;
   &__label {
-    font-size: 0.75rem;
-    font-weight: 700;
+    // font-size: 0.75rem;
+    // font-weight: 700;
+    @include h3-font;
     text-transform: uppercase;
   }
 

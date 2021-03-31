@@ -8,13 +8,18 @@
   &__label {
     display: inline-block;
     position: relative;
-    height: 20px;
+    // height: 20px;
     font-size: 0.875rem;
     line-height: 20px;
     font-weight: 400;
     color: rgba($main-color, 0.5);
     cursor: pointer;
     padding-left: 30px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $main-color;
+    }
 
     &::before {
       position: absolute;

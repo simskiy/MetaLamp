@@ -12,7 +12,7 @@
 //    btnClear:
 //    }
 //  labels: [['взрослые', 2], ['дети', 1], 'младенцы'],
-//  minimize: (false || false),
+//  minimize: (true || false),
 //  note: (string),
 //  showBtns: (false || true),
 //  preset: ('room' || 'guest'),
@@ -174,7 +174,7 @@ export default class {
       title: [this.elements.title],
       input: [this.elements.input],
       note: [this.elements.note],
-      dropdownWrapper: [this.elements.dropdownWrapper],
+      dropdownWrapper: [this.elements.dropdownWrapper] || '',
       dropdownList: [this.dropdown],
       dropdownItems: document.querySelectorAll('.drop-down__item'),
       dropdownBtns: document.querySelectorAll('.drop-down__btn'),
@@ -185,7 +185,6 @@ export default class {
       stylesArr[elem].forEach(item => {
         if (item) {
           item.setAttribute('style', this.styles[elem])
-          // console.log(elem, item)
         }
       })
     }
@@ -210,7 +209,10 @@ export default class {
       }
       break;
 
-      case 'isMinimize': if (this.minimize) this.elements.dropdownWrapper.setAttribute('style', 'display: none');
+      case 'isMinimize': if (this.minimize) {
+        this.elements.dropdownWrapper.setAttribute('style', 'display: none');
+        console.log(this.minimize);
+      }
       break;
     }
   }
@@ -249,6 +251,6 @@ export default class {
     this.createDropDown();
     this.inputEvent();
     this.btnEvent();
-    this.setStyles();
+    // this.setStyles();
   }
 }

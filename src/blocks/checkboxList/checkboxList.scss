@@ -15,20 +15,22 @@
     background-repeat: no-repeat;
     background-position: right 15px center;
     transition: background-color 0.3s ease;
-    background-image: url('@blocks/checkboxList/expand_up.svg');
     border-radius: 22px;
 
-    &--expand {
+    &[data-expand="on"] {
       background-image: url('@blocks/checkboxList/expand_down.svg');
+    }
+
+    &[data-expand="off"] {
+      background-image: url('@blocks/checkboxList/expand_up.svg');
 
       & + .checkboxList__list {
-        display: block;
+        display: none;
       }
     }
   }
 
   &__list {
-    display: none;
     padding: 0;
     margin: 0;
     list-style: none;

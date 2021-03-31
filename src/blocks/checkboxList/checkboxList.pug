@@ -5,14 +5,18 @@ mixin checkboxList(attr={})
     let opt = {
       title: attr.title ||  'Expandable checkbox list',
       items: attr.items || [],
-      expand: attr.expand,
+      expand: attr.expand || false
     }
 
   .checkboxList()&attributes(attributes)
+
     h3.checkboxList__title(
-      class=opt.expand ? 'checkboxList--expand' : ''
-    )=opt.title
-    ul.checkboxList__list
+      class=opt.expand ? 'checkboxList__title--expand' : ''
+      data-expand = opt.expand
+      )=opt.title
+    ul.checkboxList__list(
+      style=opt.expand == 'on' ? 'display: none': 'display: block'
+    )
       each val in opt.items
         li.checkboxList__item
           +checkBtn({

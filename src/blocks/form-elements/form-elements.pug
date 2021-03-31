@@ -37,7 +37,7 @@ mixin form-elements
 
   +dblSlider({preset: 'default'})(style="width: 266px")
 
-  +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...'})(style="width: 266px")
+  +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...',})(style="width: 266px")
 
   +checkboxList({
     items: [
@@ -48,8 +48,17 @@ mixin form-elements
       { label: 'Телевизор', checked: false},
       { label: 'Шампунь', checked: false}
     ],
-    expand: false
+    expand: 'on'
   })
+
+  +checkboxList({
+    title: 'Checkbox Buttons',
+    items: [
+      {label: 'Можно курить', checked: false},
+      {label: 'Можно с питомцами', checked: true},
+      {label: 'Можно пригласить гостей (до 10 человек)', checked: true}
+    ],
+  })(style="width: 225px;")
 
   +checkboxRich({
     title: 'rich checkbox buttons',

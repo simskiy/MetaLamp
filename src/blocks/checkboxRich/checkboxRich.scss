@@ -1,0 +1,31 @@
+.checkboxRich {
+
+  &__title {
+    @include h3-font;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 18px;
+  }
+
+  &__item {
+    color: rgba($main-color, 0.5);
+    font-size: 0.75rem;
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    padding-left: 30px;
+    margin-top: 5px;
+  }
+}

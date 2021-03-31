@@ -10,7 +10,8 @@ mixin checkBtn(attr={})
       name: attr.name || 'name',
       value: attr.value || 'value',
       label: attr.label || 'Можно курить',
-      checked: attr.checked || false
+      checked: attr.checked || false,
+      label_style: attr.label_style || false
     }
 
   .checkBtn&attributes(attributes)
@@ -21,4 +22,7 @@ mixin checkBtn(attr={})
       value=opt.value,
       checked=opt.checked
       )
-    label.checkBtn__label(for!=id)= opt.label
+    label.checkBtn__label(
+      for!=id
+      style=opt.label_style
+    )= opt.label

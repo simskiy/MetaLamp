@@ -7,6 +7,7 @@ include ../dblSlider/dblSlider.pug
 include ../btn/btn.pug
 include ../dropDown/dropDown.pug
 include ../checkboxList/checkboxList.pug
+include ../checkboxRich/checkboxRich.pug
 
 mixin form-elements
 
@@ -39,11 +40,31 @@ mixin form-elements
 
   +checkboxList({
     items: [
-      ['Завтрак', false],
-      ['Письменный стол', true],
-      ['Стул для кормления', true],
-      ['Кроватка', true],
-      ['Телевизор', false],
-      ['Шампунь', false] ],
+      { label: 'Завтрак', checked: false },
+      { label: 'Письменный стол', checked: true },
+      { label: 'Стул для кормления', checked: true },
+      { label: 'Кроватка', checked: true},
+      { label: 'Телевизор', checked: false},
+      { label: 'Шампунь', checked: false}
+    ],
     expand: false
   })
+
+  +checkboxRich({
+    title: 'rich checkbox buttons',
+    items: [
+            {
+              label: 'Широкий коридор',
+              checked: false,
+              text: 'Ширина коридоров в номере не менее 91 см.',
+              name: 'newnew',
+              text_style: 'width: 230px;'
+            },
+            {
+              label: 'Помощник для инвалидов',
+              checked: true,
+              text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+              text_style: 'width: 255px;'
+            }
+          ]
+  })(style="width: 266px")

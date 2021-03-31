@@ -1,0 +1,24 @@
+include ../checkBtn/checkBtn.pug
+
+mixin checkboxRich(attr={})
+  -
+    let opt = {
+      title: attr.title,
+      items: attr.items
+    }
+
+  .checkboxRich&attributes(attributes)
+    h3.checkboxRich__title=opt.title
+    ul.checkboxRich__list
+      each val in opt.items
+        li.checkboxRich__item
+          +checkBtn({
+            label: val.label,
+            checked: val.checked,
+            name: val.name,
+            value: val.value,
+            label_style: val.label_style || 'font-size: 0.875rem; font-weight: 700;'
+          })
+          p.checkboxRich__text(
+            style=val.text_style
+          )=val.text

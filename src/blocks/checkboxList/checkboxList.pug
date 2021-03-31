@@ -15,4 +15,10 @@ mixin checkboxList(attr={})
     ul.checkboxList__list
       each val in opt.items
         li.checkboxList__item
-          +checkBtn({label: val[0], checked: val[1]})
+          +checkBtn({
+            label: val.label,
+            checked: val.checked,
+            name: val.name,
+            value: val.value,
+            label_style: val.label_style
+            })

@@ -211,7 +211,6 @@ export default class {
 
       case 'isMinimize': if (this.minimize) {
         this.elements.dropdownWrapper.setAttribute('style', 'display: none');
-        console.log(this.minimize);
       }
       break;
     }

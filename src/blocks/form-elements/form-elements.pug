@@ -10,6 +10,7 @@ include ../checkboxList/checkboxList.pug
 include ../checkboxRich/checkboxRich.pug
 include ../bulletList/bulletList.pug
 include ../likeBtn/likeBtn.pug
+include ../pagination/pagination.pug
 
 mixin form-elements
 
@@ -87,3 +88,5 @@ mixin form-elements
 
   +likeBtn({disable: true, count: 2})
   +likeBtn({count: 12})
+
+  +pagination()

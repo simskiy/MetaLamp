@@ -1,0 +1,8 @@
+mixin features(items=[])
+  ul.features
+    each item in items
+      li.features__item(
+        class=`features__item--${item.img}`
+      )
+        span.features__title=item.title
+        p.features__text=item.text

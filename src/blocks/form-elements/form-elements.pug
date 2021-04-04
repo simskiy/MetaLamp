@@ -11,6 +11,7 @@ include ../checkboxRich/checkboxRich.pug
 include ../bulletList/bulletList.pug
 include ../likeBtn/likeBtn.pug
 include ../pagination/pagination.pug
+include ../features/features.pug
 
 mixin form-elements
 
@@ -90,3 +91,8 @@ mixin form-elements
   +likeBtn({count: 12})
 
   +pagination()
+
+  +features([
+    { title: 'Комфорт', text: 'Шумопоглощающие стены', img: 'insert_emoticon' },
+    { title: 'Удобство', text: 'Окно в каждой из спален', img: 'location_city' }
+  ])

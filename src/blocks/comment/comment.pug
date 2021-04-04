@@ -1,0 +1,19 @@
+include ../likeBtn/likeBtn.pug
+
+mixin comment(attr={})
+  -
+    opt = {
+      photo: attr.photo,
+      name: attr.name,
+      days: attr.days,
+      likeBtn: attr.likeBtn,
+      text: attr.text
+    }
+
+  .comment&attributes(attributes)
+    img.comment__photo(src=opt.photo width="48" height="48" alt="Фотография")
+    span.comment__name=opt.name
+    span.comment__days=`${opt.days} дней назад`
+    .comment__inner
+      +likeBtn(opt.likeBtn)(class="comment__like-btn")
+      p.comment__text=opt.text

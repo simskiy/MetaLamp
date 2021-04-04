@@ -7,5 +7,5 @@ mixin likeBtn(attr={})
 
   button.likeBtn(
     class=opt.disable ? 'likeBtn--disable' : ''
-  )
+  )&attributes(attributes)
     span.likeBtn__count=opt.count

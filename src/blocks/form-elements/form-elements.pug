@@ -12,6 +12,7 @@ include ../bulletList/bulletList.pug
 include ../likeBtn/likeBtn.pug
 include ../pagination/pagination.pug
 include ../features/features.pug
+include ../comment/comment.pug
 
 mixin form-elements
 
@@ -96,3 +97,14 @@ mixin form-elements
     { title: 'Комфорт', text: 'Шумопоглощающие стены', img: 'insert_emoticon' },
     { title: 'Удобство', text: 'Окно в каждой из спален', img: 'location_city' }
   ])
+
+  +comment({
+    photo: require('@blocks/comment/image.jpg'),
+    name: 'Мурад Сарафанов',
+    days: 5,
+    likeBtn: {
+      disable: false,
+      count: 12
+    },
+    text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+  })(style="width: 711px")

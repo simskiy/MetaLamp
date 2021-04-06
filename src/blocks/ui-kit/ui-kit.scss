@@ -35,6 +35,7 @@ main {
   }
 
   &--form-elements {
+    box-sizing: border-box;
     padding-top: 62px;
     padding-left: 110px;
     padding-right: 110px;

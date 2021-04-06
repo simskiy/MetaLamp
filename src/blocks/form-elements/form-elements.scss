@@ -13,3 +13,34 @@
 @import '@blocks/pagination/pagination.scss';
 @import '@blocks/features/features.scss';
 @import '@blocks/comment/comment.scss';
+
+.form-elements {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 636px 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 320px);
+  width: 100%;
+  justify-content: space-between;
+
+  &__block-1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  &__blocks-2 {
+    display: flex;
+
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 41px;
+
+    &--half {
+      width: 150px;
+    }
+  }
+}

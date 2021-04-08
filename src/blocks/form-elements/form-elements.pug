@@ -18,7 +18,7 @@ mixin form-elements
   .form-elements
     .form-elements__block-1
       +text-field({preset: 'text'})
-      +text-field({preset: 'text-hover'})(style="margin-top: 20px;")
+      +text-field({preset: 'text-hover'})(style="margin-top: 21px;")
       +text-field({preset: 'text-drop'})(style="margin-top: 21px;")
       +text-field({preset: 'date'})(style="margin-top: 24px")
       .form-elements__inner
@@ -26,7 +26,8 @@ mixin form-elements
         +text-field({placeholder: '19.08.2019', label: 'date dropdown', expand: true, placeholderDark: true})(class="form-elements__inner--half")
       +text-field({preset: 'date-filter'})(style="margin-top: 42px; width: 266px;")
       +text-field({preset: 'text-arrow'})(style="margin-top: 42px; width: 266px;")
-    .form-elements__block-2
+
+    .form-elements__block-2.block-2
       +checkboxList({
         title: 'Checkbox Buttons',
         items: [
@@ -34,15 +35,23 @@ mixin form-elements
           {label: 'Можно с питомцами', checked: true},
           {label: 'Можно пригласить гостей (до 10 человек)', checked: true}
         ],
-      })(style="width: 225px;")
-      +rate()
-      +checkBtn()
-      +radioBtn({preset: 'male'})
-      +radioBtn({preset: 'female'})
-      +toggleBtn({name: 'name', value: 'on', label: 'Получать спецпредложения', checked: true})
-      +toggleBtn({name: 'name', value: 'off', label: 'Получать спецпредложения'})
-      +likeBtn({disable: true, count: 2})
-      +likeBtn({count: 12})
+      })(style="width: 222px;")
+      .block-2__radio
+        h3.block-2__title Radio Buttons
+        +radioBtn({preset: 'male'})(class="block-2__btn")
+        +radioBtn({preset: 'female'})(class="blocks-2__btn")
+      .block-2__toggle
+        h3.block-2__title toggle
+        +toggleBtn({name: 'name', value: 'on', label: 'Получать спецпредложения', checked: true})
+        +toggleBtn({name: 'name', value: 'off', label: 'Получать спецпредложения'})
+      .block-2__like
+        h3.block-2__title like button
+        +likeBtn({disable: true, count: 2})
+        +likeBtn({count: 12})
+      .block-2__rate
+        h3.block-2__title rate button
+        +rate()
+        +rate({rate: 5, edit: true})
     div
       +btn({preset: 'clear'})(style="width: 99px; margin: 10px;")
       +btn({preset: 'clear', active: true})(style="width: 99px; margin: 10px;")

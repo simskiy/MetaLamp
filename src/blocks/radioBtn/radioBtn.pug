@@ -30,7 +30,7 @@ mixin radioBtn(attr={})
       checked: attr.checked
     }
 
-  .radioBtn
+  .radioBtn&attributes(attributes)
     input.radioBtn__input(
       id!=id,
       type="radio",

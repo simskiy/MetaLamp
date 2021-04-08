@@ -21,6 +21,7 @@
   grid-template-columns: repeat(3, 320px);
   width: 100%;
   justify-content: space-between;
+  justify-items: center;
 
   &__block-1 {
     display: flex;
@@ -42,5 +43,45 @@
     &--half {
       width: 150px;
     }
+  }
+}
+
+.block-2 {
+  box-sizing: border-box;
+  padding-left: 27px;
+
+  &__radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 59px;
+    padding-right: 73px;
+    height: 65px;
+  }
+
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 27px;
+    height: 82px;
+  }
+
+  &__like {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 47px;
+    height: 66px;
+    padding-right: 204px;
+  }
+
+  &__title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $main-color;
+    width: 100%;
+    margin: 0;
   }
 }

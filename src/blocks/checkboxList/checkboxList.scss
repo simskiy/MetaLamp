@@ -36,11 +36,12 @@
     margin: 0;
     list-style: none;
     margin-top: 3px;
+
   }
 
   &__item {
     margin-top: 10px;
-    // height: 20px;
+    height: 20px;
     &:first-child {
       margin-top: 0;
     }

@@ -1,0 +1,4 @@
+mixin link(attr={hover: false, text: 'text'})
+  a.link(
+    class=attr.hover ? "link--hover" : false
+  )&attributes(attributes)=attr.text

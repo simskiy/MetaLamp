@@ -13,6 +13,7 @@
 @import '@blocks/pagination/pagination.scss';
 @import '@blocks/features/features.scss';
 @import '@blocks/comment/comment.scss';
+@import '@blocks/link/link.scss';
 
 .form-elements {
   box-sizing: border-box;
@@ -28,11 +29,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-  }
-
-  &__blocks-2 {
-    display: flex;
-
   }
 
   &__inner {
@@ -76,6 +72,22 @@
     padding-right: 204px;
   }
 
+  &__rate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-right: 33px;
+
+    & .block-2__title {
+      margin-bottom: 18px;
+    }
+
+    & #rate-1 {
+      margin-left: 2px;
+    }
+  }
+
   &__title {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -84,4 +96,29 @@
     width: 100%;
     margin: 0;
   }
+}
+
+.block-3 {
+
+  &__btns {
+    margin-top: 20px;
+    padding-right: 100px;
+    height: 195px;
+
+  }
+
+  &__title {
+    width: 100%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $main-color;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  &__pagination {
+    margin-top: 43px;
+  }
+
 }

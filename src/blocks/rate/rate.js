@@ -71,8 +71,12 @@ class Rate {
 
 
 let rate1 = new Rate('#rate-1', {
-  rate: 5,
-  edit: true
+  rate: 4
+})
+
+let rate2 = new Rate('#rate-2', {
+  rate: 5
 })
 
 rate1.init()
+rate2.init()

@@ -13,6 +13,7 @@ include ../likeBtn/likeBtn.pug
 include ../pagination/pagination.pug
 include ../features/features.pug
 include ../comment/comment.pug
+include ../link/link.pug
 
 mixin form-elements
   .form-elements
@@ -50,17 +51,23 @@ mixin form-elements
         +likeBtn({count: 12})
       .block-2__rate
         h3.block-2__title rate button
-        +rate()
-        +rate({rate: 5, edit: true})
-    div
-      +btn({preset: 'clear'})(style="width: 99px; margin: 10px;")
-      +btn({preset: 'clear', active: true})(style="width: 99px; margin: 10px;")
-      +btn({preset: 'purple'})(style="width: 99px; margin: 10px;")
-      +btn({preset: 'purple', active: true})(style="width: 99px; margin: 10px;")
-      +btn({preset: 'arrow'})(style="width: 320px; margin: 10px;")
+        +rate('rate-1')
+        +rate('rate-2')
 
-      +dblSlider({preset: 'default'})(style="width: 266px")
-      +pagination()
+    .form-elements__block-3.block-3
+      +dblSlider({preset: 'default'})(style="width: 266px;")
+      .block-3__btns
+        h3.block-3__title buttons
+        +btn({preset: 'purple'})(style="width: 99px")
+        +btn({preset: 'purple', active: true})(style="width: 99px; margin-left: 19px;")
+        +btn({preset: 'clear'})(style="width: 99px; margin-top: 30px;")
+        +btn({preset: 'clear', active: true})(style="width: 99px; margin-left: 19px;")
+        +link({text: 'click me', hover: true})(style="margin-top: 33px;")
+        +link({text: 'click me'})(style="margin-left: 21px;")
+      +btn({preset: 'arrow'})(style="margin-top: 27px;")
+      .block-3__pagination
+        h3.block-3__title pagination
+        +pagination()
     div
       +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...',})(style="width: 266px")
       +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...',})(style="width: 266px")

@@ -68,14 +68,27 @@ mixin form-elements
       .block-3__pagination
         h3.block-3__title pagination
         +pagination()
-    div
-      +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...',})(style="width: 266px")
-      +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...',})(style="width: 266px")
-    div
-      +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...',})(style="width: 266px")
-    div
-      +drop-down({span: 'default', placeholder: '2 спальни, 2 кровати...',})(style="width: 266px")
-    div
+    .form-elements__block-4.block-4
+      +drop-down('drop-down-1')
+      +drop-down('drop-down-2')
+    .form-elements__block-5.block-5
+      +drop-down('drop-down-3')
+    .form-elements__block-6.block-6
+      +drop-down('drop-down-4')
+
+    .form-elements__block-7.block-7
+      +checkboxList({
+        items: [
+          { label: 'Завтрак', checked: false },
+          { label: 'Письменный стол', checked: true },
+          { label: 'Стул для кормления', checked: true },
+          { label: 'Кроватка', checked: true},
+          { label: 'Телевизор', checked: false},
+          { label: 'Шампунь', checked: false}
+        ],
+        expand: 'off'
+      })
+
       +checkboxList({
         items: [
           { label: 'Завтрак', checked: false },
@@ -86,16 +99,10 @@ mixin form-elements
           { label: 'Шампунь', checked: false}
         ],
         expand: 'on'
-      })
-      +checkboxList({
-        title: 'Checkbox Buttons',
-        items: [
-          {label: 'Можно курить', checked: false},
-          {label: 'Можно с питомцами', checked: true},
-          {label: 'Можно пригласить гостей (до 10 человек)', checked: true}
-        ],
-      })(style="width: 225px;")
-    div
+      })(style="margin-top: 50px;")
+
+
+    .form-elements__block-8.block-8
       +checkboxRich({
         title: 'rich checkbox buttons',
         items: [
@@ -114,17 +121,19 @@ mixin form-elements
           }
         ]
       })(style="width: 266px")
-    div
+
+    .form-elements__block-9.block-9
       +bulletList({
         title: 'bullet list',
         items: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
       })(style="width: 260px")
-    div
+    .form-elements__block-10.block-10
       +features([
         { title: 'Комфорт', text: 'Шумопоглощающие стены', img: 'insert_emoticon' },
         { title: 'Удобство', text: 'Окно в каждой из спален', img: 'location_city' }
       ])
-    div
+
+    .form-elements__block-11.block-11
       +comment({
         photo: require('@blocks/comment/image.jpg'),
         name: 'Мурад Сарафанов',

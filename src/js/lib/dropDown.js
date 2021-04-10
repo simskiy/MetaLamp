@@ -250,6 +250,6 @@ export default class {
     this.createDropDown();
     this.inputEvent();
     this.btnEvent();
-    // this.setStyles();
+    this.setClearBtn(this.showClearBtn);
   }
 }

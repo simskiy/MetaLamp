@@ -18,7 +18,7 @@
 .form-elements {
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 636px 1fr 1fr 1fr;
+  grid-template-rows: 640px 356px 360px 1fr;
   grid-template-columns: 320px 400px 321px;
   width: 100%;
   justify-content: space-between;
@@ -125,7 +125,7 @@
 }
 
 .block-4 {
-  padding-top: 97px;
+  margin-top: 93px;
   justify-self: left;
 
   & .drop-down {
@@ -138,7 +138,7 @@
 }
 
 .block-5 {
-  margin-top: 97px;
+  margin-top: 93px;
   padding-left: 53px;
 
   & .drop-down {
@@ -147,7 +147,7 @@
 }
 
 .block-6 {
-  margin-top: 97px;
+  margin-top: 93px;
 
   & .drop-down {
     width: 320px;

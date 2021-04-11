@@ -12,4 +12,10 @@ $('.nav__item').click(function() {
   $(activeBlock).fadeIn('slow', function () {
     $(this).css('display', 'flex')
   }).addClass('content--active')
+
+  if ($(this).data('item') == 'block-3' || $(this).data('item') == 'block-4') {
+    $('.container').addClass('container--grey')
+  } else {
+    $('.container').removeClass('container--grey')
+  }
 })

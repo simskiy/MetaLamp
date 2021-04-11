@@ -52,7 +52,7 @@ export default class {
     this.elements.inputWrapper.classList.add(`${cl}`);
     this.elements.title.classList.add(`${cl}__label`);
     this.elements.title.textContent = this.title;
-    this.elements.input.classList.add(`${cl}__input`, `${cl}__input--drop-down`, `${cl}__input--expand`);
+    this.elements.input.classList.add(`${cl}__input`, `${cl}__input--expand`);
     this.elements.input.setAttribute('readonly', true);
     this.elements.input.setAttribute('placeholder', this.placeholder);
 
@@ -132,6 +132,7 @@ export default class {
     $(`${this.elem} .text-field__input`).click( () => {
       $(`${this.elem} .drop-down__wrapper`).slideToggle();
       $(`${this.elem} .text-field__input`).toggleClass('text-field__input--hover');
+      $(`${this.elem} .text-field__input`).toggleClass('text-field__input--drop-down');
     })
   }
 

@@ -1,0 +1,23 @@
+include ../text-field/text-field.pug
+include ../dropDown/dropDown.pug
+include ../btn/btn.pug
+
+mixin searchRoom
+  .searchRoom
+    span.searchRoom__title Найдём номера под ваши пожелания
+    +text-field({
+      label: 'прибытие',
+      date: true,
+      expand: true
+    })(class="searchRoom__check-in")
+    +text-field({
+      label: 'выезд',
+      date: true,
+      expand: true
+    })(class="searchRoom__check-out")
+    +drop-down('searchRoom__drop-down')(class="searchRoom__drop-down")
+    +btn({
+      arrow: true,
+      color: 'purple',
+      text: 'Подобрать номер',
+    })(class='searchRoom__btn')

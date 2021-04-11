@@ -11,11 +11,16 @@ main {
   width: 1440px;
   padding: 30px;
   margin: 0 auto;
-  background-color: #fff;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  transition: background-color 0.3 ease;
+  background-color: #fff;
+
+  &--grey {
+    background-color: #e5e5e5;
+  }
 }
 
 .content {

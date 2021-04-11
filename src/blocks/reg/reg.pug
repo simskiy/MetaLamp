@@ -1,0 +1,38 @@
+include ../text-field/text-field.pug
+include ../radioBtn/radioBtn.pug
+include ../btn/btn.pug
+include ../toggleBtn/toggleBtn.pug
+
+mixin reg
+  form.reg
+    span.reg__title Регистрация аккаунта
+    +text-field({
+      placeholder: 'Имя'
+    })(class="reg__name")
+    +text-field({
+      placeholder: 'Фамилия'
+    })(class="reg__sirname")
+    +radioBtn({preset: 'male'})(class='reg__radio')
+    +radioBtn({preset: 'female'})(class='reg__radio')
+    +text-field({
+      label: 'Дата Рождения',
+      date: true
+    })(class="reg__birthday")
+    +text-field({
+      label: 'Данные для входа в сервис',
+      type: 'email',
+      placeholder: 'Email'
+    })(class="reg__email")
+    +text-field({
+      type: 'password',
+      placeholder: 'Пароль'
+    })(class="reg__password")
+    +toggleBtn({
+      label: 'Получать спецпредложения'
+    })(class="reg__btn-offer")
+    +btn({preset: 'arrow'})(class="reg__btn-pay")
+    span.reg__note Уже есть аккаунт на Toxin
+    +btn({
+      text: 'Войти',
+      color: 'clear'
+    })(class="reg__btn-enter")

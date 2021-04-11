@@ -12,7 +12,7 @@ mixin toggleBtn(attr={})
       label: attr.label || 'label',
       checked: attr.checked || false
     }
-  .toggleBtn
+  .toggleBtn&attributes(attributes)
     input.toggleBtn__input(
       id!=id,
       type="checkbox",

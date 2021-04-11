@@ -58,7 +58,7 @@ mixin text-field(attr={})
       }
 
     opt = {
-      label: attr.label || 'label',
+      label: attr.label || false,
       type: attr.type || 'text',
       placeholder: attr.placeholder || false,
       expand: attr.expand || false,
@@ -69,10 +69,13 @@ mixin text-field(attr={})
       placeholderDark: attr.placeholderDark || false,
       span: attr.span,
       dropDown: attr.dropDown,
+      required: attr.required || false,
+      pattern: attr.pattern || false
     }
 
   .text-field&attributes(attributes)
-    label.text-field__label(id!=id)=opt.label
+    if opt.label
+      label.text-field__label(id!=id)=opt.label
     if opt.span
       span.text-field__note=opt.span
     input.text-field__input(

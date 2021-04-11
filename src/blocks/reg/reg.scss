@@ -1,0 +1,77 @@
+.reg {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 40px 29px 30px 30px;
+  box-sizing: border-box;
+  width: 380px;
+  height: 646px;
+
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__title {
+    @include h1-font;
+    line-height: 29.26px;
+  }
+
+  &__name {
+    margin-top: 16px;
+  }
+
+  &__sirname {
+    margin-top: 10px;
+  }
+
+  &__name,
+  &__sirname {
+    width: 100%;
+    height: 44px;
+  }
+
+  &__radio {
+    margin-top: 15px;
+    margin-right: 20px;
+  }
+
+  &__birthday {
+    margin-top: 27px;
+  }
+
+  &__email {
+    margin-top: 21px;
+  }
+
+  &__password {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  &__btn-offer {
+    margin-top: 10px;
+  }
+
+  &__btn-pay {
+    margin-top: 26px;
+  }
+
+  &__note {
+    display: inline-block;
+    width: 190px;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: 43px;
+    color: $main-color;
+  }
+
+  &__btn-enter {
+    width: 99px;
+    margin-top: 30px;
+    margin-left: auto
+  }
+
+}

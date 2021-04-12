@@ -138,6 +138,7 @@ export default class {
 
   btnEvent () {
     this.elements.dropdown.addEventListener('click', (e) => {
+      e.preventDefault();
       if (e.target.classList.contains('drop-down__btn--sub')) {
         let span = e.target.nextSibling;
         if (+span.textContent > 0) {
@@ -158,13 +159,17 @@ export default class {
     })
 
     if (this.elements.btnClear) {
-      this.elements.btnClear.addEventListener('click', () => {
+      this.elements.btnClear.addEventListener('click', (e) => {
+        e.preventDefault();
         for (let item of this.elements.dropdown.children) {
           item.lastElementChild.childNodes[1].textContent = 0; //значение
         }
         this.showClearBtn = 0;
+        this.setClearBtn(this.showClearBtn);
+        for (let elem of document.querySelectorAll('.drop-down__btn--sub')) {
+          elem.classList.add('drop-down__btn--disable')
+        }
         this.setPlaceholder();
-        console.log(this.showClearBtn);
       })
     }
   }

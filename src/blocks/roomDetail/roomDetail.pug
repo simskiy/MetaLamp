@@ -1,0 +1,46 @@
+include ../text-field/text-field.pug
+include ../dropDown/dropDown.pug
+include ../btn/btn.pug
+
+mixin roomDetail()
+  .roomDetail
+    header.roomDetail__header
+      span.roomDetail__title.roomDetail__title--small &#8470;
+      span.roomDetail__title 888
+      span.roomDetail__lux Люкс
+      span.roomDetail__cost 9 990₽
+      span.roomDetail__cost-text  в сутки
+    +text-field({
+      expand: true,
+      label: 'Прибытие',
+      placeholder: '19.08.2019'
+    })(class="roomDetail__check-in")
+    +text-field({
+      expand: true,
+      label: 'Выезд',
+      placeholder: '23.08.2019'
+    })(class="roomDetail__check-out")
+    +drop-down('roomDetail')(class="roomDetail__guest")
+    .roomDetail__invoice.invoice
+      .invoice__row
+        .invoice__name 9 990₽ х 4 суток
+        .invoice__cost 39 960₽
+      .invoice__row
+        .invoice__name Сбор за услуги: скидка 2 179₽
+        .invoice__cost
+          .invoice__hint-wrapper
+            span.invoice__hint всякий непонятный текст
+          | 0₽
+      .invoice__row
+        .invoice__name Сбор за дополнительные услуги
+        .invoice__cost
+          .invoice__hint-wrapper
+            span.invoice__hint Здесь должна быть подсказка
+          | 300₽
+    span.roomDetail__total.roomDetail__total--line Итого
+    span.roomDetail__total.roomDetail__total--margin 38 081₽
+    +btn({
+      text: 'Забронировать',
+      color: 'purple',
+      arrow: true
+    })(class='roomDetail__btn')

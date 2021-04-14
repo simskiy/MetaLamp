@@ -1,0 +1,150 @@
+.roomDetail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+
+  width: 380px;
+  height: 511px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px 20px 30px 30px;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 18px;
+    margin-right: 10px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 29.26px;
+    flex-shrink: 0;
+
+    &--small {
+      font-size: 0.875rem;
+      margin-right: 3px;
+    }
+  }
+
+  &__lux {
+    font-family: Montserrat;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14.63px;
+    letter-spacing: 0em;
+    text-align: left;
+    vertical-align: baseline;
+    color: $purple;
+    text-transform: uppercase;
+    margin-right: auto;
+  }
+
+  &__cost {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: rgba($main-color, 0.5);
+    margin-right: 5px;
+  }
+
+  &__cost-text {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba($main-color, 0.5)
+  }
+
+  &__check-in,
+  &__check-out {
+    box-sizing: border-box;
+    width: 150px;
+    // height: 65px;
+  }
+
+  &__check-out {
+    margin-right: 9px;
+  }
+
+  &__guest {
+    box-sizing: border-box;
+    margin-top: 21px;
+    margin-right: 9px;
+    width: 100%;
+  }
+
+  &__invoice {
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba($main-color, 0.75);
+    margin-top: 21px;
+    margin-bottom: 15px;
+  }
+
+  &__total {
+    position: relative;
+    font-size: 1.188rem;
+    font-weight: 700;
+    line-height: 23px;
+
+    &--line::after {
+      display: block;
+      position: absolute;
+      content: '';
+
+      width: 182px;
+      height: 1px;
+      left: 65px;
+      top: 16px;
+
+      border-bottom: 1px dashed rgba($main-color, 0.25);
+    }
+
+    &--margin {
+      margin-right: 2px;
+    }
+  }
+
+  &__btn {
+    margin-top: 20px;
+    margin-left: -2px;
+    width: 320px;
+  }
+}
+
+.invoice {
+  display: table;
+  width: 100%;
+  margin-right: 10px;
+  height: 120px;
+
+  &__row {
+    display: table-row;
+  }
+
+  &__name {
+    display: table-cell;
+    padding: 0;
+    width: 215px;
+  }
+
+  &__cost {
+    display: table-cell;
+    padding: 0;
+
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  &__hint-wrapper {
+    display: none;
+  }
+}

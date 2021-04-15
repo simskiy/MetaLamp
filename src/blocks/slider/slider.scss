@@ -1,0 +1,102 @@
+.slider {
+  $width: 270px;
+  $height: 151px;
+
+  position: relative;
+  width: $width;
+  height: $height;
+  margin: 50px auto 0;
+  user-select: none;
+  touch-action: pan-y;
+
+  & img {
+    pointer-events: none;
+    object-fit: cover;
+  }
+
+  &__list {
+    width: $width;
+    height: $height;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    width: $width;
+    height: $height;
+    flex-shrink: 0;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid #000;
+    background-color: grey;
+    overflow: hidden;
+    // object-fit: cover;
+  }
+
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 42px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+    &--disabled {
+      opacity: .25;
+      pointer-events: none;
+    }
+
+    &--prev {
+      left: 0;
+      background-image: url('@blocks/slider/arrow.svg'),
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 99.99%,
+        rgba(255, 255, 255, 0) 100%);
+    }
+
+    &--next {
+      right: 0;
+      background-image: url('@blocks/slider/arrow.svg'), linear-gradient(90deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 99.99%,
+        rgba(255, 255, 255, 0) 100%);
+      transform: scale(-1);
+    }
+  }
+
+  &__indicator {
+    display: flex;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    justify-content: space-between;
+  }
+}
+
+.indicator {
+  width: 41.25px;
+
+  &__item {
+    width: 7.5px;
+    height: 7.5px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    &--current {
+      background-color: #fff;
+    }
+  }
+}

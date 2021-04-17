@@ -18,6 +18,10 @@
     width: $width;
     height: $height;
     overflow: hidden;
+
+    &:hover .slider__btn {
+      display: block;
+    }
   }
 
   &__track {
@@ -33,12 +37,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // border: 1px solid #000;
     background-color: grey;
     overflow: hidden;
-    // object-fit: cover;
+
   }
 
+  &__link {
+    display: block;
+    width: $width;
+    height: $height;
+    text-decoration: none;
+  }
 
   &__btn {
     position: absolute;
@@ -51,10 +60,10 @@
     cursor: pointer;
     outline: none;
     border: none;
+    display: none;
 
     &--disabled {
-      opacity: .25;
-      pointer-events: none;
+      opacity: 0.25;
     }
 
     &--prev {

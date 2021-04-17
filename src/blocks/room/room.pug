@@ -1,2 +1,18 @@
-mixin room
+include ../slider/slider.pug
+include ../rate/rate.pug
+
+mixin room(attr={})
   .room
+    +slider({
+      id: 'slider-1',
+      img: attr.img || ['image-1.jpg', 'image-1.jpg', 'image-1.jpg', 'image-1.jpg'],
+      link: attr.link || '#'
+    })
+    .room__info
+      span.room__title!= attr.title ? `&#8470 ${attr.title}` : '&#8470 000'
+      span.room__lux люкс
+      span.room__cost!=attr.cost ? `${attr.cost}₽` : '9999 ₽'
+      | в сутки
+    .room__review
+      +rate('cardRate-1', {rate: 4})
+      span.room__review-count=attr.review ? `${attr.review} Отзывов` : '0 отзывов'

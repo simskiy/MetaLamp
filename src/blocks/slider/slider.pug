@@ -1,10 +1,15 @@
+//- id
+//- [img, img, img, img]
+//- link (ссылка)
+
 mixin slider(attr={})
   .slider(id=attr.id)
     .slider__list
       .slider__track
         each img in attr.img
           .slider__slide
-            img(src!=require(`@blocks/slider/${img}`), alt="Фото номера")
+            a.slider__link(href=attr.link)
+              img(src!=require(`@blocks/slider/${img}`), alt="Фото номера")
       button.slider__btn.slider__btn--prev(type='button')
       button.slider__btn.slider__btn--next(type='button')
     .slider__indicator.indicator

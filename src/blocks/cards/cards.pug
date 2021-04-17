@@ -5,8 +5,6 @@ include ../login/login.pug
 include ../roomDetail/roomDetail.pug
 include ../room/room.pug
 
-include ../slider/slider.pug
-
 mixin cards
   //- +calendar('calendar-1', 'maket')
   +roomDetail
@@ -15,12 +13,4 @@ mixin cards
   //- +reg
   //- +room
 
-  +slider({
-    img: ['image-1.jpg', 'image-1.jpg', 'image-1.jpg', 'image-1.jpg'],
-    id: 'slider-1'
-  })
-
-  +slider({
-    img: ['image-2.jpg','image-2.jpg', 'image-2.jpg', 'image-2.jpg'],
-    id: 'slider-2'
-  })
+  +room

@@ -1,9 +1,9 @@
-import '@blocks/rate/rate.js'
 import '@blocks/dblSlider/dblSlider.js'
 import '@blocks/checkboxList/checkboxList.js'
 import '@blocks/pagination/pagination.js'
 
 import DropDown from '@/js/lib/dropDown.js';
+import Rate from '@/js/lib/rate.js';
 
 let drop1 = new DropDown('#drop-down-1', {
   labels: [['спальни', 2], ['кровати', 2], ['ванные комнаты', 0]],
@@ -36,3 +36,15 @@ drop1.init()
 drop2.init()
 drop3.init()
 drop4.init()
+
+
+let rate1 = new Rate('#rate-1', {
+  rate: 4
+})
+
+let rate2 = new Rate('#rate-2', {
+  rate: 5
+})
+
+rate1.init()
+rate2.init()

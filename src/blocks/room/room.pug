@@ -2,17 +2,32 @@ include ../slider/slider.pug
 include ../rate/rate.pug
 
 mixin room(attr={})
+  -
+    let opt = {
+      sliderImg: attr.sliderImg,
+      sliderId: attr.sliderId,
+      sliderLink: attr.sliderLink,
+      title: attr.title,
+      lux: attr.lux,
+      cost: attr.cost,
+      rateId: attr.rateId,
+      rateStar: attr.rateStar,
+      review: attr.review
+    }
   .room
     +slider({
-      id: 'slider-1',
-      img: attr.img || ['image-1.jpg', 'image-1.jpg', 'image-1.jpg', 'image-1.jpg'],
-      link: attr.link || '#'
+      id: opt.sliderId,
+      img: opt.sliderImg || ['image-1.jpg', 'image-1.jpg', 'image-1.jpg', 'image-1.jpg'],
+      link: opt.sliderLink || '#'
     })
     .room__info
-      span.room__title!= attr.title ? `&#8470 ${attr.title}` : '&#8470 000'
-      span.room__lux люкс
-      span.room__cost!=attr.cost ? `${attr.cost}₽` : '9999 ₽'
+      span.room__title.room__title--small &#8470
+      span.room__title!=opt.title ? opt.title : '000'
+      if opt.lux
+        span.room__lux люкс
+      span.room__cost!=opt.cost ? `${opt.cost}₽` : '9999 ₽'
       | в сутки
     .room__review
-      +rate('cardRate-1', {rate: 4})
-      span.room__review-count=attr.review ? `${attr.review} Отзывов` : '0 отзывов'
+      +rate(opt.rateId, opt.rateStar)(class="room__rate")
+      span.room__review-count=opt.review ? opt.review : '0'
+      | Отзывов

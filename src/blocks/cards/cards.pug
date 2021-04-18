@@ -13,4 +13,25 @@ mixin cards
   //- +reg
   //- +room
 
-  +room
+  +room({
+    sliderId: 'slider-1',
+    sliderLink: '#',
+    sliderImg: ['image-1.jpg', 'image-1.jpg', 'image-1.jpg', 'image-1.jpg'],
+    title: '888',
+    lux: true,
+    cost: '9 990',
+    rateId: 'cardRate-1',
+    rateStar: 5,
+    review: 145
+  })
+  +room({
+    sliderId: 'slider-2',
+    sliderLink: '#',
+    sliderImg: ['image-2.jpg', 'image-2.jpg', 'image-2.jpg', 'image-2.jpg'],
+    title: '840',
+    lux: false,
+    cost: '9 900',
+    rateId: 'cardRate-2',
+    rateStar: 4,
+    review: 65
+  })

@@ -52,8 +52,11 @@ $width-star-block: 118px;
   &__star {
     position: relative;
     clip-path: polygon(49% 0%, 61% 35%, 98% 38%, 71% 63%, 79% 98%, 50% 79%, 19% 98%, 28% 63%, 0% 38%, 39% 35%);
-    background-color: transparent;
 
+
+    & path {
+      fill: #9893fc;
+    }
   }
 
   &__item {

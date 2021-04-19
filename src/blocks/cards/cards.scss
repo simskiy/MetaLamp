@@ -4,3 +4,22 @@
 @import '@blocks/login/login.scss';
 @import '@blocks/roomDetail/roomDetail.scss';
 @import '@blocks/room/room.scss';
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: left;
+  height: 1060px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    margin-top: 40px;
+    &--first {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import '@blocks/form-elements/form-elements.js'
 import '@blocks/cards/cards.js'
-import '@blocks/text-field/text-field.js'
+// import '@blocks/text-field/text-field.js'
+import '@blocks/headers-footers/headers-footers.js'
 
 
 $('.nav__item').click(function() {

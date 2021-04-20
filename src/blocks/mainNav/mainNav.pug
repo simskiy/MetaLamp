@@ -1,0 +1,22 @@
+include ../btn/btn.pug
+
+mixin mainNav(attr={})
+  .main-nav
+    img.main-nav__logo(src=require('@blocks/mainNav/logo.svg'))
+    ul
+      each valItem, keyItem in attr.nav
+        if typeof valItem == 'object'
+          ul
+            each valSubitem, keySubitem in valItem
+              li
+                a(href=valSubitem)=keySubitem
+        li
+          a(href=valItem)=keyItem
+    +btn({
+      color: 'clear',
+      text: 'Войти'
+    })
+    +btn({
+      color: 'purple',
+      text: 'Зарегистрироваться'
+    })

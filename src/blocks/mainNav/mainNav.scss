@@ -39,6 +39,7 @@
     }
 
     &--sub-menu {
+      cursor: pointer;
       background: url('@blocks/mainNav/expand_more.svg') no-repeat center right 6px;
     }
   }

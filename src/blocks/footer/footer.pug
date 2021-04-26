@@ -1,0 +1,52 @@
+include ../text-field/text-field.pug
+
+mixin footer(attr={})
+  -
+    let opt = {
+      nav: {
+        'Навигация': { 'О нас': '#',
+                        'Новости': '#',
+                        'Служба поддержки': '#',
+                        'Услуги': '#'
+                      } ,
+        'О нас': { 'О сервисе': '#',
+                    'Наша команда': '#',
+                    'Вакансии': '#',
+                    'Инвесторы': '#'
+                  },
+        'Служба поддержки': { 'Соглашения': '#',
+                              'Сообщества': '#',
+                              'Связь с нами': '#'
+                            },
+      } || attr.nav
+    }
+
+  .footer
+    .footer__logo
+      img(src=require('@blocks/footer/logo.svg'))
+      p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+    ul.footer__list
+      each valItem, valKey in opt.nav
+        li.footer__item=valKey
+          ul.footer__sub-menu
+            each valSubItem, valSubKey in valItem
+              li=valSubKey
+    .footer__sub.sub
+      p.sub__title Подписка
+      p.sub__text Получайте специальные предложения и новости сервиса
+      +text-field({
+        placeholder: 'Email',
+        type: 'email',
+        arrow: true
+      })
+
+    ul.footer__social.social
+      li.social__item
+        a(href="")
+          img(src=require('@blocks/footer/twitter.svg'))
+      li.social__item
+        a(href="")
+          img(src=require('@blocks/footer/fb.svg'))
+      li.social__item
+        a(href="")
+          img(src=require('@blocks/footer/instagramm.svg'))

@@ -20,7 +20,8 @@ mixin mainNav(attr={})
     }
 
   .main-nav
-    img.main-nav__logo(src=require('@blocks/mainNav/logo.svg'))
+    a(href="#").main-nav__logo
+      img(src=require('@blocks/mainNav/logo.svg'))
     ul.main-nav__list
       each valItem, keyItem in opt.nav
         if typeof valItem == 'object' && !Array.isArray(valItem)

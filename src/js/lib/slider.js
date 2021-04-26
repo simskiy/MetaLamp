@@ -5,7 +5,6 @@ export default class {
     this.btnPrev = document.querySelector(`${elem} .slider__btn--prev`)
     this.sliderTrack = document.querySelector(`${elem} .slider__track`)
     this.slides = document.querySelectorAll(`${elem} .slider__slide`)
-    this.slideWidth = this.slides[0].offsetWidth
     this.slideIndex = 0
     this.indicators = document.querySelector(`${elem} .indicator`)
   }
@@ -40,7 +39,7 @@ export default class {
   }
 
   toggleSlide () {
-    this.sliderTrack.style.transform = `translate3d(-${this.slideIndex * this.slideWidth}px, 0px, 0px)`
+    this.sliderTrack.style.transform = `translate3d(-${this.slideIndex * this.slides[0].offsetWidth}px, 0px, 0px)`
   }
 
   toggleIndicator () {

@@ -1,0 +1,88 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  max-width: 1920px;
+  min-width: 320px;
+  width: 100%;
+  height: 70px;
+  padding-left: 140px;
+  padding-right: 140px;
+  box-sizing: border-box;
+  margin: auto;
+  background-color: #fff;
+
+  margin-top: 40px;
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__list {
+    width: 447px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+
+  &__item {
+    margin-right: 20px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba($main-color, 0.5);
+    line-height: 17.07px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--sub-menu {
+      background: url('@blocks/mainNav/expand_more.svg') no-repeat center right 6px;
+    }
+  }
+
+  &__sub-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__sub-item {
+    display: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgba($main-color, 0.5);
+    width: 100%;
+
+    &--active {
+      font-weight: 700;
+      color: rgba($main-color, 0.75);
+    }
+  }
+
+  &__login-btn {
+    box-sizing: border-box;
+    max-width: 87px;
+    height: 34px;
+    margin-right: 20px;
+  }
+
+  &__reg-btn {
+    box-sizing: border-box;
+    max-width: 196px;
+    height: 34px;
+  }
+
+  &__name {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.875rem;
+    color: rgba($main-color, 0.5);
+    padding-left: 20px;
+    border-left: 1px solid rgba($main-color, 0.1);
+  }
+}

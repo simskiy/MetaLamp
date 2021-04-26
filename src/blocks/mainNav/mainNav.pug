@@ -1,22 +1,51 @@
 include ../btn/btn.pug
 
 mixin mainNav(attr={})
+  -
+    let opt = {
+      nav: {
+        'О нас': ['#', 'active'],
+        'Услуги': { 'услуга 1': '#',
+                    'услуга 2': '#',
+                    'услуга 3': '#'
+                  },
+        'Вакансии': '#',
+        'Новости': '#',
+        'Соглашения': { 'Соглашение 1': '#',
+                        'Соглашение 2': '#',
+                        'соглашение 3': '#',
+                      }
+      } || attr.nav,
+      login: false || attr.login
+    }
+
   .main-nav
     img.main-nav__logo(src=require('@blocks/mainNav/logo.svg'))
-    ul
-      each valItem, keyItem in attr.nav
-        if typeof valItem == 'object'
-          ul
-            each valSubitem, keySubitem in valItem
-              li
-                a(href=valSubitem)=keySubitem
-        li
-          a(href=valItem)=keyItem
-    +btn({
-      color: 'clear',
-      text: 'Войти'
-    })
-    +btn({
-      color: 'purple',
-      text: 'Зарегистрироваться'
-    })
+    ul.main-nav__list
+      each valItem, keyItem in opt.nav
+        if typeof valItem == 'object' && !Array.isArray(valItem)
+          li.main-nav__item.main-nav__item--sub-menu=keyItem
+            ul.main-nav__sub-list
+              each valSubitem, keySubitem in valItem
+                li.main-nav__sub-item
+                  a.main-nav__link(
+                    href=valSubitem[0]
+                    class=valSubitem[1] == 'active' ? 'main-nav__link--active' : ''
+                  )=keySubitem
+        else
+          li.main-nav__item
+            a.main-nav__link(
+              href=valItem[0]
+              class=valItem[1] == 'active' ? 'main-nav__link--active' : ''
+            )=keyItem
+    if !opt.login
+      +btn({
+        color: 'clear',
+        text: 'Войти'
+      })(class="main-nav__login-btn")
+      +btn({
+        color: 'purple',
+        text: 'Зарегистрироваться'
+      })(class='main-nav__reg-btn')
+    else
+      span.main-nav__name Юлий Цезарь

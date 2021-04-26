@@ -16,9 +16,8 @@ mixin ui-kit(tab)
             )= val
 
     .logo
-
-    img.logo__img(src=require('@blocks/ui-kit/logo.svg'), alt="logo", width="48", height="48")
-    - let pages = ['colors-type', 'form-elements', 'cards', 'headers-footers']
+      img.logo__img(src=require('@blocks/ui-kit/logo.svg'), alt="logo", width="48", height="48")
+      - let pages = ['colors-type', 'form-elements', 'cards', 'headers-footers']
 
     each val, index in pages
       .content(

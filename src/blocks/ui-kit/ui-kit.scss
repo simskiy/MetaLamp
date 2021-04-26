@@ -8,8 +8,8 @@ main {
 }
 
 .container {
-  width: 1440px;
-  padding: 30px;
+  max-width: 1440px;
+  // padding: 30px;
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
@@ -33,25 +33,29 @@ main {
   }
 
   &--colors-type {
-    padding-top: 0;
+    padding-top: 78px;
     padding-bottom: 0;
-    padding-left: 120px;
-    padding-right: 127px;
+    padding-left: 150px;
+    padding-right: 157px;
   }
 
   &--form-elements {
     box-sizing: border-box;
-    padding-top: 62px;
-    padding-left: 110px;
-    padding-right: 110px;
+    padding-top: 144px;
+    padding-left: 140px;
+    padding-right: 140px;
     padding-bottom: 0;
   }
 
   &--cards {
-    padding-top: 68px;
-    padding-left: 110px;
-    padding-right: 70px;
+    padding-top: 150px;
+    padding-left: 140px;
+    padding-right: 100px;
     padding-bottom: 0;
+  }
+
+  &--headers-footers {
+    padding-top: 100px;
   }
 }
 
@@ -105,6 +109,9 @@ main {
 }
 
 .logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
   font-size: 0;
 
   &__img {

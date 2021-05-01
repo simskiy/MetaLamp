@@ -11,20 +11,22 @@
   margin: auto;
   background-color: #fff;
 
-  margin-top: 40px;
+  // margin-top: 40px;
 
   &__logo {
     margin-right: auto;
   }
 
   &__list {
-    width: 447px;
+    width: 448px;
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
     justify-content: space-between;
     margin-right: 20px;
+    margin-left: 20px;
+    margin-top: -3px;
   }
 
   &__item {
@@ -33,6 +35,7 @@
     font-weight: 400;
     color: rgba($main-color, 0.5);
     line-height: 17.07px;
+    white-space: nowrap;
 
     &:last-child {
       margin-right: 0;
@@ -69,12 +72,14 @@
     max-width: 87px;
     height: 34px;
     margin-right: 20px;
+    margin-top: -3px;
   }
 
   &__reg-btn {
     box-sizing: border-box;
     max-width: 196px;
     height: 34px;
+    margin-top: -3px;
   }
 
   &__name {

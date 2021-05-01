@@ -19,7 +19,7 @@ mixin mainNav(attr={})
       login: false || attr.login
     }
 
-  .main-nav
+  .main-nav&attributes(attributes)
     a(href="#").main-nav__logo
       img(src=require('@blocks/mainNav/logo.svg'))
     ul.main-nav__list

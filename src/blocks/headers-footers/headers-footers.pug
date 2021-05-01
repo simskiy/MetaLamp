@@ -4,5 +4,5 @@ include ../footer/footer.pug
 mixin headers-footers
   .headers-footers
     +mainNav()
-    +mainNav({login: true})
-    +footer
+    +mainNav({login: true})(class="headers-footers__login")
+    +footer(class="headers-footers__footer")

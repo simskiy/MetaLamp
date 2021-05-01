@@ -1,3 +1,135 @@
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
+  &__wrapper {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 22.3148% 55.1724% 22.3148%;
+    // grid-template-rows: 274px 70px;
+    grid-template-rows: 272px;
+    justify-content: center;
+    background-color: #fff;
+    padding-top: 98px;
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+
+  &__text {
+    line-height: 24px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba($main-color, 0.75);
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-left: 40px;
+    padding-top: 5px;
+    list-style: none;
+  }
+
+  &__item {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $main-color;
+    line-height: 14.63px;
+
+    &:nth-child(1) {
+      margin-right: 58px;
+    }
+
+    &:nth-child(2) {
+      margin-right: 92px;
+    }
+  }
+
+  &__sub-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba($main-color, 0.75);
+    text-transform: none;
+  }
+
+  &__sub-item {
+    line-height: 17px;
+    margin-top: 21px;
+
+    &:first-child {
+      margin-top: 22px;
+    }
+  }
+
+  &__subscription {
+    margin-top: 5px;
+  }
+
+  &__social {
+    height: 70px;
+    background-color: #fff;
+  }
+}
+
+.subscription {
+  &__title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $main-color;
+    margin: 0;
+  }
+
+  &__text {
+    line-height: 24px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba($main-color, 0.75);
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  &__input {
+    margin-top: 17px;
+  }
+}
+
+.social {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba($main-color, 0.25);
+  width: 100%;
+  padding-left: 140px;
+  padding-right: 140px;
+  padding-top: 1px;
+
+  &__copyright {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba($main-color, 0.75);
+    line-height: 17.07px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin-right: 1px;
+    padding-top: 4px;
+  }
+
+  &__item {
+    margin-right: 21px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }

@@ -6,7 +6,7 @@
   &__wrapper {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 22.3148% 55.1724% 22.3148%;
+    grid-template-columns: minmax(auto, 22.3148%) minmax(auto, 55.1724%) minmax(auto, 22.3148%);
     // grid-template-rows: 274px 70px;
     grid-template-rows: 272px;
     justify-content: center;
@@ -38,14 +38,7 @@
     font-weight: 700;
     color: $main-color;
     line-height: 14.63px;
-
-    &:nth-child(1) {
-      margin-right: 58px;
-    }
-
-    &:nth-child(2) {
-      margin-right: 92px;
-    }
+    width: 33.3333%;
   }
 
   &__sub-menu {
@@ -121,12 +114,12 @@
   &__list {
     display: flex;
     list-style: none;
-    margin-right: 1px;
+    // margin-right: 1px;
     padding-top: 4px;
   }
 
   &__item {
-    margin-right: 21px;
+    margin-right: 20px;
 
     &:last-child {
       margin-right: 0;

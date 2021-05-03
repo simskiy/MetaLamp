@@ -1,5 +1,44 @@
 // scss mixins
 
+//breakpoints for desktop first
+$screen-xs: 320px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1024px;
+$screen-xl: 1440px;
+$screen-xxl: 1920px;
+
+//media mixin (desktop first)
+@mixin xs-block() {
+  @media screen and (max-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin sm-block() {
+  @media screen and (max-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin md-block() {
+  @media screen and (max-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin lg-block() {
+  @media screen and (max-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin xl-block() {
+  @media screen and (max-width: $screen-xl) {
+    @content;
+  }
+}
+
 @mixin h1-font {
   font-size: 1.5rem;
   color: $main-color;

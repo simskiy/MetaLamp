@@ -1,8 +1,15 @@
 include ../mainNav/mainNav.pug
 include ../footer/footer.pug
+include ../footer-sm/footer-sm.pug
 
 mixin headers-footers
   .headers-footers
-    +mainNav()
-    +mainNav({login: true})(class="headers-footers__login")
-    +footer(class="headers-footers__footer")
+    ul.headers-footers__list
+      li.headers-footers__item
+        +mainNav()
+      li.headers-footers__item
+        +mainNav({login: true})
+      li.headers-footers__item
+        +footer
+      li.headers-footers__item.headers-footers__item--sm
+        +footer-sm

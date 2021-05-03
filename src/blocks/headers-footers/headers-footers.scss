@@ -1,15 +1,26 @@
 @import '@blocks/mainNav/mainNav.scss';
 @import '@blocks/footer/footer.scss';
+@import '@blocks/footer-sm/footer-sm.scss';
 
 .headers-footers {
   width: 100%;
   margin-top: 142px;
 
-  &__login {
-    margin-top: 40px;
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  &__footer {
+  &__item {
     margin-top: 40px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &--sm {
+      margin-bottom: 140px;
+    }
   }
 }

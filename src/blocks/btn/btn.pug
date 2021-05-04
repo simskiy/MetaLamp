@@ -22,12 +22,27 @@ mixin btn(attr={})
       arrow: attr.arrow || 'btn--arrow',
       color: attr.color || 'clear',
       text: attr.text || 'Click me',
-      active: attr.active || false
+      active: attr.active || false,
+      link: attr.link || false,
+      type: attr.type || 'button'
     }
-  button.btn(
-    class = opt.arrow == true ? 'btn--arrow' : ''
-    class = opt.color == 'clear' ? 'btn--clear' : ''
-    class = opt.color == 'purple' ? 'btn--purple' : ''
-    class = opt.active ? 'btn--active': ''
-    data-content = opt.color == 'clear' ? `${opt.text}` : ''
-  )&attributes(attributes)= opt.text
+  if opt.link
+    a.btn(
+      class = opt.arrow == true ? 'btn--arrow' : ''
+      class = opt.color == 'clear' ? 'btn--clear' : ''
+      class = opt.color == 'purple' ? 'btn--purple' : ''
+      class = opt.active ? 'btn--active': ''
+      data-content = opt.color == 'clear' ? `${opt.text}` : ''
+      onclick = opt.link ? `document.location='${opt.link}'` : ''
+      href = opt.link
+    )&attributes(attributes)= opt.text
+  else
+    button.btn(
+      class = opt.arrow == true ? 'btn--arrow' : ''
+      class = opt.color == 'clear' ? 'btn--clear' : ''
+      class = opt.color == 'purple' ? 'btn--purple' : ''
+      class = opt.active ? 'btn--active': ''
+      data-content = opt.color == 'clear' ? `${opt.text}` : ''
+      onclick = opt.link ? `document.location='${opt.link}'` : ''
+      type = opt.type
+    )&attributes(attributes)= opt.text

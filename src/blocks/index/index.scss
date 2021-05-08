@@ -1,0 +1,14 @@
+.main {
+  max-width: 1920px;
+  min-width: 320px;
+  height: 830px;
+  background: url('@blocks/index/bg-image.jpg') no-repeat center top;
+  background-size: cover;
+  margin: auto;
+  padding-top: 70px;
+  padding-left: 140px;
+
+  &__search-form {
+
+  }
+}

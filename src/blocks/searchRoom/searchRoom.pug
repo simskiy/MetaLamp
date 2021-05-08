@@ -3,7 +3,7 @@ include ../dropDown/dropDown.pug
 include ../btn/btn.pug
 
 mixin searchRoom
-  form.searchRoom
+  form.searchRoom&attributes(attributes)
     span.searchRoom__title Найдём номера под ваши пожелания
     +text-field({
       label: 'прибытие',

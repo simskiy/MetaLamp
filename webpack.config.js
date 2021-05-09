@@ -20,7 +20,8 @@ module.exports = {
     // подключаем предварительно полифилл
     'main': ['@babel/polyfill', './js/index.js'],
     'ui-kit': '@blocks/ui-kit/ui-kit.js',
-    'index': '@blocks/index/index.js'
+    'index': '@blocks/index/index.js',
+    'search': '@blocks/search/search.js'
   },
 
 	output: {
@@ -80,7 +81,8 @@ module.exports = {
     }),
     new HTMLWebpackPlugin({
       filename: 'search.html',
-      template: './pages/search.pug'
+      template: './pages/search.pug',
+      chunks: ['main', 'search']
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({

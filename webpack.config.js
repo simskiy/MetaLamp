@@ -18,7 +18,9 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
 	entry: {
     // подключаем предварительно полифилл
-    main: ['@babel/polyfill', './js/index.js'],
+    'main': ['@babel/polyfill', './js/index.js'],
+    'ui-kit': '@blocks/ui-kit/ui-kit.js',
+    'index': '@blocks/index/index.js'
   },
 
 	output: {
@@ -68,11 +70,17 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       filename: 'index.html',
-      template: './pages/index.pug'
+      template: './pages/index.pug',
+      chunks: ['main', 'index']
     }),
     new HTMLWebpackPlugin({
       filename: 'ui-kit.html',
-      template: './pages/ui-kit.pug'
+      template: './pages/ui-kit.pug',
+      chunks: ['main', 'ui-kit']
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'search.html',
+      template: './pages/search.pug'
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({

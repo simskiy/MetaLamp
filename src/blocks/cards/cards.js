@@ -6,7 +6,6 @@ import '@blocks/room/room.js'
 import Slider from '@/js/lib/slider.js';
 import Rate from '@/js/lib/rate.js';
 
-if (document.querySelector('.cards')) {
   let cardSlider1 = new Slider('#slider-1')
   cardSlider1.init()
 
@@ -22,4 +21,3 @@ if (document.querySelector('.cards')) {
     edit: false
   })
   cardRate2.init()
-}

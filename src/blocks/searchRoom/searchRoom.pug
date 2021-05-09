@@ -2,7 +2,7 @@ include ../text-field/text-field.pug
 include ../dropDown/dropDown.pug
 include ../btn/btn.pug
 
-mixin searchRoom
+mixin searchRoom(attr={})
   form.searchRoom&attributes(attributes)
     span.searchRoom__title Найдём номера под ваши пожелания
     +text-field({
@@ -20,5 +20,5 @@ mixin searchRoom
       arrow: true,
       color: 'purple',
       text: 'Подобрать номер',
-      link: 'about.html'
+      link: attr.link || 'about.html'
     })(class='searchRoom__btn')

@@ -1,0 +1,17 @@
+extends ../assets/pug/layout.pug
+include ../blocks/footer/footer.pug
+include ../blocks/mainNav/mainNav.pug
+include ../blocks/search/search.pug
+
+block meta
+  title Document
+
+block header
+  header.header
+    +mainNav()
+block content
+  main
+    +search()
+block footer
+  footer.footer
+    +footer()

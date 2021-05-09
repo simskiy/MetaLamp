@@ -5,7 +5,6 @@ import '@blocks/pagination/pagination.js'
 import DropDown from '@/js/lib/dropDown.js';
 import Rate from '@/js/lib/rate.js';
 
-if (document.querySelector('.form-elements')) {
 
   let drop1 = new DropDown('#drop-down-1', {
     labels: [['спальни', 2], ['кровати', 2], ['ванные комнаты', 0]],
@@ -49,4 +48,3 @@ if (document.querySelector('.form-elements')) {
 
   rate1.init()
   rate2.init()
-}

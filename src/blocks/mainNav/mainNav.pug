@@ -20,7 +20,7 @@ mixin mainNav(attr={})
     }
 
   .main-nav&attributes(attributes)
-    a(href="#").main-nav__logo
+    a(href="index.html").main-nav__logo
       img(src=require('@blocks/mainNav/logo.svg'))
     ul.main-nav__list
       each valItem, keyItem in opt.nav

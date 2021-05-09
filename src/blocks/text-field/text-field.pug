@@ -10,7 +10,7 @@
 mixin text-field(attr={})
   -
     let opt ={}
-    let id = Math.random()
+    let id = Math.floor(Math.random() * 1000)
 
     switch (attr.preset) {
       case 'text':

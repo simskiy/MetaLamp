@@ -12,39 +12,43 @@
   margin: auto;
   background-color: #fff;
 
-  // margin-top: 40px;
-
   &__logo {
     margin-right: auto;
   }
 
   &__list {
     width: 448px;
-    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: space-between;
     margin-right: 20px;
     margin-left: 20px;
-    margin-top: -3px;
+    margin-top: -10px;
   }
 
   &__item {
-    margin-right: 20px;
+    margin-right: 21px;
+    display: inline-block;
     font-size: 0.875rem;
     font-weight: 400;
     color: rgba($main-color, 0.5);
     line-height: 17.07px;
     white-space: nowrap;
+    flex-grow: 1;
 
     &:last-child {
       margin-right: 0;
     }
 
+    &--arrow {
+      display: inline-block;
+      width: 24px;
+      height: 21px;
+      background: url('@blocks/mainNav/expand_more.svg') no-repeat center bottom;
+    }
+
     &--sub-menu {
       cursor: pointer;
-      background: url('@blocks/mainNav/expand_more.svg') no-repeat center right 6px;
     }
   }
 

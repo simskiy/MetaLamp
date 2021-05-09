@@ -1,5 +1,7 @@
 import JSR from 'mm-jsr'
 
+if (document.querySelector('.dblSlider')) {
+
   let {a, b, min, max, step} = $('.dblSlider').data()
 
   const range = new JSR(['#jsr-1-1', '#jsr-1-2'], {
@@ -25,3 +27,4 @@ import JSR from 'mm-jsr'
     if (input.id == 'jsr-1-1') $('#dblSlider__label-1').html(formatString(value))
     if (input.id == 'jsr-1-2') $('#dblSlider__label-2').html(formatString(value))
   });
+}

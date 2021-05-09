@@ -26,6 +26,7 @@ mixin mainNav(attr={})
       each valItem, keyItem in opt.nav
         if typeof valItem == 'object' && !Array.isArray(valItem)
           li.main-nav__item.main-nav__item--sub-menu=keyItem
+            .main-nav__item--arrow
             ul.main-nav__sub-list
               each valSubitem, keySubitem in valItem
                 li.main-nav__sub-item

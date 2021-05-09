@@ -2,10 +2,11 @@
 
 .calendar {
   width: 320px;
-  height: 370px;
+  // height: 370px;
   font-family: inherit;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 6px;
   box-sizing: border-box;
 
   & .datepicker {

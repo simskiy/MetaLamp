@@ -1,6 +1,7 @@
 include ../text-field/text-field.pug
 include ../dropDown/dropDown.pug
 include ../btn/btn.pug
+include ../calendar/calendar.pug
 
 mixin searchRoom(attr={})
   form.searchRoom&attributes(attributes)
@@ -15,6 +16,7 @@ mixin searchRoom(attr={})
       date: true,
       expand: true
     })(class="searchRoom__check-out")
+    +calendar()(class="searchRoom__calendar")
     +drop-down('searchRoom__drop-down')(class="searchRoom__drop-down")
     +btn({
       arrow: true,

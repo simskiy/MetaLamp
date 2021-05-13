@@ -41,13 +41,14 @@ mixin mainNav(attr={})
               class=valItem[1] == 'active' ? 'main-nav__link--active' : ''
             )=keyItem
     if !opt.login
-      +btn({
-        color: 'clear',
-        text: 'Войти'
-      })(class="main-nav__login-btn")
-      +btn({
-        color: 'purple',
-        text: 'Зарегистрироваться'
-      })(class='main-nav__reg-btn')
+      .main-nav__btns
+        +btn({
+          color: 'clear',
+          text: 'Войти'
+        })(class="main-nav__login-btn")
+        +btn({
+          color: 'purple',
+          text: 'Зарегистрироваться'
+        })(class='main-nav__reg-btn')
     else
       span.main-nav__name Юлий Цезарь

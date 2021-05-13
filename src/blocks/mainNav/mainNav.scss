@@ -7,7 +7,7 @@
   max-width: 1920px;
   min-width: 320px;
   width: 100%;
-  height: 70px;
+  // height: 70px;
   padding-left: 140px;
   padding-right: 140px;
   box-sizing: border-box;
@@ -19,13 +19,17 @@
   }
 
   &__list {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
     width: 448px;
+    height: 70px;
     list-style: none;
     margin: 0;
     padding: 0;
     margin-right: 20px;
     margin-left: 20px;
-    margin-top: -10px;
+    // margin-top: -10px;
   }
 
   &__item {
@@ -45,7 +49,7 @@
     &--arrow {
       display: inline-block;
       width: 24px;
-      height: 21px;
+      height: 12px;
       background: url('@blocks/mainNav/expand_more.svg') no-repeat center bottom;
     }
 
@@ -74,17 +78,24 @@
     }
   }
 
+  &__btns {
+    display: flex;
+    align-items: center;
+    height: 70px;
+  }
+
   &__login-btn {
     box-sizing: border-box;
     max-width: 87px;
     height: 34px;
     margin-right: 20px;
     margin-top: -3px;
+    // flex-shrink: 0;
   }
 
   &__reg-btn {
     box-sizing: border-box;
-    max-width: 196px;
+    width: 196px;
     height: 34px;
     margin-top: -3px;
   }

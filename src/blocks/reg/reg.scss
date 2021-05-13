@@ -6,6 +6,7 @@
   box-sizing: border-box;
   width: 380px;
   height: 646px;
+  box-sizing: border-box;
 
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -68,7 +69,6 @@
   }
 
   &__btn-enter {
-    width: 99px;
     margin-top: 30px;
     margin-left: auto
   }

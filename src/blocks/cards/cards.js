@@ -22,4 +22,10 @@ let cardRate2 = new Rate('#cardRate-2', {
 })
 cardRate2.init()
 
-createCalendar('#calendar-1')
+createCalendar('#calendar-1', false)
+
+let calendar1 = document.querySelector('#calendar-1 .datepicker__submit')
+
+calendar1.addEventListener('click', (e) => {
+  e.stopPropagation();
+})

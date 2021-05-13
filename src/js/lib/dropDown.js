@@ -130,10 +130,14 @@ export default class {
 
   inputEvent () {
     $(`${this.elem} .text-field__input`).click( () => {
-      $(`${this.elem} .drop-down__wrapper`).slideToggle();
-      $(`${this.elem} .text-field__input`).toggleClass('text-field__input--hover');
-      $(`${this.elem} .text-field__input`).toggleClass('text-field__input--drop-down');
+      this.toggleDropDown();
     })
+  }
+
+  toggleDropDown () {
+    $(`${this.elem} .drop-down__wrapper`).slideToggle();
+    $(`${this.elem} .text-field__input`).toggleClass('text-field__input--hover');
+    $(`${this.elem} .text-field__input`).toggleClass('text-field__input--drop-down');
   }
 
   btnEvent () {
@@ -170,6 +174,13 @@ export default class {
           elem.classList.add('drop-down__btn--disable')
         }
         this.setPlaceholder();
+      })
+    }
+
+    if (this.elements.btnSubmit) {
+      this.elements.btnSubmit.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.toggleDropDown();
       })
     }
   }

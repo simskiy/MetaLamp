@@ -16,7 +16,7 @@ mixin searchRoom(attr={})
       date: true,
       expand: true
     })(class="searchRoom__check-out")
-    +calendar()(class="searchRoom__calendar")
+    +calendar('calendar')(class="searchRoom__calendar")
     +drop-down('searchRoom__drop-down')(class="searchRoom__drop-down")
     +btn({
       arrow: true,

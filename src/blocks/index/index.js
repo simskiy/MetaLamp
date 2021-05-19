@@ -1,2 +1,4 @@
-import '@blocks/index/index.scss'
+import '@/js/header.js'
 import '@blocks/searchRoom/searchRoom.js'
+
+require('@blocks/index/index.scss')

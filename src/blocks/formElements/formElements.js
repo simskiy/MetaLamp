@@ -1,6 +1,6 @@
-import '@blocks/dblSlider/dblSlider.js'
-import '@blocks/checkboxList/checkboxList.js'
-import '@blocks/pagination/pagination.js'
+import '@blocks/dblSlider/dblSlider.js';
+import '@blocks/checkboxList/checkboxList.js';
+import '@blocks/pagination/pagination.js';
 
 import DropDown from '@/js/lib/dropDown.js';
 import Rate from '@/js/lib/rate.js';

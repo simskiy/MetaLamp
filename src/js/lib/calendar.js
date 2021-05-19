@@ -1,5 +1,7 @@
 import 'air-datepicker'
 
+require('air-datepicker/dist/css/datepicker.min.css')
+
 function setMaket (id) {
   if ($(id).data('maket') == 'maket') {
   let datepicker = $(id).datepicker().data('datepicker');

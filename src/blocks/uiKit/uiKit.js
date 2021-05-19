@@ -1,7 +1,9 @@
-import '@blocks/form-elements/form-elements.js'
+import '@/js/header.js'
+import '@blocks/formElements/formElements.js'
 import '@blocks/cards/cards.js'
-import '@blocks/headers-footers/headers-footers.js'
-import '@blocks/ui-kit/ui-kit.scss'
+import '@blocks/headersFooters/headersFooters.js'
+
+require('@blocks/uiKit/uiKit.scss')
 
 
 $('.nav__item').click(function() {

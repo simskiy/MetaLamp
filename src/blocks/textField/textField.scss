@@ -31,12 +31,12 @@
     &--expand {
       cursor: pointer;
       padding-right: 44px;
-      background: url('@blocks/text-field/expand_more.svg') no-repeat;
+      background: url('@blocks/textField/expand_more.svg') no-repeat;
       background-position: right 15px center;
     }
 
     &--arrow {
-      background: url('@blocks/text-field/arrow_forward.svg') no-repeat;
+      background: url('@blocks/textField/arrow_forward.svg') no-repeat;
       padding-right: 44px;
       background-position: right 13px center;
     }

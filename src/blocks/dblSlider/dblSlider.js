@@ -1,5 +1,7 @@
 import JSR from 'mm-jsr'
 
+require('mm-jsr/dist/assets/css/main.css')
+
 if (document.querySelector('.dblSlider')) {
 
   let {a, b, min, max, step} = $('.dblSlider').data()

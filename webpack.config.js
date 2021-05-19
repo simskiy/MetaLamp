@@ -11,17 +11,68 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
+const plugins = [];
+
+if (isProd) {
+  // enable in production only
+  plugins.push(new MiniCssExtractPlugin( {
+    filename: '[name].[contenthash].css',
+    chunkFilename: '[id].[contenthash].css',
+  }));
+}
+
+plugins.push(new HTMLWebpackPlugin({
+  filename: 'index.html',
+  template: './pages/index.pug',
+  chunks: ['index'],
+  inject: 'body'
+}))
+
+plugins.push(new HTMLWebpackPlugin({
+  filename: 'uikit.html',
+  template: './pages/uikit.pug',
+  chunks: ['uiKit'],
+  inject: 'body'
+}))
+
+plugins.push(new HTMLWebpackPlugin({
+  filename: 'search.html',
+  template: './pages/search.pug',
+  chunks: ['search'],
+  inject: 'body'
+}))
+
+plugins.push(new CleanWebpackPlugin())
+
+plugins.push(new CopyWebpackPlugin({
+  patterns: [
+    {
+      from: path.resolve(__dirname, 'src/assets/favicon.ico'),
+      to: path.resolve(__dirname, 'dist/images')
+    }
+  ],
+}))
+
+plugins.push(new ESLintPlugin({
+  extensions: ["js", "jsx", "ts", "tsx"],
+}))
+
+plugins.push(new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery'
+}))
+
 module.exports = {
-  mode: 'development',
+  mode: isDev ? 'development' : 'production',
   context: path.resolve(__dirname, 'src'),
   target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
   devtool: isDev ? 'source-map' : false,
 	entry: {
     // подключаем предварительно полифилл
-    'main': ['@babel/polyfill', './js/index.js'],
-    'ui-kit': '@blocks/ui-kit/ui-kit.js',
+    // 'main': ['@babel/polyfill', './js/index.js'],
     'index': '@blocks/index/index.js',
-    'search': '@blocks/search/search.js'
+    'search': '@blocks/search/search.js',
+    'uiKit': '@blocks/uiKit/uiKit.js',
   },
 
 	output: {
@@ -68,42 +119,7 @@ module.exports = {
     hot: isDev,
   },
 
-  plugins: [
-    new HTMLWebpackPlugin({
-      filename: 'index.html',
-      template: './pages/index.pug',
-      chunks: ['main', 'index']
-    }),
-    new HTMLWebpackPlugin({
-      filename: 'ui-kit.html',
-      template: './pages/ui-kit.pug',
-      chunks: ['main', 'ui-kit']
-    }),
-    new HTMLWebpackPlugin({
-      filename: 'search.html',
-      template: './pages/search.pug',
-      chunks: ['main', 'search']
-    }),
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/assets/favicon.ico'),
-          to: path.resolve(__dirname, 'dist/images')
-        }
-      ],
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
-    }),
-    new ESLintPlugin({
-      extensions: ["js", "jsx", "ts", "tsx"],
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
-  ],
+  plugins,
 
   module: {
     rules: [
@@ -119,24 +135,11 @@ module.exports = {
         use: ['extract-loader', 'html-loader'],
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader'
-          }
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
@@ -144,16 +147,14 @@ module.exports = {
         type: 'asset/resource',
         generator: {
          filename: 'images/[hash][ext][query]'
-       }
-
+        }
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
         type: 'asset/resource',
         generator: {
          filename: 'fonts/[hash][ext][query]'
-       }
-
+        }
       },
       {
         test: /\.pug$/,

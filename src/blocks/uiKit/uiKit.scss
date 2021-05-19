@@ -2,10 +2,10 @@
 @import '@assets/scss/global.scss';
 @import '@assets/scss/mixins.scss';
 
-@import '@blocks/colors-type/colors-type.scss';
-@import '@blocks/form-elements/form-elements.scss';
+@import '@blocks/colorsType/colorsType.scss';
+@import '@blocks/formElements/formElements.scss';
 @import '@blocks/cards/cards.scss';
-@import '@blocks/headers-footers/headers-footers.scss';
+@import '@blocks/headersFooters/headersFooters.scss';
 
 .container {
   max-width: 1440px;

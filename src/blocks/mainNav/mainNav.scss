@@ -7,7 +7,6 @@
   max-width: 1920px;
   min-width: 320px;
   width: 100%;
-  // height: 70px;
   padding-left: 140px;
   padding-right: 140px;
   box-sizing: border-box;
@@ -16,6 +15,66 @@
 
   &__logo {
     margin-right: auto;
+  }
+
+  &__btn {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid rgba($main-color, 0.5);
+    border-radius: 4px;
+    outline: none;
+
+    & span {
+      position: absolute;
+      border-top: 1px solid rgba($main-color, 0.75);
+      transition: all 0.3s ease;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: calc(100% - 10px);
+      border-top: 1px solid rgba($main-color, 0.75);
+      left: 5px;
+      right: 5px;
+      transform: rotate(0deg);
+      transition: all 0.3s ease;
+    }
+
+    &--close {
+      & span {
+        opacity: 1;
+        top: 13px;
+        left: 5px;
+        right: 5px;
+        transition: all 0.3s ease;
+      }
+
+      &::before {
+        top: 8px;
+      }
+      &::after {
+        bottom: 7px;
+      }
+    }
+
+    &--open {
+      & span {
+        opacity: 0;
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
   }
 
   &__list {
@@ -80,6 +139,7 @@
 
   &__btns {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     height: 70px;
   }
@@ -108,5 +168,108 @@
     color: rgba($main-color, 0.5);
     padding-left: 20px;
     border-left: 1px solid rgba($main-color, 0.1);
+  }
+}
+
+@include md-block {
+  .main-nav {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@include sm-block {
+  .main-nav {
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
+
+    &__logo {
+      order: 1;
+    }
+
+    &__name {
+      order: 2;
+      margin-right: 20px;
+    }
+
+    &__btn {
+      order: 3;
+      display: block;
+      margin-right: 20px;
+    }
+
+    &__btn--close + .main-nav__list,
+    &__btn--close + .main-nav__list .main-nav__item,
+    &__btn--close ~ .main-nav__btns {
+      height: 0;
+      overflow: hidden;
+    }
+
+    &__list {
+      order: 4;
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      box-sizing: border-box;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+      border-bottom: 1px solid rgba($main-color, 0.5);
+      text-align: left;
+    }
+
+    &__btns {
+      order: 5;
+    }
+  }
+}
+
+@include width-500 {
+  .main-nav {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+    &__btn {
+      order: 2;
+      margin-left: 120px;
+    }
+    &__name {
+      order: 3;
+      margin: 0;
+      margin-left: auto;
+      padding: 0;
+    }
+
+    &__btns {
+      width: 100%;
+      height: auto;
+      justify-content: space-between;
+    }
+
+    &__login-btn {
+      margin-top: 10px;
+    }
+
+    &__reg-btn {
+      margin-top: 10px;
+    }
+  }
+}
+
+@include xs-block {
+  .main-nav {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

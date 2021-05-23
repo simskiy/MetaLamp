@@ -1,7 +1,8 @@
 include ../searchRoom/searchRoom.pug
 
 mixin index
-  .main
+  main.main
     +searchRoom({
       link: 'search.html'
     })(class="main__search-form")
+    span.main__text Лучшие номера для вашей работы, отдыха и просто вдохновения

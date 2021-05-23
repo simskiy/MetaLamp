@@ -4,7 +4,7 @@ mixin mainNav(attr={})
   -
     let opt = {
       nav: {
-        'О нас': ['#', 'active'],
+        'О нас': ['#'],
         'Услуги': { 'услуга 1': '#',
                     'услуга 2': '#',
                     'услуга 3': '#'
@@ -22,6 +22,8 @@ mixin mainNav(attr={})
   .main-nav&attributes(attributes)
     a(href="index.html").main-nav__logo
       img(src=require('@blocks/mainNav/logo.svg'))
+    button.main-nav__btn.main-nav__btn--close
+      span
     ul.main-nav__list
       each valItem, keyItem in opt.nav
         if typeof valItem == 'object' && !Array.isArray(valItem)

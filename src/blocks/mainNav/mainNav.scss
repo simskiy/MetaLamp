@@ -183,6 +183,7 @@
     padding-right: 50px;
     padding-left: 50px;
     padding-top: 10px;
+    padding-bottom: 10px;
 
     &__logo {
       order: 1;
@@ -204,6 +205,10 @@
     &__btn--close ~ .main-nav__btns {
       height: 0;
       overflow: hidden;
+    }
+
+    &__btn--close + .main-nav__list {
+      margin-bottom: 0;
     }
 
     &__list {
@@ -238,7 +243,8 @@
   .main-nav {
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 
     &__btn {
       order: 2;

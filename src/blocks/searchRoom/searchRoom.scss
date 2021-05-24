@@ -21,7 +21,8 @@
     position: absolute;
     opacity: 0;
     top: 189px;
-    left: 30px;
+    // left: 30px;
+    left: calc((100% - 320px) / 2);
     z-index: -10;
     transition: opacity 0.3s ease;
 

@@ -1,15 +1,23 @@
 @import '@blocks/textField/textField.scss';
 
+$max-fields: 140px;
+$md-fields: 70px;
+$sm-fields: 20px;
+
 .footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding-top: 97px;
-  padding-left: 140px;
-  padding-right: 140px;
+  min-width: 320px;
+  max-width: 1920px;
+  margin: auto;
+  box-sizing: border-box;
 
 
   &__wrapper {
+    padding-left: $max-fields;
+    padding-right: $max-fields;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: minmax(auto, 22.3148%) minmax(auto, 55.1724%) minmax(auto, 22.3148%);
@@ -68,6 +76,8 @@
   }
 
   &__social {
+    padding-left: $max-fields;
+    padding-right: $max-fields;
     height: 70px;
     background-color: #fff;
   }
@@ -103,8 +113,6 @@
   align-items: center;
   border-top: 1px solid rgba($main-color, 0.25);
   width: 100%;
-  // padding-left: 140px;
-  // padding-right: 140px;
   padding-top: 1px;
 
   &__copyright {
@@ -133,8 +141,14 @@
 @include md-block {
   .footer {
     padding-top: 50px;
-    padding-left: 70px;
-    padding-right: 70px;
+    &__wrapper {
+      padding-left: $md-fields;
+      padding-right: $md-fields;
+    }
+    &__social {
+      padding-left: $md-fields;
+      padding-right: $md-fields;
+    }
   }
 }
 
@@ -155,12 +169,16 @@
 
     &__wrapper {
       display: block;
+      padding-left: $sm-fields;
+      padding-right: $sm-fields;
     }
 
     &__social {
       flex-wrap: wrap;
       border: none;
       height: auto;
+      padding-left: $sm-fields;
+      padding-right: $sm-fields;
     }
   }
 

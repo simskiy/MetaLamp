@@ -13,7 +13,8 @@ mixin dblSlider(attr="")
       max: attr.max || 100,
       a: attr.a || 25,
       b: attr.b || 50,
-      step: attr.step || 1
+      step: attr.step || 1,
+      note: attr.note || false
     }
 
   .dblSlider(
@@ -49,3 +50,5 @@ mixin dblSlider(attr="")
       step=opt.step
       value=opt.b
       ).dblSlider__input
+    if opt.note
+      span.dblSlider__note=opt.note

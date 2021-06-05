@@ -16,6 +16,14 @@
     font-size: 0.75rem;
   }
 
+  &__note {
+    font-size: 0.75rem;
+    color: rgba($main-color, 0.5);
+    font-weight: 400;
+    text-transform: lowercase;
+    line-height: 0.875rem;
+  }
+
   .jsr {
     margin: 0;
     padding: 0;

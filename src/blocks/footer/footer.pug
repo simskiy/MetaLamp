@@ -21,10 +21,11 @@ mixin footer(attr={})
       } || attr.nav
     }
 
-  .footer&attributes(attributes)
+  footer.footer
     .footer__wrapper
       .footer__logo
-        img(src=require('@blocks/footer/logo.svg'))
+        a(href="index.html")
+          img(src=require('@blocks/footer/logo.svg'))
         p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
       ul.footer__list
         each valItem, valKey in opt.nav

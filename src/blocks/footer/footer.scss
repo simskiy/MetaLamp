@@ -13,6 +13,7 @@ $sm-fields: 20px;
   max-width: 1920px;
   margin: auto;
   box-sizing: border-box;
+  border-top: 1px solid rgba($main-color, 0.25);
 
 
   &__wrapper {
@@ -125,7 +126,6 @@ $sm-fields: 20px;
   &__list {
     display: flex;
     list-style: none;
-    // margin-right: 1px;
     padding-top: 4px;
   }
 

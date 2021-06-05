@@ -4,3 +4,22 @@
 
 @import '@blocks/mainNav/mainNav.scss';
 @import '@blocks/footer/footer.scss';
+
+@import '@blocks/dropDown/dropDown.scss';
+@import '@blocks/dblSlider/dblSlider.scss';
+@import '@blocks/checkboxList/checkboxList.scss';
+@import '@blocks/checkboxRich/checkboxRich.scss';
+
+
+.search {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 266px 1fr;
+  column-gap: 60px;
+  min-width: 320px;
+  max-width: 1920px;
+  box-sizing: border-box;
+  padding-left: 140px;
+  padding-right: 140px;
+  margin: auto;
+}

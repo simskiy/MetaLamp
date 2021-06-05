@@ -1,2 +1,68 @@
+include ../filterCalendar/filterCalendar.pug
+include ../dropDown/dropDown.pug
+include ../dblSlider/dblSlider.pug
+include ../checkboxList/checkboxList.pug
+include ../checkboxRich/checkboxRich.pug
+
 mixin search
-  p hello, mudilla
+  main.search
+    h1.unvis Подбор номеров
+    aside.search__filter.filter
+      +filterCalendar
+      +drop-down('filterDropGuest')
+      +dblSlider({
+        label: 'диапазон цены',
+        min: 0,
+        max: 16000,
+        a: 5000,
+        b: 10000,
+        note: 'Стоимость за сутки пребывания в номере'
+      })
+      +checkboxList({
+        title: 'Правила дома',
+        items: [{
+          label: 'Можно курить',
+          checked: false
+        },
+        {
+          label: 'Можно с питомцами',
+          checked: true
+        },
+        {
+          label: 'Можно пригласить гостей (до 10 человек)',
+          checked: true
+        }]
+      })
+      +checkboxRich({
+        title: 'Доступность',
+        items: [
+          {
+            label: 'Широкий коридор',
+            checked: false,
+            text: 'Ширина коридоров в номере не менее 91 см.',
+            name: 'newnew',
+            text_style: 'width: 230px;'
+          },
+          {
+            label: 'Помощник для инвалидов',
+            checked: false,
+            text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+            text_style: 'width: 255px;'
+          }
+        ]
+      })
+      +drop-down('filterDropComfort')
+      +checkboxList({
+          title:'Дополнительные удобства',
+          items: [
+            { label: 'Завтрак', checked: false },
+            { label: 'Письменный стол', checked: true },
+            { label: 'Стул для кормления', checked: true },
+            { label: 'Кроватка', checked: true},
+            { label: 'Телевизор', checked: false},
+            { label: 'Шампунь', checked: false}
+          ],
+          expand: 'off'
+        })
+    section.search__rooms.rooms
+      h2 Номера, которые мы для вас подобрали

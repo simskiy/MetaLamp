@@ -1,14 +1,13 @@
 extends ../assets/pug/layout.pug
+include ../blocks/header/header.pug
 include ../blocks/footer/footer.pug
-include ../blocks/mainNav/mainNav.pug
 include ../blocks/index/index.pug
 
 block meta
   title Document
 
 block header
-  header.header
-    +mainNav()
+  +header()
 block content
   +index()
 block footer

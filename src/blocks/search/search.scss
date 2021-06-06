@@ -2,24 +2,48 @@
 @import '@assets/scss/global.scss';
 @import '@assets/scss/mixins.scss';
 
-@import '@blocks/mainNav/mainNav.scss';
+@import '@blocks/header/header.scss';
 @import '@blocks/footer/footer.scss';
 
 @import '@blocks/dropDown/dropDown.scss';
 @import '@blocks/dblSlider/dblSlider.scss';
 @import '@blocks/checkboxList/checkboxList.scss';
 @import '@blocks/checkboxRich/checkboxRich.scss';
-
+@import '@blocks/room/room.scss';
+@import '@blocks/pagination/pagination.scss';
 
 .search {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 266px 1fr;
   column-gap: 60px;
+  grid-template-areas: "filters rooms";
   min-width: 320px;
   max-width: 1920px;
   box-sizing: border-box;
   padding-left: 140px;
   padding-right: 140px;
   margin: auto;
+}
+
+.filters {
+  grid-area: filters;
+}
+
+.rooms {
+  grid-area: rooms;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    column-gap: 12px;
+    row-gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__pagination {
+    margin: auto;
+  }
 }

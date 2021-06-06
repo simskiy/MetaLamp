@@ -3,44 +3,44 @@ const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require("terser-webpack-plugin")
+const ESLintPlugin = require("eslint-webpack-plugin")
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
-const plugins = [];
+const plugins = []
+
+// массив страниц
+let pages = ['index', 'uikit', 'search']
+
 
 if (isProd) {
   // enable in production only
   plugins.push(new MiniCssExtractPlugin( {
     filename: '[name].[contenthash].css',
     chunkFilename: '[id].[contenthash].css',
-  }));
+  }))
 }
 
-plugins.push(new HTMLWebpackPlugin({
-  filename: 'index.html',
-  template: './pages/index.pug',
-  chunks: ['index'],
-  inject: 'body'
-}))
+const entryFiles = (arr) => {
+  let entrys = {};
+  for (let page of arr) {
+    entrys[page] = `@blocks/${page}/${page}.js`
+  }
+  return entrys
+}
 
-plugins.push(new HTMLWebpackPlugin({
-  filename: 'uikit.html',
-  template: './pages/uikit.pug',
-  chunks: ['uiKit'],
-  inject: 'body'
-}))
-
-plugins.push(new HTMLWebpackPlugin({
-  filename: 'search.html',
-  template: './pages/search.pug',
-  chunks: ['search'],
-  inject: 'body'
-}))
+for (let page of pages) {
+  plugins.push(new HTMLWebpackPlugin({
+    filename: `${page}.html`,
+    template: `./pages/${page}.pug`,
+    chunks: [`${page}`],
+    inject: 'body'
+  }))
+}
 
 plugins.push(new CleanWebpackPlugin())
 
@@ -67,14 +67,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
   devtool: isDev ? 'source-map' : false,
-	entry: {
-    // подключаем предварительно полифилл
-    // 'main': ['@babel/polyfill', './js/index.js'],
-    'index': '@blocks/index/index.js',
-    'search': '@blocks/search/search.js',
-    'uiKit': '@blocks/uiKit/uiKit.js',
-  },
-
+  entry: entryFiles(pages),
 	output: {
     filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')

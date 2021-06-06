@@ -3,7 +3,7 @@ include ../formElements/formElements.pug
 include ../cards/cards.pug
 include ../headersFooters/headersFooters.pug
 
-mixin uiKit(tab)
+mixin uikit(tab)
   .container
     nav.nav
       ul.nav__list
@@ -16,7 +16,7 @@ mixin uiKit(tab)
             )= val
 
     .logo
-      img.logo__img(src=require('@blocks/uiKit/logo.svg'), alt="logo", width="48", height="48")
+      img.logo__img(src=require('@blocks/uikit/logo.svg'), alt="logo", width="48", height="48")
       - let pages = ['colors-type', 'form-elements', 'cards', 'headers-footers']
 
     each val, index in pages

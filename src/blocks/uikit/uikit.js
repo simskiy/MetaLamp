@@ -3,7 +3,7 @@ import '@blocks/formElements/formElements.js'
 import '@blocks/cards/cards.js'
 import '@blocks/headersFooters/headersFooters.js'
 
-require('@blocks/uiKit/uiKit.scss')
+require('@blocks/uikit/uikit.scss')
 
 
 $('.nav__item').click(function() {

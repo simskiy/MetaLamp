@@ -13,6 +13,7 @@ $sm-fields: 20px;
   box-sizing: border-box;
   width: 100%;
   border-top: 1px solid rgba($main-color, 0.25);
+  background-color: #fff;
 
 
   &__wrapper {
@@ -23,7 +24,6 @@ $sm-fields: 20px;
     grid-template-columns: minmax(auto, 22.3148%) minmax(auto, 55.1724%) minmax(auto, 22.3148%);
     grid-template-rows: 272px;
     justify-content: center;
-    background-color: #fff;
     min-width: 320px;
     max-width: 1920px;
     margin: auto;

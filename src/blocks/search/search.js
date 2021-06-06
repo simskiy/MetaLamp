@@ -21,7 +21,8 @@ let filterComfort = new DropDown('#filterDropComfort', {
   labels: [['спальни', 2], ['кровати', 2], ['ванные комнаты', 0]],
   minimize: true,
   preset: 'room',
-  showBtns: false
+  showBtns: false,
+  title: 'Удобства номера'
 })
 
 filterGuest.init()

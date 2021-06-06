@@ -25,6 +25,7 @@ mixin room(attr={})
       span.room__title!=opt.title ? opt.title : '000'
       if opt.lux
         span.room__lux люкс
+
       span.room__cost!=opt.cost ? `${opt.cost}₽` : '9999 ₽'
       | в сутки
     .room__review

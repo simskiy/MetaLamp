@@ -8,11 +8,10 @@ $sm-fields: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding-top: 97px;
-  min-width: 320px;
-  max-width: 1920px;
+  padding-top: 100px;
   margin: auto;
   box-sizing: border-box;
+  width: 100%;
   border-top: 1px solid rgba($main-color, 0.25);
 
 
@@ -25,6 +24,9 @@ $sm-fields: 20px;
     grid-template-rows: 272px;
     justify-content: center;
     background-color: #fff;
+    min-width: 320px;
+    max-width: 1920px;
+    margin: auto;
   }
 
   &__text {
@@ -81,6 +83,9 @@ $sm-fields: 20px;
     padding-right: $max-fields;
     height: 70px;
     background-color: #fff;
+    min-width: 320px;
+    max-width: 1920px;
+    margin: auto;
   }
 }
 
@@ -168,7 +173,7 @@ $sm-fields: 20px;
     }
 
     &__wrapper {
-      display: block;
+      display: flex;
       padding-left: $sm-fields;
       padding-right: $sm-fields;
     }

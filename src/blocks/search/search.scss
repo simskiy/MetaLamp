@@ -24,26 +24,121 @@
   padding-left: 140px;
   padding-right: 140px;
   margin: auto;
+  margin-top: 30px;
+  margin-bottom: 75px;
 }
 
 .filters {
   grid-area: filters;
+
+  &__checkInOut {
+    margin-top: 1px;
+  }
+
+  &__dropDown {
+    margin-top: 22px;
+  }
+
+  &__cost {
+    margin-top: 29px;
+  }
+
+  &__rules {
+    width: 240px;
+    margin-top: 22px;
+  }
+
+  &__ally {
+    margin-top: 32px;
+  }
+
+  &__comfort {
+    margin-top: 29px;
+  }
+
+  &__options {
+    margin-top: 30px;
+  }
 }
 
 .rooms {
   grid-area: rooms;
 
+  &__title {
+    line-height: 1.829rem;
+    margin: 0;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    justify-items: center;
     column-gap: 12px;
     row-gap: 20px;
     padding: 0;
     margin: 0;
+    margin-top: 20.5px;
     list-style: none;
   }
 
   &__pagination {
+    position: relative;
+    right: 7px;
     margin: auto;
+    margin-top: 43px;
+  }
+}
+
+@include md-block {
+  .search {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .rooms__pagination {
+    right: 0;
+  }
+}
+
+@include sm-block {
+  .search {
+    box-sizing: border-box;
+    grid-template-columns: 1fr;
+    grid-template-areas: "filters" "rooms";
+    justify-items: center;
+
+    &__filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 266px);
+      column-gap: 20px;
+      row-gap: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .filters {
+    &__checkInOut,
+    &__dropDown,
+    &__cost,
+    &__rules,
+    &__ally,
+    &__comfort,
+    &__options {
+      margin-top: 0px;
+    }
+  }
+
+  .rooms {
+    &__title {
+      font-size: 1.25rem;
+    }
+    &__list {
+    }
+  }
+}
+
+@include width-500 {
+  .search {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

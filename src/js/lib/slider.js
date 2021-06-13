@@ -1,3 +1,5 @@
+import './slider.scss';
+
 export default class {
   constructor (elem) {
     this.elem = elem

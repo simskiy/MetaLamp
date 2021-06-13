@@ -1,7 +1,5 @@
-@import '@blocks/textField/textField.scss';
-@import '@blocks/dropDown/dropDown.scss';
-@import '@blocks/btn/btn.scss';
-@import '@blocks/calendar/calendar.scss';
+@import '@assets/scss/global.scss';
+@import '@assets/scss/mixins.scss';
 
 .searchRoom {
   position: relative;

@@ -1,0 +1,344 @@
+
+> webpack_template@1.0.0 build
+> cross-env NODE_ENV=production webpack --mode production --stats-children --progress
+
+assets by status 2.13 MiB [cached] 52 assets
+Entrypoint index = js/638.22d46f92954ef5009f8e.js js/394.8e510d8bb181045c948f.js js/248.4a6052bcc600ab0f618f.js index.css js/index.614e1ee03b074d60f3ac.js 15 auxiliary assets
+Entrypoint search = js/638.22d46f92954ef5009f8e.js js/394.8e510d8bb181045c948f.js js/534.440b5cc603cc96f402e6.js search.css js/search.b743e1120d1b830bf8dd.js 8 auxiliary assets
+Entrypoint colorsType = js/638.22d46f92954ef5009f8e.js colorsType.css js/colorsType.c2f1cbd5250682605d4b.js 12 auxiliary assets
+orphan modules 30.9 KiB [orphan] 37 modules
+runtime modules 9.07 KiB 15 modules
+code generated modules 48.3 KiB (css/mini-extract) 478 KiB (javascript) [code generated]
+  modules by path ./ 28.9 KiB (css/mini-extract) 46.8 KiB (javascript)
+    css modules 28.9 KiB 18 modules
+    cacheable modules 46.8 KiB 4 modules
+  modules by path ../node_modules/ 431 KiB (javascript) 19.4 KiB (css/mini-extract)
+    cacheable modules 431 KiB 11 modules
+    css modules 19.4 KiB
+      css ../node_modules/css-loader/dist/cjs.js!../node_modules/normalize.css/normalize.css 5.99 KiB [code generated]
+      css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/mm-jsr/dist/assets/css/main.css 1.46 KiB [code generated]
+      css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/air-datepicker/dist/css/datepicker.min.css 12 KiB [code generated]
+  assets by status 569 KiB [cached] 19 assets
+  Entrypoint HtmlWebpackPlugin_0-0 = 5 auxiliary assets
+  Entrypoint HtmlWebpackPlugin_1-0 = 18 auxiliary assets
+  Entrypoint HtmlWebpackPlugin_2-0 = 1 auxiliary asset
+  orphan modules 22.7 KiB [orphan] 23 modules
+  runtime modules 1.33 KiB 9 modules
+  built modules 77.1 KiB (javascript) 569 KiB (asset) [built]
+    modules by path ./blocks/ 1.38 KiB (javascript) 569 KiB (asset)
+      modules by path ./blocks/slider/ 1.13 KiB (javascript) 548 KiB (asset) 15 modules
+      modules by path ./blocks/footer/*.svg 168 bytes (javascript) 12.7 KiB (asset) 4 modules
+      2 modules
+    modules by path ./pages/*.pug 68.9 KiB
+      ../node_modules/html-webpack-plugin/lib/loader.js!./pages/index.pug 24 KiB [built] [code generated]
+      ../node_modules/html-webpack-plugin/lib/loader.js!./pages/search.pug 38.4 KiB [built] [code generated]
+      ../node_modules/html-webpack-plugin/lib/loader.js!./pages/colorsType.pug 6.56 KiB [built] [code generated]
+    data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath; 77 bytes [built] [code generated]
+    ../node_modules/pug-runtime/index.js 6.51 KiB [built] [code generated]
+    ./assets/pug/mixins.pug 187 bytes [built] [code generated]
+    external "fs" 42 bytes [optional] [built] [code generated]
+    
+  Child HtmlWebpackCompiler compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 13.8 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/air-datepicker/dist/css/datepicker.min.css 12.3 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/air-datepicker/dist/css/datepicker.min.css compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 3.31 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!../node_modules/mm-jsr/dist/assets/css/main.css 1.75 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/mm-jsr/dist/assets/css/main.css compiled successfully
+
+  assets by status 245 bytes [cached] 1 asset
+  Entrypoint child = 1 auxiliary asset
+  runtime modules 1 KiB 5 modules
+  cacheable modules 4.19 KiB (javascript) 245 bytes (asset)
+    modules by path ./blocks/btn/ 1.81 KiB (javascript) 245 bytes (asset)
+      ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/btn/btn.scss 1.77 KiB [built] [code generated]
+      ./blocks/btn/arrow_forward.svg 42 bytes (javascript) 245 bytes (asset) [built] [code generated]
+    modules by path ../node_modules/css-loader/dist/runtime/*.js 2.38 KiB
+      ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/btn/btn.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 4.44 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/calendar/calendar.scss 2.88 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/calendar/calendar.scss compiled successfully
+
+  assets by status 301 bytes [cached] 1 asset
+  Entrypoint child = 1 auxiliary asset
+  runtime modules 1 KiB 5 modules
+  cacheable modules 3.93 KiB (javascript) 301 bytes (asset)
+    modules by path ./blocks/checkBtn/ 1.56 KiB (javascript) 301 bytes (asset)
+      ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/checkBtn/checkBtn.scss 1.52 KiB [built] [code generated]
+      ./blocks/checkBtn/checkBtn.png 42 bytes (javascript) 301 bytes (asset) [built] [code generated]
+    modules by path ../node_modules/css-loader/dist/runtime/*.js 2.38 KiB
+      ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/checkBtn/checkBtn.scss compiled successfully
+
+  assets by status 499 bytes [cached] 2 assets
+  Entrypoint child = 2 auxiliary assets
+  runtime modules 1 KiB 5 modules
+  cacheable modules 4.25 KiB (javascript) 499 bytes (asset)
+    javascript modules 4.16 KiB
+      ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/checkboxList/checkboxList.scss 1.79 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    asset modules 84 bytes (javascript) 499 bytes (asset)
+      ./blocks/checkboxList/expand_up.svg 42 bytes (javascript) 249 bytes (asset) [built] [code generated]
+      ./blocks/checkboxList/expand_down.svg 42 bytes (javascript) 250 bytes (asset) [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/checkboxList/checkboxList.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 2.5 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/checkboxRich/checkboxRich.scss 958 bytes [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/checkboxRich/checkboxRich.scss compiled successfully
+
+  assets by status 372 KiB [cached] 10 assets
+  Entrypoint child = 10 auxiliary assets
+  runtime modules 1 KiB 5 modules
+  modules by path ./ 5.82 KiB (javascript) 372 KiB (asset)
+    modules by path ./assets/fonts/*.eot 168 bytes (javascript) 124 KiB (asset) 4 modules
+    modules by path ./assets/fonts/*.woff2 84 bytes (javascript) 52.8 KiB (asset) 2 modules
+    modules by path ./assets/fonts/*.woff 84 bytes (javascript) 65.2 KiB (asset)
+      ./assets/fonts/montserrat-v15-latin_cyrillic-regular.woff 42 bytes (javascript) 32.4 KiB (asset) [built] [code generated]
+      ./assets/fonts/montserrat-v15-latin_cyrillic-700.woff 42 bytes (javascript) 32.8 KiB (asset) [built] [code generated]
+    modules by path ./assets/fonts/*.ttf 84 bytes (javascript) 130 KiB (asset)
+      ./assets/fonts/montserrat-v15-latin_cyrillic-regular.ttf 42 bytes (javascript) 64.8 KiB (asset) [built] [code generated]
+      ./assets/fonts/montserrat-v15-latin_cyrillic-700.ttf 42 bytes (javascript) 65.4 KiB (asset) [built] [code generated]
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/colorsType/colorsType.scss 5.41 KiB [built] [code generated]
+  modules by path ../node_modules/ 9.02 KiB
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/normalize.css/normalize.css 6.64 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/colorsType/colorsType.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 2.97 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/dblSlider/dblSlider.scss 1.41 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/dblSlider/dblSlider.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 3.7 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/dropDown/dropDown.scss 2.13 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/dropDown/dropDown.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 4.67 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/footer/footer.scss 3.1 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/footer/footer.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 2.94 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/headerUI/headerUI.scss 1.37 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/headerUI/headerUI.scss compiled successfully
+
+  assets by status 1.28 MiB [cached] 11 assets
+  Entrypoint child = 11 auxiliary assets
+  runtime modules 1 KiB 5 modules
+  modules by path ./ 5.22 KiB (javascript) 1.28 MiB (asset)
+    modules by path ./assets/fonts/ 420 bytes (javascript) 372 KiB (asset)
+      modules by path ./assets/fonts/*.eot 168 bytes (javascript) 124 KiB (asset) 4 modules
+      modules by path ./assets/fonts/*.woff2 84 bytes (javascript) 52.8 KiB (asset) 2 modules
+      modules by path ./assets/fonts/*.woff 84 bytes (javascript) 65.2 KiB (asset) 2 modules
+      modules by path ./assets/fonts/*.ttf 84 bytes (javascript) 130 KiB (asset) 2 modules
+    modules by path ./blocks/index/ 4.81 KiB (javascript) 941 KiB (asset)
+      ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/index/index.scss 4.76 KiB [built] [code generated]
+      ./blocks/index/bg-image.jpg 42 bytes (javascript) 941 KiB (asset) [built] [code generated]
+  modules by path ../node_modules/ 9.02 KiB
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/normalize.css/normalize.css 6.64 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/index/index.scss compiled successfully
+
+  assets by status 241 bytes [cached] 1 asset
+  Entrypoint child = 1 auxiliary asset
+  runtime modules 1 KiB 5 modules
+  cacheable modules 6.72 KiB (javascript) 241 bytes (asset)
+    modules by path ./blocks/mainNav/ 4.34 KiB (javascript) 241 bytes (asset)
+      ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/mainNav/mainNav.scss 4.3 KiB [built] [code generated]
+      ./blocks/mainNav/expand_more.svg 42 bytes (javascript) 241 bytes (asset) [built] [code generated]
+    modules by path ../node_modules/css-loader/dist/runtime/*.js 2.38 KiB
+      ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/mainNav/mainNav.scss compiled successfully
+
+  assets by status 250 bytes [cached] 1 asset
+  Entrypoint child = 1 auxiliary asset
+  runtime modules 1 KiB 5 modules
+  cacheable modules 4.1 KiB (javascript) 250 bytes (asset)
+    modules by path ./blocks/pagination/ 1.72 KiB (javascript) 250 bytes (asset)
+      ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/pagination/pagination.scss 1.68 KiB [built] [code generated]
+      ./blocks/pagination/arrow_forward.svg 42 bytes (javascript) 250 bytes (asset) [built] [code generated]
+    modules by path ../node_modules/css-loader/dist/runtime/*.js 2.38 KiB
+      ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/pagination/pagination.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 3.08 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/rate/rate.scss 1.51 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/rate/rate.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 3.06 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/room/room.scss 1.49 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/room/room.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 3.35 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/search/search.scss 1.78 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/search/search.scss compiled successfully
+
+  Entrypoint child =
+  runtime modules 997 bytes 4 modules
+  cacheable modules 2.95 KiB
+    ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/searchRoom/searchRoom.scss 1.38 KiB [built] [code generated]
+    ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/searchRoom/searchRoom.scss compiled successfully
+
+  assets by status 724 bytes [cached] 2 assets
+  Entrypoint child = 2 auxiliary assets
+  runtime modules 1 KiB 5 modules
+  cacheable modules 4.84 KiB (javascript) 724 bytes (asset)
+    javascript modules 4.76 KiB
+      ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./blocks/textField/textField.scss 2.38 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+      ../node_modules/css-loader/dist/runtime/getUrl.js 830 bytes [built] [code generated]
+    asset modules 84 bytes (javascript) 724 bytes (asset)
+      ./blocks/textField/expand_more.svg 42 bytes (javascript) 265 bytes (asset) [built] [code generated]
+      ./blocks/textField/arrow_forward.svg 42 bytes (javascript) 459 bytes (asset) [built] [code generated]
+    
+  Child mini-css-extract-plugin /home/sim/work/metalamp/node_modules/css-loader/dist/cjs.js!/home/sim/work/metalamp/node_modules/sass-loader/dist/cjs.js!/home/sim/work/metalamp/src/blocks/textField/textField.scss compiled successfully
+
+WARNING in /home/sim/work/metalamp/src/js/lib/calendar.js
+  37:16  warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+
+/home/sim/work/metalamp/src/js/lib/dropDown.js
+   23:16  warning  Argument 'elem' should be typed     @typescript-eslint/explicit-module-boundary-types
+   23:22  warning  Argument 'options' should be typed  @typescript-eslint/explicit-module-boundary-types
+   50:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+   67:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  111:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  119:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  125:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  125:11  warning  Argument 'elem' should be typed     @typescript-eslint/explicit-module-boundary-types
+  133:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  139:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  145:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  190:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  212:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  212:16  warning  Argument 'num' should be typed      @typescript-eslint/explicit-module-boundary-types
+  220:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  220:13  warning  Argument 'attr' should be typed     @typescript-eslint/explicit-module-boundary-types
+  238:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  268:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+
+/home/sim/work/metalamp/src/js/lib/rate.js
+   4:16  warning  Argument 'elem' should be typed     @typescript-eslint/explicit-module-boundary-types
+   4:22  warning  Argument 'options' should be typed  @typescript-eslint/explicit-module-boundary-types
+  27:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  65:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+  76:3   warning  Missing return type on function     @typescript-eslint/explicit-module-boundary-types
+
+/home/sim/work/metalamp/src/js/lib/slider.js
+   4:16  warning  Argument 'elem' should be typed  @typescript-eslint/explicit-module-boundary-types
+  14:3   warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+  21:3   warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+  28:3   warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+  35:3   warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+  43:3   warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+  47:3   warning  Missing return type on function  @typescript-eslint/explicit-module-boundary-types
+
+✖ 31 problems (0 errors, 31 warnings)
+
+ERROR in ./js/lib/slider.js 10:0-21
+Module not found: Error: Can't resolve 'slider.scss' in '/home/sim/work/metalamp/src/js/lib'
+Did you mean './slider.scss'?
+Requests that should resolve in the current directory need to start with './'.
+Requests that start with a name are treated as module requests and resolve within module directories (node_modules).
+If changing the source code is not an option there is also a resolve options called 'preferRelative' which tries to resolve these kind of requests in the current directory too.
+resolve 'slider.scss' in '/home/sim/work/metalamp/src/js/lib'
+  Parsed request is a module
+  using description file: /home/sim/work/metalamp/package.json (relative path: ./src/js/lib)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/sim/work/metalamp/src/js/lib/node_modules doesn't exist or is not a directory
+      /home/sim/work/metalamp/src/js/node_modules doesn't exist or is not a directory
+      /home/sim/work/metalamp/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/sim/work/metalamp/node_modules
+        single file module
+          using description file: /home/sim/work/metalamp/package.json (relative path: ./node_modules/slider.scss)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/sim/work/metalamp/node_modules/slider.scss doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/sim/work/metalamp/node_modules/slider.scss.js doesn't exist
+            .json
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/sim/work/metalamp/node_modules/slider.scss.json doesn't exist
+        /home/sim/work/metalamp/node_modules/slider.scss doesn't exist
+      looking for modules in /home/sim/work/node_modules
+        single file module
+          No description file found in /home/sim/work/node_modules or above
+          no extension
+            Field 'browser' doesn't contain a valid alias configuration
+            /home/sim/work/node_modules/slider.scss doesn't exist
+          .js
+            Field 'browser' doesn't contain a valid alias configuration
+            /home/sim/work/node_modules/slider.scss.js doesn't exist
+          .json
+            Field 'browser' doesn't contain a valid alias configuration
+            /home/sim/work/node_modules/slider.scss.json doesn't exist
+        /home/sim/work/node_modules/slider.scss doesn't exist
+      /home/sim/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./blocks/search/search.js 8:0-40 35:6-12
+
+webpack 5.38.1 compiled with 1 error and 1 warning in 16032 ms

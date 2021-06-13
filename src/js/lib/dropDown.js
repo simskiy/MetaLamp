@@ -17,6 +17,8 @@
 //  showBtns: (false || true),
 //  preset: ('room' || 'guest'),
 
+import '@blocks/dropDown/dropDown.scss'
+
 export default class {
   constructor (elem, options) {
     this.elem = elem;

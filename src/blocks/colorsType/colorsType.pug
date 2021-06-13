@@ -1,28 +1,29 @@
-mixin colors-type()
+mixin colorsType()
   -
     let colors= [ {class: 'dark', text: 'Dark Shade 100%', code: '#1F2041' },
                   {class: 'dark75', text: 'Dark Shade 75%', code: '#1F2041'},
                   {class: 'dark50', text: 'Dark Shade 50%', code: '#1F2041'},
-                  {class: 'dark25', text: 'Dark Shade 50%', code: '#1F2041'},
-                  {class: 'dark5', text: 'Dark Shade 50%', code: '#1F2041'},
+                  {class: 'dark25', text: 'Dark Shade 25%', code: '#1F2041'},
+                  {class: 'dark5', text: 'Dark Shade 5%', code: '#1F2041'},
                   {class: 'purple', text: 'Purple', code: '#BC9CFF'},
                   {class: 'green', text: 'Green', code: '#6FCF97'}  ]
-  ul.color
-    each val in colors
-      li.color__item
-        .color__block(class=`color__block--${val.class}`)
-        .color__text
-          span= val.text
-          span.color__code= val.code
+  main.container
+    ul.color
+      each val in colors
+        li.color__item
+          .color__block(class=`color__block--${val.class}`)
+          .color__text
+            span= val.text
+            span.color__code= val.code
 
-  ul.font-style
-    -
-      let fonts = [ {class: 'h1', title: 'H1', text: 'This one is the sub-section or widget title', upper: false },
-                    {class: 'h2', title: 'H2', text: 'Next one is the item title inside widgets', upper: false},
-                    {class: 'h3', title: 'H3', text: 'This is a label or CTA text', upper: true},
-                    {class: 'body', title: 'Body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', upper: false }]
+    ul.font-style
+      -
+        let fonts = [ {class: 'h1', title: 'H1', text: 'This one is the sub-section or widget title', upper: false },
+                      {class: 'h2', title: 'H2', text: 'Next one is the item title inside widgets', upper: false},
+                      {class: 'h3', title: 'H3', text: 'This is a label or CTA text', upper: true},
+                      {class: 'body', title: 'Body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', upper: false }]
 
-    each val in fonts
-      li.font-style__item(class=`font-style__item--${val.class}`)
-        span.font-style__title= val.title
-        span.font-style__text.font-style__text--style(class= val.upper ? 'font-style__text--uppercase' : '')= val.text
+      each val in fonts
+        li.font-style__item(class=`font-style__item--${val.class}`)
+          span.font-style__title= val.title
+          span.font-style__text.font-style__text--style(class= val.upper ? 'font-style__text--uppercase' : '')= val.text

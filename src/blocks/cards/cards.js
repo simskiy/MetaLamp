@@ -6,6 +6,13 @@ import Slider from '@/js/lib/slider.js';
 import Rate from '@/js/lib/rate.js';
 import createCalendar from '@/js/lib/calendar.js';
 
+import '@blocks/cards/cards.scss'
+
+import '@blocks/calendar/calendar.js';
+import '@blocks/searchRoom/searchRoom.js';
+import '@blocks/reg/reg.js';
+import '@blocks/login/login.js';
+
 let cardSlider1 = new Slider('#slider-1')
 cardSlider1.init()
 

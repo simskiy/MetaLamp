@@ -1,3 +1,6 @@
+import '@blocks/btn/btn.js';
+import '@blocks/mainNav/mainNav.scss';
+
 $('.main-nav__btn').click(function () {
   $('.main-nav__btn').toggleClass('main-nav__btn--open');
   $('.main-nav__btn').toggleClass('main-nav__btn--close');

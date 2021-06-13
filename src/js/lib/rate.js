@@ -1,3 +1,5 @@
+import '@blocks/rate/rate.scss'
+
 export default class {
   constructor (elem, options) {
     this.elem = elem;

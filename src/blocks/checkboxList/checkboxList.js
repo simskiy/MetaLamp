@@ -1,3 +1,7 @@
+import '@blocks/checkBtn/checkBtn.js';
+
+import '@blocks/checkboxList/checkboxList.scss';
+
 $('.checkboxList__title[data-expand]').click(function () {
   let attr = $(this).attr('data-expand');
   // if (attr == 'on') {

@@ -1,0 +1,13 @@
+mixin headerUI(tab)
+  header.header
+    nav.nav
+      ul.nav__list
+        - let tabs = ['Colors & Types', 'Form Elements', 'Cards', 'Headers & Footers']
+
+        each val, index in tabs
+          li.nav__item(
+            class= index + 1  == tab ? 'nav__item--active' : ''
+            )= val
+
+    .logo
+      img.logo__img(src=require('@blocks/headerUI/logo.svg'), alt="logo", width="48", height="48")

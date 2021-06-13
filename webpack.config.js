@@ -14,14 +14,14 @@ const isProd = !isDev
 const plugins = []
 
 // массив страниц
-let pages = ['index', 'uikit', 'search']
+let pages = ['index', 'search', 'colorsType']
 
 
 if (isProd) {
   // enable in production only
   plugins.push(new MiniCssExtractPlugin( {
-    filename: '[name].[contenthash].css',
-    chunkFilename: '[id].[contenthash].css',
+    filename: '[name].css',
+    chunkFilename: '[id].css',
   }))
 }
 
@@ -37,8 +37,7 @@ for (let page of pages) {
   plugins.push(new HTMLWebpackPlugin({
     filename: `${page}.html`,
     template: `./pages/${page}.pug`,
-    chunks: [`${page}`],
-    inject: 'body'
+    chunks: [`${page}`]
   }))
 }
 

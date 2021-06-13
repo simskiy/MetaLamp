@@ -1,3 +1,5 @@
+import '@blocks/pagination/pagination.scss'
+
 if (document.querySelector('.pagination__list')) {
   document.querySelector('.pagination__list').addEventListener('click', (e) => {
     if (!e.target.classList.contains('pagination__link--next')) {

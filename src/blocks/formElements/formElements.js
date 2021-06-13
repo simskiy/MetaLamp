@@ -5,6 +5,22 @@ import '@blocks/pagination/pagination.js';
 import DropDown from '@/js/lib/dropDown.js';
 import Rate from '@/js/lib/rate.js';
 
+import '@blocks/textField/textField.js';
+// @import '@blocks/rate/rate.scss';
+import '@blocks/checkBtn/checkBtn.js';
+import '@blocks/radioBtn/radioBtn.js';
+import '@blocks/toggleBtn/toggleBtn.js';
+import '@blocks/btn/btn.js';
+// @import '@blocks/dropDown/dropDown.scss';
+import '@blocks/checkboxRich/checkboxRich.js';
+import '@blocks/bulletList/bulletList.js';
+import '@blocks/likeBtn/likeBtn.js';
+import '@blocks/features/features.js';
+import '@blocks/comment/comment.js';
+import '@blocks/link/link.js';
+
+import '@blocks/formElements/formElements.scss';
+
 
   let drop1 = new DropDown('#drop-down-1', {
     labels: [['спальни', 2], ['кровати', 2], ['ванные комнаты', 0]],

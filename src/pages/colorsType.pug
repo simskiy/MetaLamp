@@ -1,0 +1,12 @@
+extends ../assets/pug/layout.pug
+include ../blocks/headerUI/headerUI.pug
+include ../blocks/colorsType/colorsType.pug
+
+block meta
+  title Document
+
+block header
+  +headerUI(1)
+block content
+  +colorsType()
+block footer

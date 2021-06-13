@@ -1,5 +1,7 @@
 import JSR from 'mm-jsr'
 
+import '@blocks/dblSlider/dblSlider.scss'
+
 require('mm-jsr/dist/assets/css/main.css')
 
 if (document.querySelector('.dblSlider')) {

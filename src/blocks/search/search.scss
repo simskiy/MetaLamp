@@ -1,16 +1,4 @@
-@import '@assets/scss/fonts.scss';
-@import '@assets/scss/global.scss';
 @import '@assets/scss/mixins.scss';
-
-@import '@blocks/header/header.scss';
-@import '@blocks/footer/footer.scss';
-
-@import '@blocks/dropDown/dropDown.scss';
-@import '@blocks/dblSlider/dblSlider.scss';
-@import '@blocks/checkboxList/checkboxList.scss';
-@import '@blocks/checkboxRich/checkboxRich.scss';
-@import '@blocks/room/room.scss';
-@import '@blocks/pagination/pagination.scss';
 
 .search {
   display: grid;

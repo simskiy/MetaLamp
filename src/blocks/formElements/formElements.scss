@@ -4,12 +4,12 @@
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 640px 356px 360px 1fr;
-  grid-template-columns: 320px 400px 321px;
+  grid-template-columns: 320px 320px 320px;
   width: 1440px;
   justify-content: space-between;
   justify-items: center;
   margin: auto;
-  padding: 140px 140px 130px 140px;
+  padding: 144px 140px 130px 141px;
 
   &__block-1 {
     display: flex;

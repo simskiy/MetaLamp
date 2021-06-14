@@ -8,6 +8,7 @@ import createCalendar from '@/js/lib/calendar.js';
 
 import '@blocks/cards/cards.scss'
 
+import '@blocks/headerUI/headerUI.js';
 import '@blocks/calendar/calendar.js';
 import '@blocks/searchRoom/searchRoom.js';
 import '@blocks/reg/reg.js';

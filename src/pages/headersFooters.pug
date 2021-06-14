@@ -1,12 +1,12 @@
 extends ../assets/pug/layout.pug
 include ../blocks/headerUI/headerUI.pug
-include ../blocks/colorsType/colorsType.pug
+include ../blocks/headersFooters/headersFooters.pug
 
 block meta
   title Document
 
 block header
-  +headerUI('colorsType')
+  +headerUI('headersFooters')
 block content
-  +colorsType()
+  +headers-footers()
 block footer

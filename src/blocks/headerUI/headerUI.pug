@@ -2,12 +2,11 @@ mixin headerUI(tab)
   header.header
     nav.nav
       ul.nav__list
-        - let tabs = ['Colors & Types', 'Form Elements', 'Cards', 'Headers & Footers']
+        - let tabs = { colorsType: 'Colors & Types', formElements: 'Form Elements', cards: 'Cards', headersFooters: 'Headers & Footers' }
 
-        each val, index in tabs
-          li.nav__item(
-            class= index + 1  == tab ? 'nav__item--active' : ''
-            )= val
+        each val, key in tabs
+          li.nav__item(class= key == tab ? 'nav__item--active' : '')
+            a.nav__link(href=`${key}.html`)=val
 
     a.logo(href="index.html")
       img.logo__img(src=require('@blocks/headerUI/logo.svg'), alt="logo", width="48", height="48")

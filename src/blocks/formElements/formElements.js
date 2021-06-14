@@ -19,6 +19,8 @@ import '@blocks/features/features.js';
 import '@blocks/comment/comment.js';
 import '@blocks/link/link.js';
 
+import '@blocks/headerUI/headerUI.js';
+
 import '@blocks/formElements/formElements.scss';
 
 

@@ -14,7 +14,7 @@ const isProd = !isDev
 const plugins = []
 
 // массив страниц
-let pages = ['index', 'search', 'colorsType']
+let pages = ['index', 'search', 'colorsType', 'formElements']
 
 
 if (isProd) {
@@ -110,9 +110,7 @@ module.exports = {
     open: true,
     hot: isDev,
   },
-
   plugins,
-
   module: {
     rules: [
       {

@@ -1,0 +1,12 @@
+extends ../assets/pug/layout.pug
+include ../blocks/headerUI/headerUI.pug
+include ../blocks/formElements/formElements.pug
+
+block meta
+  title Document
+
+block header
+  +headerUI(2)
+block content
+  +form-elements()
+block footer

@@ -9,5 +9,5 @@ mixin headerUI(tab)
             class= index + 1  == tab ? 'nav__item--active' : ''
             )= val
 
-    .logo
+    a.logo(href="index.html")
       img.logo__img(src=require('@blocks/headerUI/logo.svg'), alt="logo", width="48", height="48")

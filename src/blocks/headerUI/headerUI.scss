@@ -2,7 +2,8 @@
 
 .header {
   position: relative;
-  max-width: 1440px;
+  width: 1440px;
+  height: auto;
   margin: auto;
 }
 
@@ -58,9 +59,10 @@
 }
 
 .logo {
+  display: inline-block;
   position: absolute;
   top: 30px;
-  left: 120px;
+  left: 30px;
   font-size: 0;
   z-index: 10;
 

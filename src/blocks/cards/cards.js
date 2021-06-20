@@ -6,7 +6,7 @@ import Slider from '@/js/lib/slider.js';
 import Rate from '@/js/lib/rate.js';
 import createCalendar from '@/js/lib/calendar.js';
 
-import '@blocks/cards/cards.scss'
+import '@blocks/cards/cards.scss';
 
 import '@blocks/headerUI/headerUI.js';
 import '@blocks/calendar/calendar.js';

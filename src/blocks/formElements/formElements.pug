@@ -17,16 +17,16 @@ include ../link/link.pug
 
 mixin form-elements
   main.form-elements
-    .form-elements__block-1
-      +text-field({preset: 'text'})
-      +text-field({preset: 'text-hover'})(style="margin-top: 21px;")
-      +text-field({preset: 'text-drop'})(style="margin-top: 21px;")
-      +text-field({preset: 'date'})(style="margin-top: 24px")
+    .form-elements__block-1.block-1
+      +text-field({preset: 'text'})(class='block-1__text')
+      +text-field({preset: 'text-hover'})(class='block-1__text-hover')
+      +text-field({preset: 'text-drop'})(class='block-1__text-drop')
+      +text-field({preset: 'date'})(class='block-1__date')
       .form-elements__inner
         +text-field({preset: 'date-drop'})(class="form-elements__inner--half")
         +text-field({placeholder: '19.08.2019', label: 'date dropdown', expand: true, placeholderDark: true})(class="form-elements__inner--half")
-      +text-field({preset: 'date-filter'})(style="margin-top: 42px; width: 266px;")
-      +text-field({preset: 'text-arrow'})(style="margin-top: 42px; width: 266px;")
+      +text-field({preset: 'date-filter'})(class='block-1__date-filter')
+      +text-field({preset: 'text-arrow'})(class='block-1__text-arrow')
 
     .form-elements__block-2.block-2
       +checkboxList({
@@ -34,9 +34,9 @@ mixin form-elements
         items: [
           {label: 'Можно курить', checked: false},
           {label: 'Можно с питомцами', checked: true},
-          {label: 'Можно пригласить гостей (до 10 человек)', checked: true}
+          {label: 'Можно пригласить гостей <span class=nobr>(до 10 человек)</span>', checked: true}
         ],
-      })(style="width: 222px;")
+      })
       .block-2__radio
         h3.block-2__title Radio Buttons
         +radioBtn({preset: 'male'})(class="block-2__btn")
@@ -58,13 +58,14 @@ mixin form-elements
       +dblSlider({preset: 'default'})(style="width: 266px;")
       .block-3__btns
         h3.block-3__title buttons
-        +btn({preset: 'purple'})(style="width: 99px")
-        +btn({preset: 'purple', active: true})(style="width: 99px; margin-left: 19px;")
-        +btn({preset: 'clear'})(style="width: 99px; margin-top: 30px;")
-        +btn({preset: 'clear', active: true})(style="width: 99px; margin-left: 19px;")
-        +link({text: 'click me', hover: true})(style="margin-top: 33px;")
-        +link({text: 'click me'})(style="margin-left: 21px;")
-      +btn({preset: 'arrow'})(style="margin-top: 27px;")
+        +btn({preset: 'purple'})(class="")
+        +btn({preset: 'purple', active: true})()
+        +btn({preset: 'clear'})
+        +btn({preset: 'clear', active: true})
+        .block-3__btns-link
+          +link({text: 'click me', hover: true})
+          +link({text: 'click me'})
+      +btn({preset: 'arrow'})(class="block-3__btn-arrow")
       .block-3__pagination
         h3.block-3__title pagination
         +pagination()
@@ -120,13 +121,13 @@ mixin form-elements
             text_style: 'width: 255px;'
           }
         ]
-      })(style="width: 266px")
+      })
 
     .form-elements__block-9.block-9
       +bulletList({
         title: 'bullet list',
         items: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
-      })(style="width: 260px")
+      })
     .form-elements__block-10.block-10
       +features([
         { title: 'Комфорт', text: 'Шумопоглощающие стены', img: 'insert_emoticon' },
@@ -143,4 +144,4 @@ mixin form-elements
           count: 12
         },
         text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-      })(style="width: 711px")
+      })

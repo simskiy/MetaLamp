@@ -1,22 +1,17 @@
 @import '@assets/scss/global.scss';
+@import '@assets/scss/fonts.scss';
+@import 'normalize.css';
 
 .form-elements {
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 640px 356px 360px 1fr;
-  grid-template-columns: 320px 320px 320px;
+  grid-template-columns: 320px 268px 320px;
   width: 1440px;
   justify-content: space-between;
   justify-items: center;
   margin: auto;
   padding: 144px 140px 130px 141px;
-
-  &__block-1 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
 
   &__inner {
     display: flex;
@@ -29,17 +24,43 @@
   }
 }
 
+.block-1 {
+  &__text-hover {
+    margin-top: 21px;
+  }
+
+  &__text-drop {
+    margin-top: 21px;
+  }
+
+  &__date {
+    margin-top: 24px;
+  }
+
+  &__date-filter {
+    margin-top: 42px;
+    width: 266px;
+  }
+
+  &__text-arrow {
+    margin-top: 42px;
+    width: 266px;
+  }
+}
+
 .block-2 {
   box-sizing: border-box;
-  padding-left: 67px;
   margin-top: -1px;
+  width: 100%;
 
   &__radio {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 58px;
-    padding-right: 112px;
+    margin-top: 43px;
+    padding-right: 48px;
     height: 65px;
   }
 
@@ -57,7 +78,7 @@
     justify-content: space-between;
     margin-top: 47px;
     height: 66px;
-    padding-right: 244px;
+    padding-right: 178px;
   }
 
   &__rate {
@@ -65,7 +86,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 25px;
-    padding-right: 73px;
+    padding-right: 8px;
 
     & .block-2__title {
       margin-bottom: 18px;
@@ -87,26 +108,51 @@
 }
 
 .block-3 {
+  width: 100%;
 
   &__btns {
-    margin-top: 20px;
+    display: grid;
+    align-items: center;
+    column-gap: 19px;
+    grid-template-rows: 13px 1fr 1fr 29px;
+    grid-template-columns: 99px 99px;
+    margin-top: 29px;
     padding-right: 100px;
-    height: 195px;
+    height: 192px;
+  }
 
+  &__btns-link {
+    box-sizing: border-box;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: self-end;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 75px;
   }
 
   &__title {
+    align-self: self-start;
+    grid-column-start: 1;
+    grid-column-end: 3;
     width: 100%;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     color: $main-color;
     margin: 0;
-    margin-bottom: 15px;
+  }
+
+  &__btn-arrow {
+    margin-top: 31px;
   }
 
   &__pagination {
     margin-top: 43px;
+
+    & .block-3__title {
+      margin-bottom: 16px;
+    }
   }
 
 }
@@ -147,12 +193,14 @@
 }
 
 .block-8 {
+  width: 100%;
   margin-top: 45px;
 }
 
 .block-9 {
   margin-top: 57px;
   justify-self: left;
+  padding-right: 60px;
 }
 
 .block-10 {
@@ -162,6 +210,6 @@
 
 .block-11 {
   grid-column: span 2;
-  padding-left: 64px;
   margin-top: 74px;
+  padding-right: 3px;
 }

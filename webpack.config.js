@@ -29,6 +29,8 @@ const entryFiles = (arr) => {
   let entrys = {};
   for (let page of arr) {
     entrys[page] = `@blocks/${page}/${page}.js`
+    // entrys[`js/${page}.js`] = `@blocks/${page}/${page}.js`
+    // entrys[`css/${page}.css`] = `@blocks/${page}/${page}.scss`
   }
   return entrys
 }
@@ -66,9 +68,12 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
   devtool: isDev ? 'source-map' : false,
+
   entry: entryFiles(pages),
+
 	output: {
     filename: 'js/[name].[contenthash].js',
+    // filename: '[name]',
     path: path.resolve(__dirname, 'dist')
 	},
 
@@ -110,7 +115,9 @@ module.exports = {
     open: true,
     hot: isDev,
   },
+
   plugins,
+
   module: {
     rules: [
       {
@@ -127,7 +134,12 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          isDev ? 'style-loader' : {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: './css/',
+            }
+          },
           'css-loader',
           'sass-loader',
         ],
@@ -167,3 +179,5 @@ module.exports = {
     ],
   }
 }
+7\
+4

@@ -6,38 +6,39 @@ include ../roomDetail/roomDetail.pug
 include ../room/room.pug
 
 mixin cards
-  ul.cards
-    li.cards__item.cards__item--first
-      +searchRoom
-    li.cards__item
-      +reg
-    li.cards__item.cards__item--first
-      +roomDetail
-    li.cards__item
-      +login
-    li.cards__item.cards__item--first
-      +calendar('calendar-1', 'maket')
-    li.cards__item
-      +room({
-        sliderId: 'slider-1',
-        sliderLink: '#',
-        sliderImg: ['image-1.jpg', 'image-1.jpg', 'image-1.jpg', 'image-1.jpg'],
-        title: '888',
-        lux: true,
-        cost: '9 990',
-        rateId: 'cardRate-1',
-        rateStar: 5,
-        review: 145
-      })
-    li.cards__item
-      +room({
-        sliderId: 'slider-2',
-        sliderLink: '#',
-        sliderImg: ['image-2.jpg', 'image-2.jpg', 'image-2.jpg', 'image-2.jpg'],
-        title: '840',
-        lux: false,
-        cost: '9 900',
-        rateId: 'cardRate-2',
-        rateStar: 4,
-        review: 65
-      })
+  main.cards
+    ul.cards__list
+      li.cards__item.cards__item--first
+        +searchRoom
+      li.cards__item
+        +reg
+      li.cards__item.cards__item--first
+        +roomDetail
+      li.cards__item
+        +login
+      li.cards__item.cards__item--first
+        +calendar('calendar-1', 'maket')
+      li.cards__item
+        +room({
+          sliderId: 'slider-1',
+          sliderLink: '#',
+          sliderImg: ['image-1.jpg', 'image-1.jpg', 'image-1.jpg', 'image-1.jpg'],
+          title: '888',
+          lux: true,
+          cost: '9 990',
+          rateId: 'cardRate-1',
+          rateStar: 5,
+          review: 145
+        })
+      li.cards__item
+        +room({
+          sliderId: 'slider-2',
+          sliderLink: '#',
+          sliderImg: ['image-2.jpg', 'image-2.jpg', 'image-2.jpg', 'image-2.jpg'],
+          title: '840',
+          lux: false,
+          cost: '9 900',
+          rateId: 'cardRate-2',
+          rateStar: 4,
+          review: 65
+        })

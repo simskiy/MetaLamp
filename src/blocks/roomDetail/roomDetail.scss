@@ -88,7 +88,7 @@
     line-height: 18px;
     color: rgba($main-color, 0.75);
     margin-top: 21px;
-    margin-bottom: 15px;
+    margin-bottom: -2px;
   }
 
   &__total {
@@ -126,27 +126,60 @@
   display: table;
   width: 100%;
   margin-right: 10px;
-  height: 120px;
+  height: 137px;
 
   &__row {
     display: table-row;
   }
 
   &__name {
+    position: relative;
     display: table-cell;
     padding: 0;
     width: 215px;
+    vertical-align: top;
   }
 
   &__cost {
     display: table-cell;
     padding: 0;
+    vertical-align: top;
 
     text-align: right;
     text-transform: uppercase;
   }
 
-  &__hint-wrapper {
-    display: none;
+  &__hint {
+    position: absolute;
+    top: -1px;
+    right: -24px;
+    cursor: pointer;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('@blocks/roomDetail/hint.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &::after {
+      content: 'здесь должна быть подсказка';
+      display: inline-block;
+      width: 150px;
+      position: absolute;
+      top: -35px;
+      right: -155px;
+      background-color: yellow;
+      border-radius: 5px;
+      padding: 5px;
+      font: inherit;
+      font-size: 0.8rem;
+      line-height: 0.8rem;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
   }
 }

@@ -27,16 +27,12 @@ mixin roomDetail()
         .invoice__cost 39 960₽
       .invoice__row
         .invoice__name Сбор за услуги: скидка 2 179₽
-        .invoice__cost
-          .invoice__hint-wrapper
-            span.invoice__hint всякий непонятный текст
-          | 0₽
+          span.invoice__hint
+        .invoice__cost 0₽
       .invoice__row
         .invoice__name Сбор за дополнительные услуги
-        .invoice__cost
-          .invoice__hint-wrapper
-            span.invoice__hint Здесь должна быть подсказка
-          | 300₽
+          span.invoice__hint
+        .invoice__cost 300₽
     span.roomDetail__total.roomDetail__total--line Итого
     span.roomDetail__total.roomDetail__total--margin 38 081₽
     +btn({

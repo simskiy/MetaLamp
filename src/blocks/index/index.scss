@@ -11,14 +11,14 @@
   box-sizing: border-box;
   max-width: 1920px;
   min-width: 320px;
-  height: 833px;
-  background: url('@blocks/index/bg-image.jpg') no-repeat center bottom 3px;
+  height: 830px;
+  background: url('@blocks/index/bg-image.jpg') no-repeat center bottom 0px;
   background-size: cover;
   margin: auto;
   padding-top: 70px;
   padding-left: 140px;
   padding-right: 134px;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
 
   &__text {
     display: inline-block;

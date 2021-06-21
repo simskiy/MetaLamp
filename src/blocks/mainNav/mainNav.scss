@@ -13,6 +13,9 @@
   box-sizing: border-box;
   margin: auto;
   background-color: #fff;
+  box-sizing: border-box;
+  height: 70px;
+  padding-top: 3px;
 
   &__logo {
     margin-right: auto;
@@ -83,7 +86,7 @@
     align-items: center;
     box-sizing: border-box;
     width: 448px;
-    height: 70px;
+    // height: 70px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -142,7 +145,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    height: 70px;
+    // height: 70px;
   }
 
   &__login-btn {

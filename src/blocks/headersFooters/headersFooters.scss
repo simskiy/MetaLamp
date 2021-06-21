@@ -1,7 +1,10 @@
 
 .headers-footers {
-  width: 100%;
-  margin-top: 142px;
+  width: 1440px;
+  margin: auto;
+  background-color: #e5e5e5;
+  padding-top: 140px;
+  padding-bottom: 140px;
 
   &__list {
     list-style: none;
@@ -14,10 +17,6 @@
 
     &:first-child {
       margin-top: 0;
-    }
-
-    &--sm {
-      margin-bottom: 140px;
     }
   }
 }

@@ -5,7 +5,7 @@ mixin bulletList(attr={})
       items: attr.items || []
     }
   .bulletList&attributes(attributes)
-    h3.bulletList__title= opt.title
+    h2.bulletList__title= opt.title
     ul.bulletList__list
       each val in opt.items
         li.bulletList__item=val

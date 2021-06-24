@@ -13,7 +13,10 @@ mixin comment(attr={})
   .comment&attributes(attributes)
     img.comment__photo(src=opt.photo width="48" height="48" alt="Фотография")
     span.comment__name=opt.name
-    span.comment__days=`${opt.days} дней назад`
+    if opt.days == 7
+      span.comment__days= 'неделю назад'
+    else
+      span.comment__days=`${opt.days} дней назад`
     .comment__inner
       +likeBtn(opt.likeBtn)(class="comment__like-btn")
       p.comment__text=opt.text

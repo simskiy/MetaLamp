@@ -1,0 +1,17 @@
+@import '@assets/scss/fonts.scss';
+@import '@assets/scss/global.scss';
+@import '@assets/scss/mixins.scss';
+@import 'normalize.css';
+
+.roomDetails {
+  position: relative;
+  max-width: 1920px;
+  margin: auto;
+
+  &__banner {
+    height: 33.68%;
+    width: 100vw;
+    max-width: 1440px;
+    margin: auto;
+  }
+}

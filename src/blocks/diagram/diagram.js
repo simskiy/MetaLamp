@@ -1,3 +1,6 @@
+import '@blocks/diagram/diagram.scss'
+
+
 export default class {
   constructor (elem) {
     this.canvas = document.getElementById(elem)
@@ -11,7 +14,8 @@ export default class {
   }
 
   getRadians(degrees) {
-	  return (Math.PI/180)*degrees;
+    let pi = Math.PI
+	  return degrees * pi / 180
   }
 
   getRadius() {
@@ -20,15 +24,28 @@ export default class {
 
   getDegrees (radian) {
     let pi = Math.PI
-    return radian * (180/pi)
+    return radian * 180/pi
   }
 
-  getAnglesArr () {
+  getCoord(arr) {
+    let coord = []
+    if (arr) {
+      for (let elem of arr) {
+        let a = this.getRadians(elem).toFixed(5)
+        let r = this.getRadius()
+        coord.push((Math.cos(a).toFixed(5) * r) + r )
+        coord.push(-(Math.sin(a).toFixed(5) * r) + r)
+      }
+    }
+    return coord
+  }
+
+  getDataDiagram () {
     let sumVote = Object.values(this.votes).reduce((acc, cur) => +acc + +cur)
     let angles = [270 + this.indent / 2]
-    let anglesArr = []
+    let dataDiagramArr = []
     let rate = ['great', 'good', 'satis', 'bad']
-    let colors = {great: 'orange', good: 'green', satis: 'blue', bad: 'black'}
+    let colors = {great: ['#ffba9c', '#ffe39c'], good: ['#66d2ea', '#6fcf97'], satis: ['#8BA4F9', '#BC9CFF'], bad: ['#3D4975', '#909090']}
     let voteValues = Object.values(this.votes)
 
     for (let i = 0; i < Object.keys(this.votes).length; i++) {
@@ -40,54 +57,42 @@ export default class {
     for (let i = 0; i < angles.length - 1; i++) {
       let obj = {}
       if (angles[i] != angles[i + 1]) {
-        obj.coord = [angles[i] - this.indent / 2, angles[i + 1] + this.indent / 2]
+        obj.position = [angles[i] - this.indent / 2, angles[i + 1] + this.indent / 2]
+
       } else {
-        obj.coord = false
+        obj.position = false
       }
       obj.rate = rate[i]
       obj.value = voteValues[i]
       obj.color = colors[obj.rate]
-      anglesArr.push(obj)
+      obj.coord = this.getCoord(obj.position)
+      dataDiagramArr.push(obj)
     }
-    return anglesArr
+    console.log(dataDiagramArr)
+    return dataDiagramArr
   }
 
   draw () {
     let x = this.width/2
     let y = this.height/2
     let r = this.getRadius() - this.line
-    console.log(this.getAnglesArr())
 
-    for (let elem of this.getAnglesArr()) {
-      if (elem.coord) {
-        let a = this.getRadians(elem.coord[0])
-        let b = this.getRadians(elem.coord[1])
+    for (let elem of this.getDataDiagram()) {
+      if (elem.position) {
+        let a = this.getRadians(elem.position[0])
+        let b = this.getRadians(elem.position[1])
+        let x1 = elem.coord[0]
+        let y1 = elem.coord[1]
+        let x2 = elem.coord[2]
+        let y2 = elem.coord[3]
         this.ctx.beginPath()
         this.ctx.arc(x, y, r, a, b, true)
-        this.ctx.strokeStyle = elem.color
+        let gradient =this.ctx.createLinearGradient(x1, y1, x2, y2)
+        gradient.addColorStop(0, elem.color[0])
+        gradient.addColorStop(1, elem.color[1])
+        this.ctx.strokeStyle = gradient
         this.ctx.stroke()
-        console.log(elem.color)
       }
     }
-
-    // let coord = this.calcDegrees()
-
-    // console.log(`radius: ${this.getRadius()}`)
-    // console.log(coord)
-
-    // for (let i = 1; i < coord.length; i += 2) {
-    //   let a = this.getRadians(coord[i])
-    //   let b = this.getRadians(coord[i + 1])
-
-    //   if (coord[i] != coord[i + 1]) {
-    //     this.ctx.beginPath()
-    //     this.ctx.arc(x, y, r, a, b, false)
-    //     this.ctx.strokeStyle = colors[i]
-    //     this.ctx.stroke()
-
-    //     console.log(`radX: ${a}, radY: ${b}`)
-    //     console.log(`x: ${this.getDegrees(a)}, y: ${this.getDegrees(b)}`)
-    //   }
-    // }
   }
 }

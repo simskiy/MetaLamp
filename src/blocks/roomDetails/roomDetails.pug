@@ -1,6 +1,7 @@
 include ../features/features.pug
 include ../comment/comment.pug
 include ../bulletList/bulletList.pug
+include ../diagram/diagram.pug
 
 mixin roomDetails
   main.roomDetails
@@ -28,14 +29,7 @@ mixin roomDetails
 
     .roomDetails__impress
       h2.roomDetails__subtitle Впечатления от номера
-      canvas(
-        height="125"
-        width="125"
-        data-great="130"
-        data-good="65"
-        data-satis="65"
-        data-bad="0"
-      )#diagram
+      +diagram
 
     .roomDetails__comment
       h2.roomDetails__subtitle Отзывы посетителей номера

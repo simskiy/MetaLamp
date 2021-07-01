@@ -1,0 +1,58 @@
+@import '@assets/scss/global.scss';
+
+.diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: bottom;
+  align-items: flex-end;
+
+  &__pie {
+    width: auto;
+    margin-right: 28px;
+  }
+
+  &__legend {
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    // margin-top: 20px;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 15px;
+    color: rgba($main-color, 0.75);
+    font-size: 0.875rem;
+    line-height: 24px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      display: block;
+      align-content: center;
+      width: 10px;
+      height: 10px;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    &--great::before {
+      background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+    }
+
+    &--good::before {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+
+    &--satis::before {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &--bad::before {
+      background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    }
+  }
+}

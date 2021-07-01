@@ -1,9 +1,15 @@
 mixin diagram()
-  canvas(
-    height="125"
-    width="125"
-    data-great="130"
-    data-good="65"
-    data-satis="65"
-    data-bad="0"
-  )#diagram
+  .diagram
+    canvas(
+      height="124"
+      width="124"
+      data-great="130"
+      data-good="65"
+      data-satis="65"
+      data-bad="0"
+    )#diagram.diagram__pie
+    ul.diagram__legend
+      li.diagram__item.diagram__item--great Великолепно
+      li.diagram__item.diagram__item--good Хорошо
+      li.diagram__item.diagram__item--satis Удовлетворительно
+      li.diagram__item.diagram__item--bad Разочарован

@@ -6,7 +6,7 @@ export default class {
     this.canvas = document.getElementById(elem)
     this.ctx = this.canvas.getContext('2d')
     this.line = 4
-    this.indent = 2
+    this.indent = 3
     this.ctx.lineWidth = this.line
     this.height = this.canvas.clientHeight
     this.width = this.canvas.clientWidth
@@ -29,11 +29,12 @@ export default class {
 
   getCoord(arr) {
     let coord = []
+
     if (arr) {
       for (let elem of arr) {
         let a = this.getRadians(elem).toFixed(5)
         let r = this.getRadius()
-        coord.push((Math.cos(a).toFixed(5) * r) + r )
+        coord.push((Math.cos(a).toFixed(5) * r) + r)
         coord.push(-(Math.sin(a).toFixed(5) * r) + r)
       }
     }
@@ -68,16 +69,33 @@ export default class {
       obj.coord = this.getCoord(obj.position)
       dataDiagramArr.push(obj)
     }
-    console.log(dataDiagramArr)
     return dataDiagramArr
+  }
+
+  setText(text) {
+    let a = text%10
+    if (a == 0 || (a > 4 && a < 9)) return 'ГОЛОСОВ'
+    if (a == 1) return 'ГОЛОС'
+    if (a > 1 || a < 5) return 'ГОЛОСА'
+  }
+
+  getText (dataDiagram, x, y) {
+      this.ctx.textAlign = 'center'
+      this.ctx.fillStyle = '#BC9CFF'
+      let text = dataDiagram.reduce((sum, curr) => sum + Number(curr.value), 0)
+      this.ctx.font = 'bold 24px "Montserrat"'
+      this.ctx.fillText(text, x, y - 2)
+      this.ctx.font = 'bold 12px "Montserrat"'
+      this.ctx.fillText(this.setText(text), x, y + 17)
   }
 
   draw () {
     let x = this.width/2
     let y = this.height/2
     let r = this.getRadius() - this.line
+    let dataDiagram = this.getDataDiagram()
 
-    for (let elem of this.getDataDiagram()) {
+    for (let elem of dataDiagram) {
       if (elem.position) {
         let a = this.getRadians(elem.position[0])
         let b = this.getRadians(elem.position[1])
@@ -94,5 +112,6 @@ export default class {
         this.ctx.stroke()
       }
     }
+    this.getText(dataDiagram, x, y)
   }
 }

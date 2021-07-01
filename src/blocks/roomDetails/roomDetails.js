@@ -10,5 +10,10 @@ import '@blocks/comment/comment.js'
 import '@blocks/bulletList/bulletList.js'
 import Diagram from '@blocks/diagram/diagram.js'
 
-let dia = new Diagram('diagram')
-dia.draw()
+
+function drawDiagram () {
+  let dia = new Diagram('diagram')
+  dia.draw()
+}
+
+setTimeout(drawDiagram, 300)

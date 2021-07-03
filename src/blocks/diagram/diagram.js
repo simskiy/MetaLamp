@@ -2,7 +2,7 @@ import '@blocks/diagram/diagram.scss'
 
 
 export default class {
-  constructor (elem) {
+  constructor(elem) {
     this.canvas = document.getElementById(elem)
 
     this.diagram = {
@@ -28,7 +28,7 @@ export default class {
     return width > height ? height/2 : width/2
   }
 
-  getDegrees (radian) {
+  getDegrees(radian) {
     let pi = Math.PI
     return radian * 180/pi
   }
@@ -47,7 +47,12 @@ export default class {
     return coord
   }
 
-  getDataDiagram () {
+  // пригодится, когда буду реализовывать анимацию
+  fromPercentToNum(num, percent) {
+    return num * percent / 100
+  }
+
+  getDataDiagram() {
     let sumVote = Object.values(this.diagram.votes).reduce((acc, cur) => +acc + +cur)
     let angles = [270 + this.diagram.indent / 2]
     let dataDiagramArr = []
@@ -87,7 +92,7 @@ export default class {
     if (a > 1 || a < 5) return 'ГОЛОСА'
   }
 
-  getText (dataDiagram, x, y) {
+  drawText(dataDiagram, x, y) {
       this.ctx.textAlign = 'center'
       this.ctx.fillStyle = '#BC9CFF'
       let text = dataDiagram.reduce((sum, curr) => sum + Number(curr.value), 0)
@@ -97,27 +102,20 @@ export default class {
       this.ctx.fillText(this.setText(text), x, y + 17)
   }
 
-  animateSector (coord) {
-    let x1 = coord[0]
-    let y1 = coord[1]
-    let x2 = coord[2]
-    let y2 = coord[3]
-  }
+  drawSector(sector) {
+    let x = sector.x
+    let y = sector.y
+    let r = sector.r
 
-  draw () {
-    let x = this.diagram.width/2
-    let y = this.diagram.height/2
-    let r = this.getRadius() - this.diagram.line
-    let dataDiagram = this.getDataDiagram()
-
-    for (let elem of dataDiagram) {
+    for (let elem of sector.dataDiagram) {
       if (elem.position) {
-        let a = this.getRadians(elem.position[0])
-        let b = this.getRadians(elem.position[1])
         let x1 = elem.coord[0]
         let y1 = elem.coord[1]
         let x2 = elem.coord[2]
         let y2 = elem.coord[3]
+        let a = this.getRadians(elem.position[0])
+        let b = this.getRadians(elem.position[1])
+
         this.ctx.beginPath()
         this.ctx.arc(x, y, r, a, b, true)
         let gradient =this.ctx.createLinearGradient(x1, y1, x2, y2)
@@ -127,6 +125,19 @@ export default class {
         this.ctx.stroke()
       }
     }
-    this.getText(dataDiagram, x, y)
+  }
+
+  init() {
+    let sector = {
+      x: this.diagram.width/2,
+      y: this.diagram.height/2,
+      r: this.getRadius() - this.diagram.line,
+      dataDiagram: this.getDataDiagram()
+    }
+
+    setTimeout(() => {
+      this.drawSector(sector)
+      this.drawText(sector.dataDiagram, sector.x, sector.y)
+    }, 300)
   }
 }

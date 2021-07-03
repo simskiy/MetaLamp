@@ -4,13 +4,17 @@ import '@blocks/diagram/diagram.scss'
 export default class {
   constructor (elem) {
     this.canvas = document.getElementById(elem)
+
+    this.diagram = {
+      line: 4,
+      indent: 3,
+      height: this.canvas.clientHeight,
+      width: this.canvas.clientWidth,
+      votes: this.canvas.dataset
+    }
+
     this.ctx = this.canvas.getContext('2d')
-    this.line = 4
-    this.indent = 3
-    this.ctx.lineWidth = this.line
-    this.height = this.canvas.clientHeight
-    this.width = this.canvas.clientWidth
-    this.votes = this.canvas.dataset
+    this.ctx.lineWidth = this.diagram.line
   }
 
   getRadians(degrees) {
@@ -19,7 +23,9 @@ export default class {
   }
 
   getRadius() {
-    return this.width > this.height ? this.height/2 : this.width/2
+    let width = this.diagram.width
+    let height = this.diagram.height
+    return width > height ? height/2 : width/2
   }
 
   getDegrees (radian) {
@@ -42,32 +48,34 @@ export default class {
   }
 
   getDataDiagram () {
-    let sumVote = Object.values(this.votes).reduce((acc, cur) => +acc + +cur)
-    let angles = [270 + this.indent / 2]
+    let sumVote = Object.values(this.diagram.votes).reduce((acc, cur) => +acc + +cur)
+    let angles = [270 + this.diagram.indent / 2]
     let dataDiagramArr = []
     let rate = ['great', 'good', 'satis', 'bad']
     let colors = {great: ['#ffba9c', '#ffe39c'], good: ['#66d2ea', '#6fcf97'], satis: ['#8BA4F9', '#BC9CFF'], bad: ['#3D4975', '#909090']}
-    let voteValues = Object.values(this.votes)
+    let voteValues = Object.values(this.diagram.votes)
+    let votes = this.diagram.votes
+    let indent = this.diagram.indent
 
-    for (let i = 0; i < Object.keys(this.votes).length; i++) {
+    for (let i = 0; i < Object.keys(votes).length; i++) {
       let percent = voteValues[i] * 100 / sumVote
       let deg = 360 * percent / 100
       angles.push((angles[i] - deg) % 360)
     }
 
     for (let i = 0; i < angles.length - 1; i++) {
-      let obj = {}
+      let sector = {}
       if (angles[i] != angles[i + 1]) {
-        obj.position = [angles[i] - this.indent / 2, angles[i + 1] + this.indent / 2]
+        sector.position = [angles[i] - indent / 2, angles[i + 1] + indent / 2]
 
       } else {
-        obj.position = false
+        sector.position = false
       }
-      obj.rate = rate[i]
-      obj.value = voteValues[i]
-      obj.color = colors[obj.rate]
-      obj.coord = this.getCoord(obj.position)
-      dataDiagramArr.push(obj)
+      sector.rate = rate[i]
+      sector.value = voteValues[i]
+      sector.color = colors[sector.rate]
+      sector.coord = this.getCoord(sector.position)
+      dataDiagramArr.push(sector)
     }
     return dataDiagramArr
   }
@@ -89,10 +97,17 @@ export default class {
       this.ctx.fillText(this.setText(text), x, y + 17)
   }
 
+  animateSector (coord) {
+    let x1 = coord[0]
+    let y1 = coord[1]
+    let x2 = coord[2]
+    let y2 = coord[3]
+  }
+
   draw () {
-    let x = this.width/2
-    let y = this.height/2
-    let r = this.getRadius() - this.line
+    let x = this.diagram.width/2
+    let y = this.diagram.height/2
+    let r = this.getRadius() - this.diagram.line
     let dataDiagram = this.getDataDiagram()
 
     for (let elem of dataDiagram) {

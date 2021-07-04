@@ -135,10 +135,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           isDev ? 'style-loader' : {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: './css/',
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
           'sass-loader',
@@ -148,14 +145,14 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         type: 'asset/resource',
         generator: {
-         filename: 'images/[hash][ext][query]'
+         filename: 'images/[hash][ext]'
         }
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
         type: 'asset/resource',
         generator: {
-         filename: 'fonts/[hash][ext][query]'
+         filename: 'fonts/[hash][ext]'
         }
       },
       {

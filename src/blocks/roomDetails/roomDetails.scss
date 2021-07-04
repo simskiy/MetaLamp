@@ -7,11 +7,136 @@
   position: relative;
   max-width: 1920px;
   margin: auto;
+  box-sizing: border-box;
+
+  &__subtitle {
+    font-size: 1.188rem;
+    color: $main-color;
+    margin: 0;
+    margin-bottom: 20px;
+    line-height: 23.16px;
+
+    &--info {
+      margin-bottom: 0px;
+    }
+
+    &--cancel {
+      margin-bottom: 18px;
+    }
+  }
 
   &__banner {
-    height: 33.68%;
-    width: 100vw;
-    max-width: 1440px;
+    height: auto;
+    width: 100%;
+    max-width: 1920px;
+  }
+
+  &__details {
+    padding: 70px 140px;
+    box-sizing: border-box;
+    padding-top: 67px;
     margin: auto;
+    display: grid;
+    grid-template-areas:
+      "info impress form"
+      "comment comment form"
+      "rules cancel form";
+    column-gap: 68px;
+    row-gap: 33px;
+    grid-template-columns: 22.28% 1fr 380px;
+  }
+
+  &__info {
+    grid-area: info;
+  }
+
+  &__impress {
+    grid-area: impress;
+    padding-left: 34px;
+  }
+
+  &__comment {
+    grid-area: comment;
+    margin-top: -20px;
+  }
+
+  &__comment-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__comment-item {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__rules {
+    grid-area: rules;
+  }
+
+  &__cancel {
+    grid-area: cancel;
+    padding-left: 34px;
+  }
+
+  &__cancel-text {
+    font-size: 0.875rem;
+    line-height: 24px;
+    color: rgba($main-color, 0.75);
+    margin: 0;
+  }
+
+  &__form {
+    grid-area: form;
+  }
+}
+
+@include custom-block('1350px') {
+  .roomDetails__details {
+    padding: 40px 70px;
+    grid-template-areas:
+      "info impress form"
+      "comment comment form"
+      "rules cancel cancel";
+  }
+}
+
+@include lg-block {
+  .roomDetails__details {
+    grid-template-areas:
+      "info form"
+      "impress form"
+      "comment comment"
+      "rules cancel";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include md-block {
+  .roomDetails {
+
+    &__details {
+      justify-items: center;
+      padding: 20px 20px;
+      grid-template-areas:
+        "info"  "impress" "form" "comment" "rules" "cancel";
+      grid-template-columns: 1fr;
+    }
+
+    &__info {
+      justify-self: stretch;
+    }
+
+    &__rules {
+      justify-self: self-start;
+    }
+
+    &__cancel {
+      padding-left: 0;
+    }
   }
 }

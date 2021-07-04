@@ -2,65 +2,72 @@ include ../features/features.pug
 include ../comment/comment.pug
 include ../bulletList/bulletList.pug
 include ../diagram/diagram.pug
+include ../roomDetail/roomDetail.pug
 
 mixin roomDetails
   main.roomDetails
+    h1.unvis Подробнее о номере
     img(src=require('@blocks/roomDetails/image.jpg') alt="картинка" height="485" width="1440").roomDetails__banner
 
-    .roomDetails__info
-      h2.roomDetails__subtitle Сведения о номере
-      +features([
-        {
-          title: 'Комфорт',
-          img: 'insert_emoticon',
-          text: 'Шумопоглащающие стены'
-        },
-        {
-          title: 'Удобство',
-          img: 'location_city',
-          text: 'Окно в каждой из спален'
-        },
-        {
-          title: 'Уют',
-          img: 'whatshot',
-          text: 'Номер оснащен камином'
-        }
-      ])
+    section.roomDetails__details
+      h2.unvis Детализация комнаты
 
-    .roomDetails__impress
-      h2.roomDetails__subtitle Впечатления от номера
-      +diagram
+      .roomDetails__info
+        h3.roomDetails__subtitle.roomDetails__subtitle--info Сведения о номере
+        +features([
+          {
+            title: 'Комфорт',
+            img: 'insert_emoticon',
+            text: 'Шумопоглащающие стены'
+          },
+          {
+            title: 'Удобство',
+            img: 'location_city',
+            text: 'Окно в каждой из спален'
+          },
+          {
+            title: 'Уют',
+            img: 'whatshot',
+            text: 'Номер оснащен камином'
+          }
+        ])
 
-    .roomDetails__comment
-      h2.roomDetails__subtitle Отзывы посетителей номера
-      ul.roomDetails__comment-list
-        li.roomDetails__comment-item
-          +comment({
-            photo: require('@blocks/comment/image.jpg'),
-            name: 'Мурад Сарафанов',
-            days: 5,
-            likeBtn: {
-              disable: false,
-              count: 12
-            },
-            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-          })
-        li.roomDetails__comment-item
-          +comment({
-            photo: require('@blocks/comment/image-2.jpg'),
-            name: 'Патрисия Стёклышкова',
-            days: 7,
-            likeBtn: {
-              disable: true,
-              count: 2
-            },
-            text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
-          })
-    .roomDetails__rules
-      +bulletList({
-        title: 'Правила',
-        items: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
-      })
-    .roomDetails__cancel
-      h2.roomDetails__subtitle Отмена
-      p.roomDetails__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      .roomDetails__impress
+        h3.roomDetails__subtitle Впечатления от номера
+        +diagram
+
+      .roomDetails__comment
+        h3.roomDetails__subtitle.roomDetails__subtitle--comment Отзывы посетителей номера
+        ul.roomDetails__comment-list
+          li.roomDetails__comment-item
+            +comment({
+              photo: require('@blocks/comment/image.png'),
+              name: 'Мурад Сарафанов',
+              days: 5,
+              likeBtn: {
+                disable: false,
+                count: 12
+              },
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+            })
+          li.roomDetails__comment-item
+            +comment({
+              photo: require('@blocks/comment/image-2.png'),
+              name: 'Патрисия Стёклышкова',
+              days: 7,
+              likeBtn: {
+                disable: true,
+                count: 2
+              },
+              text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+            })
+      .roomDetails__rules
+        +bulletList({
+          title: 'Правила',
+          items: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+        })
+      .roomDetails__cancel
+        h2.roomDetails__subtitle.roomDetails__subtitle--cancel Отмена
+        p.roomDetails__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+      +roomDetail()(class="roomDetails__form")

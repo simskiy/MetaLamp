@@ -8,6 +8,7 @@ import '@blocks/footer/footer.js'
 import '@blocks/features/features.js'
 import '@blocks/comment/comment.js'
 import '@blocks/bulletList/bulletList.js'
+import '@blocks/roomDetail/roomDetail.js'
 import Diagram from '@blocks/diagram/diagram.js'
 
 

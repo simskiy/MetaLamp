@@ -1,11 +1,14 @@
 mixin bulletList(attr={})
   -
     let opt = {
-      title: attr.title || 'bullet list',
+      title: attr.title || 'BULLET LIST',
       items: attr.items || []
     }
   .bulletList&attributes(attributes)
-    h2.bulletList__title= opt.title
+    if opt.title == 'BULLET LIST'
+      h3.bulletList__title.bulletList__title--default= opt.title
+    else
+      h3.bulletList__title= opt.title
     ul.bulletList__list
       each val in opt.items
         li.bulletList__item=val

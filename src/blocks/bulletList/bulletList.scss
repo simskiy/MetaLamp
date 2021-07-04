@@ -2,17 +2,23 @@
 
 .bulletList {
   &__title {
-    font-size: 0.75rem;
+    font-size: 1.188rem;
     color: $main-color;
-    text-transform: uppercase;
     margin: 0;
+    padding-left: 20px;
+    margin-bottom: 20px;
+
+    &--default {
+      padding-left: 0;
+      font-size: 0.75rem;
+      margin-bottom: 15px;
+    }
   }
 
   &__list {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top: 15px;
     font-size: 0.875rem;
     color: rgba($main-color, 0.75);
   }
@@ -22,6 +28,7 @@
     padding-left: 21px;
     margin-top: 10px;
     line-height: 24px;
+
     &::before {
       content: '';
       display: block;

@@ -9,6 +9,12 @@ $screen-xl: 1440px;
 $screen-xxl: 1920px;
 
 //media mixin (desktop first)
+@mixin custom-block($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
 @mixin xs-block() {
   @media screen and (max-width: $screen-xs) {
     @content;

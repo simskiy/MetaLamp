@@ -6,12 +6,13 @@
   margin: 0;
 
   &__item {
+    display: flex;
+    height: 89px;
+    flex-wrap: wrap;
     box-sizing: border-box;
     border-bottom: 1px solid rgba($main-color, 0.1);
     background-size: 48px 48px;
     padding-left: 58px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     font-size: 0.875rem;
     color: rgba($main-color, 0.75);
     line-height: 24px;
@@ -26,10 +27,13 @@
 
   &__title {
     font-weight: 700;
+    width: 100%;
+    align-self: flex-end;
   }
 
   &__text {
     font-weight: 400;
     margin: 0;
+    align-self: flex-start;
   }
 }

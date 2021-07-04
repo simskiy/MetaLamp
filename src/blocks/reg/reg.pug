@@ -3,7 +3,7 @@ include ../radioBtn/radioBtn.pug
 include ../btn/btn.pug
 include ../toggleBtn/toggleBtn.pug
 
-mixin reg
+mixin reg(attr={})
   form.reg
     span.reg__title Регистрация аккаунта
     +text-field({
@@ -30,7 +30,7 @@ mixin reg
     +toggleBtn({
       label: 'Получать спецпредложения'
     })(class="reg__btn-offer")
-    +btn({preset: 'arrow'})(class="reg__btn-pay")
+    +btn({preset: 'arrow', text: 'Зарегистрироваться'})(class="reg__btn-pay")
     span.reg__note Уже есть аккаунт на Toxin
     +btn({
       text: 'Войти',

@@ -1,0 +1,16 @@
+@import '@assets/scss/fonts.scss';
+@import '@assets/scss/global.scss';
+@import '@assets/scss/mixins.scss';
+@import 'normalize.css';
+
+.registration {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  height: 684px;
+  background: url('@blocks/registration/bgpic.jpg') no-repeat center bottom;
+
+}

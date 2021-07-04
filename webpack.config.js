@@ -14,7 +14,7 @@ const isProd = !isDev
 const plugins = []
 
 // массив страниц
-let pages = ['index', 'search', 'colorsType', 'formElements', 'cards', 'headersFooters', 'roomDetails']
+let pages = ['index', 'search', 'colorsType', 'formElements', 'cards', 'headersFooters', 'roomDetails', 'registration']
 
 
 if (isProd) {

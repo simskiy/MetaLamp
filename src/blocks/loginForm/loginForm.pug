@@ -1,0 +1,24 @@
+include ../textField/textField.pug
+include ../btn/btn.pug
+
+mixin loginForm
+  form.loginForm
+    span.loginForm__title Войти
+    +text-field({
+      type: 'email',
+      placeholder: 'Email'
+    })(class="loginForm__email")
+    +text-field({
+      type: 'password',
+      placeholder: 'Пароль'
+    })(class="loginForm__password")
+    +btn({
+      color: 'purple',
+      text: 'Войти',
+      arrow: true
+    })(class="loginForm__btn-enter")
+    span.loginForm__note Нет аккаунта на Toxin?
+    +btn({
+      color: 'clear',
+      text: 'Создать',
+    })(class="loginForm__btn-create")

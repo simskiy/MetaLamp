@@ -63,7 +63,7 @@
 
   &__note {
     display: inline-block;
-    width: 190px;
+    // width: 190px;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
@@ -76,4 +76,13 @@
     margin-left: auto
   }
 
+}
+
+@include width-500 {
+  .reg {
+    padding: 20px;
+    &__note {
+    font-size: 0.75rem;
+  }
+  }
 }

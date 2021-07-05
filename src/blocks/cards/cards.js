@@ -12,7 +12,7 @@ import '@blocks/headerUI/headerUI.js';
 import '@blocks/calendar/calendar.js';
 import '@blocks/searchRoom/searchRoom.js';
 import '@blocks/reg/reg.js';
-import '@blocks/login/login.js';
+import '@blocks/loginForm/loginForm.js';
 
 let cardSlider1 = new Slider('#slider-1')
 cardSlider1.init()

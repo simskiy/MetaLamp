@@ -1,0 +1,14 @@
+extends ../assets/pug/layout.pug
+include ../blocks/header/header.pug
+include ../blocks/footer/footer.pug
+include ../blocks/login/login.pug
+
+block meta
+  title Главная страница
+
+block header
+  +header()
+block content
+  +login()
+block footer
+  +footer()

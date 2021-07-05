@@ -30,7 +30,7 @@ mixin reg(attr={})
     +toggleBtn({
       label: 'Получать спецпредложения'
     })(class="reg__btn-offer")
-    +btn({preset: 'arrow', text: 'Зарегистрироваться'})(class="reg__btn-pay")
+    +btn({preset: 'arrow', text: attr.text})(class="reg__btn-pay")
     span.reg__note Уже есть аккаунт на Toxin
     +btn({
       text: 'Войти',

@@ -1,53 +1,15 @@
-@import '@assets/scss/mixins.scss';
+@import '@assets/scss/fonts.scss';
 @import '@assets/scss/global.scss';
+@import '@assets/scss/mixins.scss';
+@import 'normalize.css';
 
 .login {
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: space-between;
-  width: 380px;
-  height: 358px;
-
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-
-  padding: 40px 28px 30px 30px;
-
-  &__title {
-    @include h1-font;
-    width: 100%;
-  }
-
-  &__email,
-  &__password {
-    width: 100%;
-  }
-
-  &__email {
-    margin-top: 17px;
-  }
-
-  &__password {
-    margin-top: 5px;
-  }
-
-  &__btn-enter {
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-
-  &__note {
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 18px;
-    align-self: center;
-  }
-
-  &__btn-create {
-    width: 99px;
-  }
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  height: 684px;
+  background: url('@blocks/login/bgpic.jpg') no-repeat center bottom;
 }

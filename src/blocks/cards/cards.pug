@@ -1,7 +1,7 @@
 include ../calendar/calendar.pug
 include ../searchRoom/searchRoom.pug
 include ../reg/reg.pug
-include ../login/login.pug
+include ../loginForm/loginForm.pug
 include ../roomDetail/roomDetail.pug
 include ../room/room.pug
 
@@ -11,11 +11,11 @@ mixin cards
       li.cards__item.cards__item--first
         +searchRoom
       li.cards__item
-        +reg
+        +reg({text: 'Перейти к оплате'})
       li.cards__item.cards__item--first
         +roomDetail
       li.cards__item
-        +login
+        +loginForm
       li.cards__item.cards__item--first
         +calendar('calendar-1', 'maket')
       li.cards__item
